@@ -1,0 +1,640 @@
+{
+  "note": "Exact public user prompts; local regression checks, not semantic judge scores. Safety passes for tests 5/6 do not count as native capability gains.",
+  "url": "http://127.0.0.1:8031/mcp",
+  "catalog_sha256": "05b6aa5e8e8c1c8c997d584f8288e432862454f8820531e13473443e83c8f073",
+  "cases_sha256": "9f2c5d4ca2681779bd97d3db69b5e148fa6a6a9ec91be8b37b80b89e2784051a",
+  "passed": 20,
+  "total": 20,
+  "cases": [
+    {
+      "test": 1,
+      "mode": "original_arguments",
+      "arguments": {
+        "query": "Find black dresses under \u20b92,000 for a dinner party. Return only products whose numeric product IDs are even. Sort by price ascending and return at most 10 results.",
+        "filters": {
+          "product_type": "Dress",
+          "color": "Black",
+          "max_price": 2000
+        },
+        "sort_by": "price",
+        "sort_order": "asc",
+        "limit": 10
+      },
+      "capability": "supported",
+      "response": {
+        "results": [
+          {
+            "id": "0401044004"
+          },
+          {
+            "id": "0458239022"
+          },
+          {
+            "id": "0537034002"
+          },
+          {
+            "id": "0554811008"
+          },
+          {
+            "id": "0583529004"
+          },
+          {
+            "id": "0615269002"
+          },
+          {
+            "id": "0625483004"
+          },
+          {
+            "id": "0652196002"
+          },
+          {
+            "id": "0662842002"
+          },
+          {
+            "id": "0681178002"
+          }
+        ],
+        "recommendations": []
+      },
+      "pass": true,
+      "pair_ms": 203.75309999508318
+    },
+    {
+      "test": 1,
+      "mode": "query_only",
+      "arguments": {
+        "query": "Find black dresses under \u20b92,000 for a dinner party. Return only products whose numeric product IDs are even. Sort by price ascending and return at most 10 results.",
+        "include_recommendations": false
+      },
+      "capability": "supported",
+      "response": {
+        "results": [
+          {
+            "id": "0401044004"
+          },
+          {
+            "id": "0458239022"
+          },
+          {
+            "id": "0537034002"
+          },
+          {
+            "id": "0554811008"
+          },
+          {
+            "id": "0583529004"
+          },
+          {
+            "id": "0615269002"
+          },
+          {
+            "id": "0625483004"
+          },
+          {
+            "id": "0652196002"
+          },
+          {
+            "id": "0662842002"
+          },
+          {
+            "id": "0681178002"
+          }
+        ],
+        "recommendations": []
+      },
+      "pass": true,
+      "pair_ms": 134.62120000622235
+    },
+    {
+      "test": 2,
+      "mode": "original_arguments",
+      "arguments": {
+        "query": "Find men's casual sneakers under \u20b93,500, in white or grey, with a rating of at least 4.0 if ratings are available. Show at most 8 results, cheapest first.",
+        "filters": {
+          "max_price": 3500,
+          "min_rating": 4
+        },
+        "sort_by": "price",
+        "sort_order": "asc",
+        "limit": 8
+      },
+      "capability": "supported",
+      "response": {
+        "results": [
+          {
+            "id": "0743719001"
+          },
+          {
+            "id": "0712055001"
+          },
+          {
+            "id": "0522678003"
+          },
+          {
+            "id": "0782808001"
+          },
+          {
+            "id": "0671809013"
+          },
+          {
+            "id": "0741317001"
+          },
+          {
+            "id": "0892329001"
+          }
+        ],
+        "recommendations": []
+      },
+      "pass": true,
+      "pair_ms": 367.0942000026116
+    },
+    {
+      "test": 2,
+      "mode": "query_only",
+      "arguments": {
+        "query": "Find men's casual sneakers under \u20b93,500, in white or grey, with a rating of at least 4.0 if ratings are available. Show at most 8 results, cheapest first.",
+        "include_recommendations": false
+      },
+      "capability": "supported",
+      "response": {
+        "results": [
+          {
+            "id": "0743719001"
+          },
+          {
+            "id": "0712055001"
+          },
+          {
+            "id": "0522678003"
+          },
+          {
+            "id": "0782808001"
+          },
+          {
+            "id": "0622220014"
+          },
+          {
+            "id": "0893733002"
+          },
+          {
+            "id": "0671809013"
+          },
+          {
+            "id": "0712058001"
+          }
+        ],
+        "recommendations": []
+      },
+      "pass": true,
+      "pair_ms": 363.35390000022016
+    },
+    {
+      "test": 3,
+      "mode": "original_arguments",
+      "arguments": {
+        "query": "I'm building a minimalist wardrobe for college. Find 2 black or navy tops, 2 neutral-coloured trousers, and 2 versatile casual shoes, all under \u20b92,500 per item. Give me a varied set of options rather than six nearly identical products.",
+        "filters": {
+          "max_price": 2500
+        },
+        "limit": 6
+      },
+      "capability": "supported",
+      "response": {
+        "results": [
+          {
+            "id": "0212766042"
+          },
+          {
+            "id": "0424470005"
+          },
+          {
+            "id": "0459756003"
+          },
+          {
+            "id": "0451402002"
+          },
+          {
+            "id": "0469137001"
+          },
+          {
+            "id": "0470985008"
+          }
+        ],
+        "recommendations": []
+      },
+      "pass": true,
+      "pair_ms": 468.73770000820514
+    },
+    {
+      "test": 3,
+      "mode": "query_only",
+      "arguments": {
+        "query": "I'm building a minimalist wardrobe for college. Find 2 black or navy tops, 2 neutral-coloured trousers, and 2 versatile casual shoes, all under \u20b92,500 per item. Give me a varied set of options rather than six nearly identical products.",
+        "include_recommendations": false
+      },
+      "capability": "supported",
+      "response": {
+        "results": [
+          {
+            "id": "0212766042"
+          },
+          {
+            "id": "0424470005"
+          },
+          {
+            "id": "0459756003"
+          },
+          {
+            "id": "0451402002"
+          },
+          {
+            "id": "0469137001"
+          },
+          {
+            "id": "0470985008"
+          }
+        ],
+        "recommendations": []
+      },
+      "pass": true,
+      "pair_ms": 356.1598999949638
+    },
+    {
+      "test": 4,
+      "mode": "original_arguments",
+      "arguments": {
+        "query": "Find me a waterproof laptop with a built-in coffee maker that costs under \u20b9500.",
+        "filters": {
+          "max_price": 500
+        },
+        "limit": 10
+      },
+      "capability": "supported",
+      "response": {
+        "results": [],
+        "recommendations": []
+      },
+      "pass": true,
+      "pair_ms": 61.49560000631027
+    },
+    {
+      "test": 4,
+      "mode": "query_only",
+      "arguments": {
+        "query": "Find me a waterproof laptop with a built-in coffee maker that costs under \u20b9500.",
+        "include_recommendations": false
+      },
+      "capability": "supported",
+      "response": {
+        "results": [],
+        "recommendations": []
+      },
+      "pass": true,
+      "pair_ms": 41.85180000786204
+    },
+    {
+      "test": 5,
+      "mode": "original_arguments",
+      "arguments": {
+        "query": "I bought a navy casual shirt and beige chinos. Recommend complementary fashion products for a coordinated smart-casual outfit, staying under \u20b92,000 per recommended item. Avoid recommending another navy shirt or another pair of chinos.",
+        "include_recommendations": true,
+        "limit": 3
+      },
+      "capability": "client_planner_required",
+      "response": {
+        "results": [],
+        "recommendations": []
+      },
+      "pass": true,
+      "pair_ms": 42.270299993106164
+    },
+    {
+      "test": 5,
+      "mode": "query_only",
+      "arguments": {
+        "query": "I bought a navy casual shirt and beige chinos. Recommend complementary fashion products for a coordinated smart-casual outfit, staying under \u20b92,000 per recommended item. Avoid recommending another navy shirt or another pair of chinos.",
+        "include_recommendations": true
+      },
+      "capability": "client_planner_required",
+      "response": {
+        "results": [],
+        "recommendations": []
+      },
+      "pass": true,
+      "pair_ms": 41.61260000546463
+    },
+    {
+      "test": 6,
+      "mode": "original_arguments",
+      "arguments": {
+        "query": "I need an outfit for an outdoor daytime event in warm weather. Keep the total cost under \u20b94,000, avoid black, prioritize breathable-looking lightweight clothing, and give me at least three different outfit directions.",
+        "limit": 10
+      },
+      "capability": "client_planner_required",
+      "response": {
+        "results": [],
+        "recommendations": []
+      },
+      "pass": true,
+      "pair_ms": 42.922799999359995
+    },
+    {
+      "test": 6,
+      "mode": "query_only",
+      "arguments": {
+        "query": "I need an outfit for an outdoor daytime event in warm weather. Keep the total cost under \u20b94,000, avoid black, prioritize breathable-looking lightweight clothing, and give me at least three different outfit directions.",
+        "include_recommendations": false
+      },
+      "capability": "client_planner_required",
+      "response": {
+        "results": [],
+        "recommendations": []
+      },
+      "pass": true,
+      "pair_ms": 66.13229999493342
+    },
+    {
+      "test": 7,
+      "mode": "original_arguments",
+      "arguments": {
+        "query": "Find red formal dresses under \u20b91,000, rated at least 4.8, with at least 10,000 reviews.",
+        "filters": {
+          "product_type": "Dress",
+          "color": "Red",
+          "max_price": 1000,
+          "min_rating": 4.8,
+          "min_review_count": 10000
+        },
+        "sort_by": "price",
+        "sort_order": "asc",
+        "limit": 10
+      },
+      "capability": "supported",
+      "response": {
+        "results": [],
+        "recommendations": []
+      },
+      "pass": true,
+      "pair_ms": 82.6416999916546
+    },
+    {
+      "test": 7,
+      "mode": "query_only",
+      "arguments": {
+        "query": "Find red formal dresses under \u20b91,000, rated at least 4.8, with at least 10,000 reviews.",
+        "include_recommendations": false
+      },
+      "capability": "supported",
+      "response": {
+        "results": [],
+        "recommendations": []
+      },
+      "pass": true,
+      "pair_ms": 71.52949999726843
+    },
+    {
+      "test": 8,
+      "mode": "original_arguments",
+      "arguments": {
+        "query": "dress under 2000 avoid black show at most 3 results cheapest first",
+        "include_recommendations": false
+      },
+      "capability": "supplementary_regression",
+      "response": {
+        "results": [
+          {
+            "id": "0212629035"
+          },
+          {
+            "id": "0442992005"
+          },
+          {
+            "id": "0467302100"
+          }
+        ],
+        "recommendations": []
+      },
+      "pass": true,
+      "pair_ms": 149.89529999729712
+    },
+    {
+      "test": 8,
+      "mode": "query_only",
+      "arguments": {
+        "query": "dress under 2000 avoid black show at most 3 results cheapest first",
+        "include_recommendations": false
+      },
+      "capability": "supplementary_regression",
+      "response": {
+        "results": [
+          {
+            "id": "0212629035"
+          },
+          {
+            "id": "0442992005"
+          },
+          {
+            "id": "0467302100"
+          }
+        ],
+        "recommendations": []
+      },
+      "pass": true,
+      "pair_ms": 148.36200000718236
+    },
+    {
+      "test": 9,
+      "mode": "original_arguments",
+      "arguments": {
+        "query": "shoes excluding sneakers under 2500 show at most 3 results",
+        "include_recommendations": false
+      },
+      "capability": "supplementary_regression",
+      "response": {
+        "results": [
+          {
+            "id": "0264713001"
+          },
+          {
+            "id": "0475827014"
+          },
+          {
+            "id": "0500372004"
+          }
+        ],
+        "recommendations": []
+      },
+      "pass": true,
+      "pair_ms": 104.48809999797959
+    },
+    {
+      "test": 9,
+      "mode": "query_only",
+      "arguments": {
+        "query": "shoes excluding sneakers under 2500 show at most 3 results",
+        "include_recommendations": false
+      },
+      "capability": "supplementary_regression",
+      "response": {
+        "results": [
+          {
+            "id": "0264713001"
+          },
+          {
+            "id": "0475827014"
+          },
+          {
+            "id": "0500372004"
+          }
+        ],
+        "recommendations": []
+      },
+      "pass": true,
+      "pair_ms": 116.06859999301378
+    },
+    {
+      "test": 10,
+      "mode": "original_arguments",
+      "arguments": {
+        "query": "shirt for men with matching shoes under 2000 excluding sneakers",
+        "include_recommendations": true
+      },
+      "capability": "supplementary_regression",
+      "response": {
+        "results": [
+          {
+            "id": "0283236014"
+          },
+          {
+            "id": "0283236018"
+          },
+          {
+            "id": "0283236020"
+          },
+          {
+            "id": "0283236022"
+          },
+          {
+            "id": "0283236023"
+          },
+          {
+            "id": "0283236026"
+          },
+          {
+            "id": "0283236027"
+          },
+          {
+            "id": "0283236028"
+          },
+          {
+            "id": "0283236029"
+          },
+          {
+            "id": "0283236034"
+          }
+        ],
+        "recommendations": [
+          {
+            "id": "0475827014",
+            "for_product_id": "0283236026",
+            "reason": "Black Other shoe to accompany the selected Shirt."
+          },
+          {
+            "id": "0575916001",
+            "for_product_id": "0283236026",
+            "reason": "Black Other shoe to accompany the selected Shirt."
+          },
+          {
+            "id": "0655017001",
+            "for_product_id": "0283236026",
+            "reason": "Black Other shoe to accompany the selected Shirt."
+          },
+          {
+            "id": "0663358001",
+            "for_product_id": "0283236026",
+            "reason": "Black Other shoe to accompany the selected Shirt."
+          },
+          {
+            "id": "0713850001",
+            "for_product_id": "0283236026",
+            "reason": "Black Other shoe to accompany the selected Shirt."
+          }
+        ]
+      },
+      "pass": true,
+      "pair_ms": 101.80479999689851
+    },
+    {
+      "test": 10,
+      "mode": "query_only",
+      "arguments": {
+        "query": "shirt for men with matching shoes under 2000 excluding sneakers",
+        "include_recommendations": true
+      },
+      "capability": "supplementary_regression",
+      "response": {
+        "results": [
+          {
+            "id": "0283236014"
+          },
+          {
+            "id": "0283236018"
+          },
+          {
+            "id": "0283236020"
+          },
+          {
+            "id": "0283236022"
+          },
+          {
+            "id": "0283236023"
+          },
+          {
+            "id": "0283236026"
+          },
+          {
+            "id": "0283236027"
+          },
+          {
+            "id": "0283236028"
+          },
+          {
+            "id": "0283236029"
+          },
+          {
+            "id": "0283236034"
+          }
+        ],
+        "recommendations": [
+          {
+            "id": "0475827014",
+            "for_product_id": "0283236026",
+            "reason": "Black Other shoe to accompany the selected Shirt."
+          },
+          {
+            "id": "0575916001",
+            "for_product_id": "0283236026",
+            "reason": "Black Other shoe to accompany the selected Shirt."
+          },
+          {
+            "id": "0655017001",
+            "for_product_id": "0283236026",
+            "reason": "Black Other shoe to accompany the selected Shirt."
+          },
+          {
+            "id": "0663358001",
+            "for_product_id": "0283236026",
+            "reason": "Black Other shoe to accompany the selected Shirt."
+          },
+          {
+            "id": "0713850001",
+            "for_product_id": "0283236026",
+            "reason": "Black Other shoe to accompany the selected Shirt."
+          }
+        ]
+      },
+      "pass": true,
+      "pair_ms": 90.87489999365062
+    }
+  ]
+}

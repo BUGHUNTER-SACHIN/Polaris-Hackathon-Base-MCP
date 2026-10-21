@@ -1,0 +1,748 @@
+{
+  "note": "Attribute, full-slot and coverage proxies only; no Bedrock grades or official score.",
+  "cases_sha256": "4489cfd3e012f89c0bb266e087b301deb4bfc5bdd56de827a9268f1654cdc39b",
+  "split": "dev",
+  "startup_seconds": 4.098782700006268,
+  "passed": 16,
+  "total": 25,
+  "areas": {
+    "ranking": {
+      "passed": 2,
+      "total": 8
+    },
+    "mixed": {
+      "passed": 3,
+      "total": 3
+    },
+    "unusual": {
+      "passed": 2,
+      "total": 4
+    },
+    "validity": {
+      "passed": 2,
+      "total": 3
+    },
+    "recommendations": {
+      "passed": 2,
+      "total": 2
+    },
+    "irrelevant": {
+      "passed": 5,
+      "total": 5
+    }
+  },
+  "cases": [
+    {
+      "name": "recommend-coat",
+      "area": "ranking",
+      "split": "dev",
+      "response": {
+        "results": [],
+        "recommendations": []
+      },
+      "milliseconds": 43.37179999856744,
+      "pass": false,
+      "error": "missing primary slots"
+    },
+    {
+      "name": "suggest-shirt",
+      "area": "ranking",
+      "split": "dev",
+      "response": {
+        "results": [],
+        "recommendations": []
+      },
+      "milliseconds": 2.0948999881511554,
+      "pass": false,
+      "error": "missing primary slots"
+    },
+    {
+      "name": "either-dress-skirt",
+      "area": "mixed",
+      "split": "dev",
+      "response": {
+        "results": [
+          {
+            "id": "0189626001"
+          },
+          {
+            "id": "0862386002"
+          },
+          {
+            "id": "0189654001"
+          },
+          {
+            "id": "0189654045"
+          },
+          {
+            "id": "0189654046"
+          },
+          {
+            "id": "0189654047"
+          },
+          {
+            "id": "0317812001"
+          },
+          {
+            "id": "0317812011"
+          },
+          {
+            "id": "0317812012"
+          },
+          {
+            "id": "0327310001"
+          }
+        ],
+        "recommendations": []
+      },
+      "milliseconds": 28.12449999328237,
+      "pass": true
+    },
+    {
+      "name": "both-scoped-colors",
+      "area": "mixed",
+      "split": "dev",
+      "response": {
+        "results": [
+          {
+            "id": "0386681014"
+          },
+          {
+            "id": "0779063001"
+          },
+          {
+            "id": "0550433001"
+          },
+          {
+            "id": "0784038001"
+          },
+          {
+            "id": "0553055003"
+          },
+          {
+            "id": "0796631001"
+          },
+          {
+            "id": "0553068002"
+          },
+          {
+            "id": "0834724001"
+          },
+          {
+            "id": "0608436001"
+          },
+          {
+            "id": "0615372008"
+          }
+        ],
+        "recommendations": []
+      },
+      "milliseconds": 5.077699999674223,
+      "pass": true
+    },
+    {
+      "name": "within-budget",
+      "area": "ranking",
+      "split": "dev",
+      "response": {
+        "results": [],
+        "recommendations": []
+      },
+      "milliseconds": 2.425700004096143,
+      "pass": false,
+      "error": "missing primary slots"
+    },
+    {
+      "name": "budget-of",
+      "area": "ranking",
+      "split": "dev",
+      "response": {
+        "results": [],
+        "recommendations": []
+      },
+      "milliseconds": 1.6238999960478395,
+      "pass": false,
+      "error": "missing primary slots"
+    },
+    {
+      "name": "no-more-price",
+      "area": "ranking",
+      "split": "dev",
+      "response": {
+        "results": [],
+        "recommendations": []
+      },
+      "milliseconds": 6.961700011743233,
+      "pass": false,
+      "error": "missing primary slots"
+    },
+    {
+      "name": "unit-rating",
+      "area": "ranking",
+      "split": "dev",
+      "response": {
+        "results": [
+          {
+            "id": "0720547004"
+          }
+        ],
+        "recommendations": []
+      },
+      "milliseconds": 5.0359000015305355,
+      "pass": false,
+      "error": "missing primary slots"
+    },
+    {
+      "name": "review-count",
+      "area": "ranking",
+      "split": "dev",
+      "response": {
+        "results": [
+          {
+            "id": "0495560002"
+          },
+          {
+            "id": "0495560003"
+          },
+          {
+            "id": "0501620013"
+          },
+          {
+            "id": "0573875001"
+          },
+          {
+            "id": "0578234001"
+          },
+          {
+            "id": "0584298001"
+          },
+          {
+            "id": "0618265001"
+          },
+          {
+            "id": "0633600001"
+          },
+          {
+            "id": "0693540001"
+          },
+          {
+            "id": "0701187002"
+          }
+        ],
+        "recommendations": []
+      },
+      "milliseconds": 3.3134000113932416,
+      "pass": true
+    },
+    {
+      "name": "hyphen-color",
+      "area": "unusual",
+      "split": "dev",
+      "response": {
+        "results": [
+          {
+            "id": "0584200005"
+          },
+          {
+            "id": "0607712001"
+          },
+          {
+            "id": "0611479008"
+          },
+          {
+            "id": "0612033001"
+          },
+          {
+            "id": "0620182001"
+          },
+          {
+            "id": "0640193004"
+          },
+          {
+            "id": "0723367004"
+          },
+          {
+            "id": "0762939001"
+          },
+          {
+            "id": "0539446002"
+          },
+          {
+            "id": "0568568001"
+          }
+        ],
+        "recommendations": []
+      },
+      "milliseconds": 4.166900005657226,
+      "pass": false,
+      "error": "primary constraints"
+    },
+    {
+      "name": "hyphen-pattern",
+      "area": "unusual",
+      "split": "dev",
+      "response": {
+        "results": [],
+        "recommendations": []
+      },
+      "milliseconds": 1.4073000056669116,
+      "pass": false,
+      "error": "missing primary slots"
+    },
+    {
+      "name": "unit-result-count",
+      "area": "validity",
+      "split": "dev",
+      "response": {
+        "results": [],
+        "recommendations": []
+      },
+      "milliseconds": 2.8872999973827973,
+      "pass": false,
+      "error": "missing primary slots"
+    },
+    {
+      "name": "typed-complement",
+      "area": "recommendations",
+      "split": "dev",
+      "response": {
+        "results": [
+          {
+            "id": "0283236014"
+          },
+          {
+            "id": "0283236018"
+          },
+          {
+            "id": "0283236020"
+          },
+          {
+            "id": "0283236022"
+          },
+          {
+            "id": "0283236023"
+          },
+          {
+            "id": "0283236026"
+          },
+          {
+            "id": "0283236027"
+          },
+          {
+            "id": "0283236028"
+          },
+          {
+            "id": "0283236029"
+          },
+          {
+            "id": "0283236034"
+          }
+        ],
+        "recommendations": [
+          {
+            "id": "0338016009",
+            "for_product_id": "0283236026",
+            "reason": "Black Belt to accompany the selected Shirt."
+          },
+          {
+            "id": "0347200001",
+            "for_product_id": "0283236026",
+            "reason": "Black Belt to accompany the selected Shirt."
+          },
+          {
+            "id": "0417855001",
+            "for_product_id": "0283236026",
+            "reason": "Black Belt to accompany the selected Shirt."
+          },
+          {
+            "id": "0588037001",
+            "for_product_id": "0283236026",
+            "reason": "Black Belt to accompany the selected Shirt."
+          },
+          {
+            "id": "0677918001",
+            "for_product_id": "0283236026",
+            "reason": "Black Belt to accompany the selected Shirt."
+          }
+        ]
+      },
+      "milliseconds": 38.40650001075119,
+      "pass": true
+    },
+    {
+      "name": "seasonal-complement",
+      "area": "recommendations",
+      "split": "dev",
+      "response": {
+        "results": [
+          {
+            "id": "0624839001"
+          },
+          {
+            "id": "0643308001"
+          },
+          {
+            "id": "0678632001"
+          },
+          {
+            "id": "0678632003"
+          },
+          {
+            "id": "0695755001"
+          },
+          {
+            "id": "0703369001"
+          },
+          {
+            "id": "0706278001"
+          },
+          {
+            "id": "0706655001"
+          },
+          {
+            "id": "0706655002"
+          },
+          {
+            "id": "0738238001"
+          }
+        ],
+        "recommendations": [
+          {
+            "id": "0590416002",
+            "for_product_id": "0643308001",
+            "reason": "White Sandals to accompany the selected Dress."
+          },
+          {
+            "id": "0600920001",
+            "for_product_id": "0643308001",
+            "reason": "White Sandals to accompany the selected Dress."
+          },
+          {
+            "id": "0631878006",
+            "for_product_id": "0643308001",
+            "reason": "White Sandals to accompany the selected Dress."
+          },
+          {
+            "id": "0632651003",
+            "for_product_id": "0643308001",
+            "reason": "White Sandals to accompany the selected Dress."
+          },
+          {
+            "id": "0647794001",
+            "for_product_id": "0643308001",
+            "reason": "White Sandals to accompany the selected Dress."
+          }
+        ]
+      },
+      "milliseconds": 117.58109999937005,
+      "pass": true
+    },
+    {
+      "name": "mixed-budget",
+      "area": "mixed",
+      "split": "dev",
+      "response": {
+        "results": [
+          {
+            "id": "0294008040"
+          },
+          {
+            "id": "0446847001"
+          },
+          {
+            "id": "0318951032"
+          },
+          {
+            "id": "0588335001"
+          },
+          {
+            "id": "0487275022"
+          },
+          {
+            "id": "0612912001"
+          },
+          {
+            "id": "0399087028"
+          },
+          {
+            "id": "0491680007"
+          },
+          {
+            "id": "0399087047"
+          },
+          {
+            "id": "0498061004"
+          }
+        ],
+        "recommendations": []
+      },
+      "milliseconds": 19.050000002607703,
+      "pass": true
+    },
+    {
+      "name": "exclude-black",
+      "area": "validity",
+      "split": "dev",
+      "response": {
+        "results": [
+          {
+            "id": "0192460006"
+          },
+          {
+            "id": "0202017055"
+          },
+          {
+            "id": "0212629031"
+          },
+          {
+            "id": "0212629032"
+          },
+          {
+            "id": "0212629033"
+          },
+          {
+            "id": "0212629035"
+          },
+          {
+            "id": "0212629036"
+          },
+          {
+            "id": "0212629040"
+          },
+          {
+            "id": "0212629043"
+          },
+          {
+            "id": "0212629047"
+          }
+        ],
+        "recommendations": []
+      },
+      "milliseconds": 86.30489998904523,
+      "pass": true
+    },
+    {
+      "name": "exclude-type",
+      "area": "validity",
+      "split": "dev",
+      "response": {
+        "results": [
+          {
+            "id": "0601111001"
+          },
+          {
+            "id": "0264713001"
+          },
+          {
+            "id": "0264713028"
+          },
+          {
+            "id": "0411499001"
+          },
+          {
+            "id": "0475827007"
+          },
+          {
+            "id": "0475827008"
+          },
+          {
+            "id": "0475827010"
+          },
+          {
+            "id": "0475827011"
+          },
+          {
+            "id": "0475827014"
+          },
+          {
+            "id": "0475827018"
+          }
+        ],
+        "recommendations": []
+      },
+      "milliseconds": 35.32420001283754,
+      "pass": true
+    },
+    {
+      "name": "color-alternative",
+      "area": "ranking",
+      "split": "dev",
+      "response": {
+        "results": [
+          {
+            "id": "0202017055"
+          },
+          {
+            "id": "0212629033"
+          },
+          {
+            "id": "0212629051"
+          },
+          {
+            "id": "0272591026"
+          },
+          {
+            "id": "0301656018"
+          },
+          {
+            "id": "0316553026"
+          },
+          {
+            "id": "0374762008"
+          },
+          {
+            "id": "0401044019"
+          },
+          {
+            "id": "0401044037"
+          },
+          {
+            "id": "0467302028"
+          }
+        ],
+        "recommendations": []
+      },
+      "milliseconds": 15.327699991757981,
+      "pass": true
+    },
+    {
+      "name": "unusual-lounge",
+      "area": "unusual",
+      "split": "dev",
+      "response": {
+        "results": [
+          {
+            "id": "0583456001"
+          },
+          {
+            "id": "0583456003"
+          },
+          {
+            "id": "0583456004"
+          },
+          {
+            "id": "0583456006"
+          },
+          {
+            "id": "0583456007"
+          },
+          {
+            "id": "0767079001"
+          },
+          {
+            "id": "0767079002"
+          },
+          {
+            "id": "0767079004"
+          },
+          {
+            "id": "0882336002"
+          },
+          {
+            "id": "0889844001"
+          }
+        ],
+        "recommendations": []
+      },
+      "milliseconds": 224.5783999969717,
+      "pass": true
+    },
+    {
+      "name": "known-typo",
+      "area": "unusual",
+      "split": "dev",
+      "response": {
+        "results": [
+          {
+            "id": "0759107001"
+          },
+          {
+            "id": "0212042043"
+          },
+          {
+            "id": "0447795001"
+          },
+          {
+            "id": "0453741002"
+          },
+          {
+            "id": "0453831022"
+          },
+          {
+            "id": "0460363017"
+          },
+          {
+            "id": "0471566003"
+          },
+          {
+            "id": "0471566005"
+          },
+          {
+            "id": "0488697015"
+          },
+          {
+            "id": "0488697030"
+          }
+        ],
+        "recommendations": []
+      },
+      "milliseconds": 6.454000002122484,
+      "pass": true
+    },
+    {
+      "name": "unknown-material",
+      "area": "irrelevant",
+      "split": "dev",
+      "response": {
+        "results": [],
+        "recommendations": []
+      },
+      "milliseconds": 1.1667999933706596,
+      "pass": true
+    },
+    {
+      "name": "zero-price",
+      "area": "irrelevant",
+      "split": "dev",
+      "response": {
+        "results": [],
+        "recommendations": []
+      },
+      "milliseconds": 15.177200009929948,
+      "pass": true
+    },
+    {
+      "name": "unavailable-size",
+      "area": "irrelevant",
+      "split": "dev",
+      "response": {
+        "results": [],
+        "recommendations": []
+      },
+      "milliseconds": 0.15699998766649514,
+      "pass": true
+    },
+    {
+      "name": "unknown-text",
+      "area": "irrelevant",
+      "split": "dev",
+      "response": {
+        "results": [],
+        "recommendations": []
+      },
+      "milliseconds": 2.4960000009741634,
+      "pass": true
+    },
+    {
+      "name": "impossible-count",
+      "area": "irrelevant",
+      "split": "dev",
+      "response": {
+        "results": [],
+        "recommendations": []
+      },
+      "milliseconds": 2.850900011253543,
+      "pass": true
+    }
+  ]
+}

@@ -1,0 +1,257 @@
+{
+  "note": "Local remediation evidence only; no official benchmark or judge score. Unsupported-case safety is not capability success.",
+  "baseline_commit": "2dd37a2a63377074f3f909a9bff1f2e489def570",
+  "sources_sha256": {
+    "query.py": "286076acfcee746cdcccbb5972b8240ea3cb072cda44e94f8a5c24c7c6597e21",
+    "search.py": "a5adae02d64b91ae4b53c01525eee7d7268475522fc46dc8ea4da05e15a6a453",
+    "recommendations.py": "75b7cbc4148f5ab22bb1dfb34fc433ffb5142f74bdb3ae39f94ed76a68cf135c",
+    "server.py": "1d9758c4ee77dff29517abc1d734fee9e6d045ce5b5d379a2cb1f354d0c6803e",
+    "requirements.txt": "a3088ac8bcbfc1a70d6313d810ce00934c4415f5d7e5ae759b9cba90586202fc",
+    "Dockerfile": "2805eee1e741994cad45ee31116ff3738ec2c8231327f9afbba8facd26cd800c",
+    "schemas/input.schema.json": "61356c5687485d6906ba0ee053aa9dd8ea1bcac3ba4676b32ece9256b8062eb4",
+    "schemas/output.schema.json": "b678e744edd9e6ce308e8712c806da48d4ec9426a2fee5172a252c13d4d87c1f",
+    "evaluation/advanced.py": "21b509962cd8234c72bd10a6c347255830ec44c4b67d5ba0dd28c42a5afc3a6c",
+    "evaluation/advanced_cases.json": "9f2c5d4ca2681779bd97d3db69b5e148fa6a6a9ec91be8b37b80b89e2784051a",
+    "tests/test_remediation.py": "37152452787bd34e265433e25824d45e83e62744e91411fc824c90061d998d5f"
+  },
+  "catalog_sha256": "05b6aa5e8e8c1c8c997d584f8288e432862454f8820531e13473443e83c8f073",
+  "image_id": "sha256:f34ad3ab66103b7b80b7cc0fe3492be5ec2867262a6922bf8ad9a7f597eb659f",
+  "image_sources_equal_working_files": true,
+  "host_unit_tests": {
+    "passed": 48,
+    "total": 48,
+    "seconds": 0.222
+  },
+  "container_unit_tests": {
+    "passed": 48,
+    "total": 48,
+    "seconds": 0.261
+  },
+  "host_pip_check": "PASS",
+  "container_pip_check": "PASS",
+  "host_official_supplied_smoke": "PASS",
+  "container_official_supplied_smoke": "PASS",
+  "native_regressions": {
+    "before": 10,
+    "after": 20,
+    "total": 20,
+    "container_passed": 20,
+    "cross_platform_outputs_identical": true,
+    "unsupported_safety_checks": 4
+  },
+  "proxy": {
+    "before": {
+      "passed": 37,
+      "total": 37,
+      "areas": {
+        "validity": {
+          "passed": 9,
+          "total": 9,
+          "mean_proxy_ndcg10": 0
+        },
+        "ranking": {
+          "passed": 8,
+          "total": 8,
+          "mean_proxy_ndcg10": 1.0
+        },
+        "unusual": {
+          "passed": 9,
+          "total": 9,
+          "mean_proxy_ndcg10": 0.3333333333333333
+        },
+        "mixed": {
+          "passed": 5,
+          "total": 5,
+          "mean_proxy_ndcg10": 1.0
+        },
+        "recommendations": {
+          "passed": 4,
+          "total": 4,
+          "mean_proxy_ndcg10": 1.0
+        },
+        "performance": {
+          "passed": 2,
+          "total": 2,
+          "mean_proxy_ndcg10": 0
+        }
+      },
+      "startup_seconds": 5.944258500006981,
+      "peak_process_mib": 651.06640625,
+      "cases_sha256": "f964193a5ecb52b7bb2dce7f1e464ac05398cb83a20e3fa41ec468bc3400c705"
+    },
+    "after": {
+      "passed": 37,
+      "total": 37,
+      "areas": {
+        "validity": {
+          "passed": 9,
+          "total": 9,
+          "mean_proxy_ndcg10": 0
+        },
+        "ranking": {
+          "passed": 8,
+          "total": 8,
+          "mean_proxy_ndcg10": 1.0
+        },
+        "unusual": {
+          "passed": 9,
+          "total": 9,
+          "mean_proxy_ndcg10": 0.3333333333333333
+        },
+        "mixed": {
+          "passed": 5,
+          "total": 5,
+          "mean_proxy_ndcg10": 1.0
+        },
+        "recommendations": {
+          "passed": 4,
+          "total": 4,
+          "mean_proxy_ndcg10": 1.0
+        },
+        "performance": {
+          "passed": 2,
+          "total": 2,
+          "mean_proxy_ndcg10": 0
+        }
+      },
+      "startup_seconds": 8.278129099999205,
+      "peak_process_mib": 651.609375,
+      "cases_sha256": "3c706c84fbb27784680637f0ec1b402e055779e619ce44ac0d7553719cbdd46b"
+    }
+  },
+  "proxy_cases_equal_after_json_parsing": true,
+  "proxy_case_digest_note": "Rollback Git archive uses LF; Windows working cases use CRLF. Parsed cases are identical.",
+  "single_workload": {
+    "before": {
+      "calls": 300,
+      "correct": 300,
+      "p50_ms": 44.06215000199154,
+      "p95_ms": 159.66999999363907,
+      "pool_sha256": "dc7b51d5ca0a9f8ec8316fc2dc543326defe206e4920c77eaf5f8a090772aefd"
+    },
+    "after": {
+      "calls": 300,
+      "correct": 300,
+      "p50_ms": 46.211799992306624,
+      "p95_ms": 203.92739999806508,
+      "pool_sha256": "dc7b51d5ca0a9f8ec8316fc2dc543326defe206e4920c77eaf5f8a090772aefd"
+    }
+  },
+  "interleaved_performance": {
+    "note": "Three interleaved Windows localhost runs per version; each has 20 warmups and 300 timed calls. Not official performance or a statistically established speed change. Raw per-call reports retained in ignored scratch.",
+    "rows": [
+      {
+        "version": "before",
+        "repetition": 0,
+        "calls": 300,
+        "correct": 300,
+        "p50_ms": 37.72899999603396,
+        "p95_ms": 138.61519999045413,
+        "pool_sha256": "dc7b51d5ca0a9f8ec8316fc2dc543326defe206e4920c77eaf5f8a090772aefd"
+      },
+      {
+        "version": "after",
+        "repetition": 0,
+        "calls": 300,
+        "correct": 300,
+        "p50_ms": 41.30045000783866,
+        "p95_ms": 138.85089999530464,
+        "pool_sha256": "dc7b51d5ca0a9f8ec8316fc2dc543326defe206e4920c77eaf5f8a090772aefd"
+      },
+      {
+        "version": "before",
+        "repetition": 1,
+        "calls": 300,
+        "correct": 300,
+        "p50_ms": 47.784150003280956,
+        "p95_ms": 136.5356000023894,
+        "pool_sha256": "dc7b51d5ca0a9f8ec8316fc2dc543326defe206e4920c77eaf5f8a090772aefd"
+      },
+      {
+        "version": "after",
+        "repetition": 1,
+        "calls": 300,
+        "correct": 300,
+        "p50_ms": 42.123049999645445,
+        "p95_ms": 146.4200000045821,
+        "pool_sha256": "dc7b51d5ca0a9f8ec8316fc2dc543326defe206e4920c77eaf5f8a090772aefd"
+      },
+      {
+        "version": "before",
+        "repetition": 2,
+        "calls": 300,
+        "correct": 300,
+        "p50_ms": 41.86679999838816,
+        "p95_ms": 150.6748000101652,
+        "pool_sha256": "dc7b51d5ca0a9f8ec8316fc2dc543326defe206e4920c77eaf5f8a090772aefd"
+      },
+      {
+        "version": "after",
+        "repetition": 2,
+        "calls": 300,
+        "correct": 300,
+        "p50_ms": 46.55379999894649,
+        "p95_ms": 136.4713000075426,
+        "pool_sha256": "dc7b51d5ca0a9f8ec8316fc2dc543326defe206e4920c77eaf5f8a090772aefd"
+      }
+    ]
+  },
+  "startup_profile": {
+    "note": "Fresh Python processes, interleaved baseline/candidate, warm local filesystem; excludes imports and server binding; not cold-start SLA.",
+    "rows": [
+      {
+        "version": "before",
+        "repetition": 0,
+        "startup_seconds": 4.964257800005726,
+        "peak_process_mib": 641.875,
+        "products": 105126
+      },
+      {
+        "version": "after",
+        "repetition": 0,
+        "startup_seconds": 4.933352500011097,
+        "peak_process_mib": 641.96484375,
+        "products": 105126
+      },
+      {
+        "version": "before",
+        "repetition": 1,
+        "startup_seconds": 4.778372599990689,
+        "peak_process_mib": 642.25390625,
+        "products": 105126
+      },
+      {
+        "version": "after",
+        "repetition": 1,
+        "startup_seconds": 4.83216469999752,
+        "peak_process_mib": 641.98828125,
+        "products": 105126
+      },
+      {
+        "version": "before",
+        "repetition": 2,
+        "startup_seconds": 4.664618599999812,
+        "peak_process_mib": 641.98046875,
+        "products": 105126
+      },
+      {
+        "version": "after",
+        "repetition": 2,
+        "startup_seconds": 5.1842098999914015,
+        "peak_process_mib": 641.7265625,
+        "products": 105126
+      }
+    ]
+  },
+  "container": {
+    "uid": 10001,
+    "health_before_stop": "healthy",
+    "exit_code": 0,
+    "oom_killed": false,
+    "test_container_removed": true
+  },
+  "remaining_listeners": {
+    "baseline": "http://127.0.0.1:8000/mcp",
+    "candidate": "http://127.0.0.1:8031/mcp"
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "note": "Pre-publication checks. Source branch confirmed by user; no claim of deployment or official score. Original quality metrics remain historical.",
+  "base_commit": "2dd37a2a63377074f3f909a9bff1f2e489def570",
+  "target_repository": "BUGHUNTER-SACHIN/Polaris-Hackathon-Base-MCP",
+  "target_branch": "main",
+  "deployment_target_confirmation": "User confirmed in SpringWinter settings during release finalization",
+  "windows_unit": {
+    "passed": 60,
+    "total": 60,
+    "seconds": 1.345
+  },
+  "linux_unit": {
+    "passed": 60,
+    "total": 60,
+    "seconds": 0.973
+  },
+  "original_proxy": {
+    "passed": 37,
+    "total": 37
+  },
+  "quality_direct": {
+    "passed": 39,
+    "total": 39
+  },
+  "quality_native": {
+    "passed": 39,
+    "total": 39
+  },
+  "advanced_native": {
+    "passed": 20,
+    "total": 20,
+    "unsupported_safety_checks": 4
+  },
+  "local_smoke": "PASS",
+  "host_container_pip_check": "PASS",
+  "original_quality_cases_sha256": "4489cfd3e012f89c0bb266e087b301deb4bfc5bdd56de827a9268f1654cdc39b",
+  "corrected_quality_cases_sha256": "f4a1b44338ec62939eb70493b7a4ab394c4849963526fb8e37fe06044b955f3e",
+  "quality_case_correction": "One literal floral skirt exists; independently checked reference count=1 replaces impossible ten-primary expectation. No application quality gain claimed. Evaluators now fail exit status on failed cases.",
+  "working_files_sha256": {
+    "query.py": "b80a26dde5ff4284ad3d00d327eb984510eaec79c23c8a9c5181233d7dc2f497",
+    "search.py": "a5adae02d64b91ae4b53c01525eee7d7268475522fc46dc8ea4da05e15a6a453",
+    "recommendations.py": "75b7cbc4148f5ab22bb1dfb34fc433ffb5142f74bdb3ae39f94ed76a68cf135c",
+    "server.py": "1d9758c4ee77dff29517abc1d734fee9e6d045ce5b5d379a2cb1f354d0c6803e",
+    "requirements.txt": "a3088ac8bcbfc1a70d6313d810ce00934c4415f5d7e5ae759b9cba90586202fc",
+    "Dockerfile": "2805eee1e741994cad45ee31116ff3738ec2c8231327f9afbba8facd26cd800c",
+    "schemas/input.schema.json": "61356c5687485d6906ba0ee053aa9dd8ea1bcac3ba4676b32ece9256b8062eb4",
+    "schemas/output.schema.json": "b678e744edd9e6ce308e8712c806da48d4ec9426a2fee5172a252c13d4d87c1f",
+    "evaluation/advanced.py": "21b509962cd8234c72bd10a6c347255830ec44c4b67d5ba0dd28c42a5afc3a6c",
+    "evaluation/advanced_cases.json": "9f2c5d4ca2681779bd97d3db69b5e148fa6a6a9ec91be8b37b80b89e2784051a",
+    "tests/test_remediation.py": "37152452787bd34e265433e25824d45e83e62744e91411fc824c90061d998d5f",
+    "evaluation/quality.py": "b08c0748a51dd538c88c5f8570dba9deea25db9531a01011fe89e38d8587fb1b",
+    "evaluation/quality_mcp.py": "a7b03899a8a48429948c5820f88841502fb11702bad054c5951d1d4f55dccf20",
+    "evaluation/quality_cases.json": "f4a1b44338ec62939eb70493b7a4ab394c4849963526fb8e37fe06044b955f3e",
+    "tests/test_quality.py": "edda53c97465d758bb343cd329fe90e9b989dd1de50f2be75006d33444b83c27",
+    "tests/test_transport_security.py": "985cdab4786e6c31212c6785db070fa9421d5c9dccfc0ba048479b8fbc7e8aa7",
+    "data/products.json": "05b6aa5e8e8c1c8c997d584f8288e432862454f8820531e13473443e83c8f073"
+  },
+  "deployed_sha": null
+}

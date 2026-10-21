@@ -1,0 +1,465 @@
+{
+  "note": "Attribute, full-slot and coverage proxies only; no Bedrock grades or official score.",
+  "cases_sha256": "4489cfd3e012f89c0bb266e087b301deb4bfc5bdd56de827a9268f1654cdc39b",
+  "split": "heldout",
+  "startup_seconds": 3.8347060000087367,
+  "passed": 13,
+  "total": 14,
+  "areas": {
+    "ranking": {
+      "passed": 5,
+      "total": 5
+    },
+    "mixed": {
+      "passed": 2,
+      "total": 2
+    },
+    "unusual": {
+      "passed": 1,
+      "total": 1
+    },
+    "recommendations": {
+      "passed": 0,
+      "total": 1
+    },
+    "irrelevant": {
+      "passed": 5,
+      "total": 5
+    }
+  },
+  "cases": [
+    {
+      "name": "suggest-skirt",
+      "area": "ranking",
+      "split": "heldout",
+      "response": {
+        "results": [
+          {
+            "id": "0189654046"
+          },
+          {
+            "id": "0483737003"
+          },
+          {
+            "id": "0517331003"
+          },
+          {
+            "id": "0520457003"
+          },
+          {
+            "id": "0524517004"
+          },
+          {
+            "id": "0527237001"
+          },
+          {
+            "id": "0535826006"
+          },
+          {
+            "id": "0537742002"
+          },
+          {
+            "id": "0542439003"
+          },
+          {
+            "id": "0542442001"
+          }
+        ],
+        "recommendations": []
+      },
+      "milliseconds": 39.518899997347035,
+      "pass": true
+    },
+    {
+      "name": "either-accessory",
+      "area": "mixed",
+      "split": "heldout",
+      "response": {
+        "results": [
+          {
+            "id": "0179950001"
+          },
+          {
+            "id": "0310365019"
+          },
+          {
+            "id": "0179950002"
+          },
+          {
+            "id": "0315509001"
+          },
+          {
+            "id": "0179950017"
+          },
+          {
+            "id": "0315509020"
+          },
+          {
+            "id": "0183815013"
+          },
+          {
+            "id": "0315509024"
+          },
+          {
+            "id": "0224606019"
+          },
+          {
+            "id": "0315509032"
+          }
+        ],
+        "recommendations": []
+      },
+      "milliseconds": 15.100999997230247,
+      "pass": true
+    },
+    {
+      "name": "both-men",
+      "area": "mixed",
+      "split": "heldout",
+      "response": {
+        "results": [
+          {
+            "id": "0212766042"
+          },
+          {
+            "id": "0451019010"
+          },
+          {
+            "id": "0451402002"
+          },
+          {
+            "id": "0501619024"
+          },
+          {
+            "id": "0501620026"
+          },
+          {
+            "id": "0582625006"
+          },
+          {
+            "id": "0501620047"
+          },
+          {
+            "id": "0651649001"
+          },
+          {
+            "id": "0501722010"
+          },
+          {
+            "id": "0688930001"
+          }
+        ],
+        "recommendations": []
+      },
+      "milliseconds": 9.255199998733588,
+      "pass": true
+    },
+    {
+      "name": "no-more-price-reworded",
+      "area": "ranking",
+      "split": "heldout",
+      "response": {
+        "results": [
+          {
+            "id": "0192460006"
+          },
+          {
+            "id": "0212629032"
+          },
+          {
+            "id": "0212629035"
+          },
+          {
+            "id": "0315352008"
+          },
+          {
+            "id": "0316553025"
+          },
+          {
+            "id": "0355421003"
+          },
+          {
+            "id": "0401044004"
+          },
+          {
+            "id": "0442992005"
+          },
+          {
+            "id": "0454143003"
+          },
+          {
+            "id": "0467302100"
+          }
+        ],
+        "recommendations": []
+      },
+      "milliseconds": 25.443400008953176,
+      "pass": true
+    },
+    {
+      "name": "budget-no-article",
+      "area": "ranking",
+      "split": "heldout",
+      "response": {
+        "results": [
+          {
+            "id": "0312878001"
+          },
+          {
+            "id": "0417773006"
+          },
+          {
+            "id": "0503076001"
+          },
+          {
+            "id": "0503654002"
+          },
+          {
+            "id": "0522561002"
+          },
+          {
+            "id": "0555432001"
+          },
+          {
+            "id": "0555432003"
+          },
+          {
+            "id": "0570968002"
+          },
+          {
+            "id": "0610072001"
+          },
+          {
+            "id": "0637940005"
+          }
+        ],
+        "recommendations": []
+      },
+      "milliseconds": 1.6386000061174855,
+      "pass": true
+    },
+    {
+      "name": "rating-existing",
+      "area": "ranking",
+      "split": "heldout",
+      "response": {
+        "results": [
+          {
+            "id": "0283236014"
+          },
+          {
+            "id": "0283236018"
+          },
+          {
+            "id": "0283236020"
+          },
+          {
+            "id": "0283236029"
+          },
+          {
+            "id": "0337777012"
+          },
+          {
+            "id": "0337777014"
+          },
+          {
+            "id": "0337777015"
+          },
+          {
+            "id": "0457412049"
+          },
+          {
+            "id": "0458882003"
+          },
+          {
+            "id": "0501619006"
+          }
+        ],
+        "recommendations": []
+      },
+      "milliseconds": 8.680999992066063,
+      "pass": true
+    },
+    {
+      "name": "pattern-budget",
+      "area": "ranking",
+      "split": "heldout",
+      "response": {
+        "results": [
+          {
+            "id": "0547104005"
+          },
+          {
+            "id": "0573875001"
+          },
+          {
+            "id": "0584298016"
+          },
+          {
+            "id": "0586116001"
+          },
+          {
+            "id": "0595592003"
+          },
+          {
+            "id": "0597073001"
+          },
+          {
+            "id": "0618265001"
+          },
+          {
+            "id": "0631109002"
+          },
+          {
+            "id": "0631109003"
+          },
+          {
+            "id": "0631109004"
+          }
+        ],
+        "recommendations": []
+      },
+      "milliseconds": 2.931199996965006,
+      "pass": true
+    },
+    {
+      "name": "color-tshirt",
+      "area": "unusual",
+      "split": "heldout",
+      "response": {
+        "results": [
+          {
+            "id": "0515748004"
+          },
+          {
+            "id": "0554598010"
+          },
+          {
+            "id": "0554598012"
+          },
+          {
+            "id": "0554598032"
+          },
+          {
+            "id": "0615180001"
+          },
+          {
+            "id": "0638953001"
+          },
+          {
+            "id": "0761378001"
+          },
+          {
+            "id": "0772513001"
+          },
+          {
+            "id": "0788627001"
+          },
+          {
+            "id": "0796977001"
+          }
+        ],
+        "recommendations": []
+      },
+      "milliseconds": 2.9454000032274053,
+      "pass": true
+    },
+    {
+      "name": "floral-complement",
+      "area": "recommendations",
+      "split": "heldout",
+      "response": {
+        "results": [
+          {
+            "id": "0647676001"
+          }
+        ],
+        "recommendations": [
+          {
+            "id": "0436570008",
+            "for_product_id": "0647676001",
+            "reason": "Black Bag to accompany the selected Skirt."
+          },
+          {
+            "id": "0475762003",
+            "for_product_id": "0647676001",
+            "reason": "Black Bag to accompany the selected Skirt."
+          },
+          {
+            "id": "0486195003",
+            "for_product_id": "0647676001",
+            "reason": "Black Bag to accompany the selected Skirt."
+          },
+          {
+            "id": "0508045007",
+            "for_product_id": "0647676001",
+            "reason": "Black Bag to accompany the selected Skirt."
+          },
+          {
+            "id": "0510618001",
+            "for_product_id": "0647676001",
+            "reason": "Black Bag to accompany the selected Skirt."
+          }
+        ]
+      },
+      "milliseconds": 8.212600005208515,
+      "pass": false,
+      "error": "missing primary slots"
+    },
+    {
+      "name": "unknown-request",
+      "area": "irrelevant",
+      "split": "heldout",
+      "response": {
+        "results": [],
+        "recommendations": []
+      },
+      "milliseconds": 1.9789000070886686,
+      "pass": true
+    },
+    {
+      "name": "mixed-unsupported",
+      "area": "irrelevant",
+      "split": "heldout",
+      "response": {
+        "results": [],
+        "recommendations": []
+      },
+      "milliseconds": 2.952700000605546,
+      "pass": true
+    },
+    {
+      "name": "alias-with-unsupported",
+      "area": "irrelevant",
+      "split": "heldout",
+      "response": {
+        "results": [],
+        "recommendations": []
+      },
+      "milliseconds": 1.3095000031171367,
+      "pass": true
+    },
+    {
+      "name": "unknown-inventory",
+      "area": "irrelevant",
+      "split": "heldout",
+      "response": {
+        "results": [],
+        "recommendations": []
+      },
+      "milliseconds": 0.1137000072048977,
+      "pass": true
+    },
+    {
+      "name": "unknown-brand",
+      "area": "irrelevant",
+      "split": "heldout",
+      "response": {
+        "results": [],
+        "recommendations": []
+      },
+      "milliseconds": 0.8834999898681417,
+      "pass": true
+    }
+  ]
+}

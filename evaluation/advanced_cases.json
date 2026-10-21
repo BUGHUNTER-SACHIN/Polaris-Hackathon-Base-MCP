@@ -1,0 +1,87 @@
+[
+  {
+    "test": 1,
+    "arguments": {
+      "query": "Find black dresses under \u20b92,000 for a dinner party. Return only products whose numeric product IDs are even. Sort by price ascending and return at most 10 results.",
+      "filters": {
+        "product_type": "Dress",
+        "color": "Black",
+        "max_price": 2000
+      },
+      "sort_by": "price",
+      "sort_order": "asc",
+      "limit": 10
+    },
+    "original_capability": "supported"
+  },
+  {
+    "test": 2,
+    "arguments": {
+      "query": "Find men's casual sneakers under \u20b93,500, in white or grey, with a rating of at least 4.0 if ratings are available. Show at most 8 results, cheapest first.",
+      "filters": {
+        "max_price": 3500,
+        "min_rating": 4
+      },
+      "sort_by": "price",
+      "sort_order": "asc",
+      "limit": 8
+    },
+    "original_capability": "supported"
+  },
+  {
+    "test": 3,
+    "arguments": {
+      "query": "I'm building a minimalist wardrobe for college. Find 2 black or navy tops, 2 neutral-coloured trousers, and 2 versatile casual shoes, all under \u20b92,500 per item. Give me a varied set of options rather than six nearly identical products.",
+      "filters": {
+        "max_price": 2500
+      },
+      "limit": 6
+    },
+    "original_capability": "supported"
+  },
+  {
+    "test": 4,
+    "arguments": {
+      "query": "Find me a waterproof laptop with a built-in coffee maker that costs under \u20b9500.",
+      "filters": {
+        "max_price": 500
+      },
+      "limit": 10
+    },
+    "original_capability": "supported"
+  },
+  {
+    "test": 5,
+    "arguments": {
+      "query": "I bought a navy casual shirt and beige chinos. Recommend complementary fashion products for a coordinated smart-casual outfit, staying under \u20b92,000 per recommended item. Avoid recommending another navy shirt or another pair of chinos.",
+      "include_recommendations": true,
+      "limit": 3
+    },
+    "original_capability": "client_planner_required"
+  },
+  {
+    "test": 6,
+    "arguments": {
+      "query": "I need an outfit for an outdoor daytime event in warm weather. Keep the total cost under \u20b94,000, avoid black, prioritize breathable-looking lightweight clothing, and give me at least three different outfit directions.",
+      "limit": 10
+    },
+    "original_capability": "client_planner_required"
+  },
+  {
+    "test": 7,
+    "arguments": {
+      "query": "Find red formal dresses under \u20b91,000, rated at least 4.8, with at least 10,000 reviews.",
+      "filters": {
+        "product_type": "Dress",
+        "color": "Red",
+        "max_price": 1000,
+        "min_rating": 4.8,
+        "min_review_count": 10000
+      },
+      "sort_by": "price",
+      "sort_order": "asc",
+      "limit": 10
+    },
+    "original_capability": "supported"
+  }
+]

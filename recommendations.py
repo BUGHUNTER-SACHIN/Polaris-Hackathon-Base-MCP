@@ -1,6 +1,6 @@
 """Reviewed category relationships; all returned items still come from the catalog."""
 
-from query import Intent, audience_matches
+from query import Intent, audience_matches, parity_matches
 
 COMPATIBLE = {
     'Dress': (
@@ -98,6 +98,9 @@ def recommend(catalog, results, arguments):
                 audience=scoped_audience,
                 meaningful=True,
                 unsupported=intent.unsupported,
+                excluded_types=intent.excluded_types,
+                excluded_categories=intent.excluded_categories,
+                nullable_rating=intent.nullable_rating,
             )
             key = (
                 types,
@@ -109,6 +112,9 @@ def recommend(catalog, results, arguments):
                 scoped.excluded_terms,
                 scoped.soft,
                 scoped_audience,
+                scoped.excluded_types,
+                scoped.excluded_categories,
+                scoped.nullable_rating,
             )
             if key not in cache:
                 cache[key] = [
@@ -116,7 +122,7 @@ def recommend(catalog, results, arguments):
                     for p in catalog.retrieve(scoped, {})
                 ]
             for p, base in cache[key]:
-                if p['id'] in excluded:
+                if p['id'] in excluded or not parity_matches(p['id'], plan.id_parity):
                     continue
                 score = base + (1 if p.get('color') == anchor.get('color') else 0)
                 # Neutral catalog colors are a modest coordination preference.

@@ -1,0 +1,698 @@
+[
+  {
+    "name": "recommend-coat",
+    "area": "ranking",
+    "split": "dev",
+    "args": {
+      "query": "recommend a navy coat below INR 4000"
+    },
+    "choices": [
+      {
+        "types": [
+          "Coat"
+        ],
+        "colors": [
+          "Dark Blue"
+        ],
+        "max_price": 4000
+      }
+    ]
+  },
+  {
+    "name": "suggest-shirt",
+    "area": "ranking",
+    "split": "dev",
+    "args": {
+      "query": "suggest a white shirt for men"
+    },
+    "choices": [
+      {
+        "types": [
+          "Shirt"
+        ],
+        "colors": [
+          "White",
+          "Off White"
+        ],
+        "audience": "men"
+      }
+    ]
+  },
+  {
+    "name": "either-dress-skirt",
+    "area": "mixed",
+    "split": "dev",
+    "args": {
+      "query": "either a dress or a skirt"
+    },
+    "choices": [
+      {
+        "types": [
+          "Dress"
+        ]
+      },
+      {
+        "types": [
+          "Skirt"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "both-scoped-colors",
+    "area": "mixed",
+    "split": "dev",
+    "args": {
+      "query": "both a black dress and a white bag"
+    },
+    "choices": [
+      {
+        "types": [
+          "Dress"
+        ],
+        "colors": [
+          "Black"
+        ]
+      },
+      {
+        "types": [
+          "Bag",
+          "Shoulder bag",
+          "Cross-body bag",
+          "Tote bag",
+          "Weekend/Gym bag",
+          "Backpack",
+          "Bumbag"
+        ],
+        "colors": [
+          "White",
+          "Off White"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "within-budget",
+    "area": "ranking",
+    "split": "dev",
+    "args": {
+      "query": "show black dresses within INR 2000"
+    },
+    "choices": [
+      {
+        "types": [
+          "Dress"
+        ],
+        "colors": [
+          "Black"
+        ],
+        "max_price": 2000
+      }
+    ]
+  },
+  {
+    "name": "budget-of",
+    "area": "ranking",
+    "split": "dev",
+    "args": {
+      "query": "dress with a budget of INR 2000"
+    },
+    "choices": [
+      {
+        "types": [
+          "Dress"
+        ],
+        "max_price": 2000
+      }
+    ]
+  },
+  {
+    "name": "no-more-price",
+    "area": "ranking",
+    "split": "dev",
+    "args": {
+      "query": "black dress no more than INR 2000"
+    },
+    "choices": [
+      {
+        "types": [
+          "Dress"
+        ],
+        "colors": [
+          "Black"
+        ],
+        "max_price": 2000
+      }
+    ]
+  },
+  {
+    "name": "unit-rating",
+    "area": "ranking",
+    "split": "dev",
+    "args": {
+      "query": "black dresses rated 4 stars and above"
+    },
+    "choices": [
+      {
+        "types": [
+          "Dress"
+        ],
+        "colors": [
+          "Black"
+        ],
+        "min_rating": 4
+      }
+    ]
+  },
+  {
+    "name": "review-count",
+    "area": "ranking",
+    "split": "dev",
+    "args": {
+      "query": "white shirt for men with at least 5 reviews"
+    },
+    "choices": [
+      {
+        "types": [
+          "Shirt"
+        ],
+        "colors": [
+          "White",
+          "Off White"
+        ],
+        "audience": "men",
+        "min_review_count": 5
+      }
+    ]
+  },
+  {
+    "name": "hyphen-color",
+    "area": "unusual",
+    "split": "dev",
+    "args": {
+      "query": "off-white blouses under 2000"
+    },
+    "choices": [
+      {
+        "types": [
+          "Blouse"
+        ],
+        "colors": [
+          "Off White"
+        ],
+        "max_price": 2000
+      }
+    ]
+  },
+  {
+    "name": "hyphen-pattern",
+    "area": "unusual",
+    "split": "dev",
+    "args": {
+      "query": "polka-dot dresses"
+    },
+    "choices": [
+      {
+        "types": [
+          "Dress"
+        ],
+        "patterns": [
+          "Dot"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "unit-result-count",
+    "area": "validity",
+    "split": "dev",
+    "args": {
+      "query": "black dress no more than 3 results cheapest first"
+    },
+    "choices": [
+      {
+        "types": [
+          "Dress"
+        ],
+        "colors": [
+          "Black"
+        ]
+      }
+    ],
+    "min_results": 3,
+    "max_results": 3,
+    "price_ascending": true
+  },
+  {
+    "name": "typed-complement",
+    "area": "recommendations",
+    "split": "dev",
+    "args": {
+      "query": "a shirt and matching belt under 1000",
+      "include_recommendations": true
+    },
+    "choices": [
+      {
+        "types": [
+          "Shirt"
+        ]
+      }
+    ],
+    "complements": [
+      {
+        "types": [
+          "Belt"
+        ],
+        "max_price": 1000
+      }
+    ]
+  },
+  {
+    "name": "seasonal-complement",
+    "area": "recommendations",
+    "split": "dev",
+    "args": {
+      "query": "a summer dress with matching sandals under 1500",
+      "include_recommendations": true
+    },
+    "choices": [
+      {
+        "types": [
+          "Dress"
+        ]
+      }
+    ],
+    "complements": [
+      {
+        "types": [
+          "Sandals"
+        ],
+        "max_price": 1500
+      }
+    ]
+  },
+  {
+    "name": "mixed-budget",
+    "area": "mixed",
+    "split": "dev",
+    "args": {
+      "query": "black jeans and white T-shirts under INR 2000 each"
+    },
+    "choices": [
+      {
+        "types": [
+          "Trousers"
+        ],
+        "colors": [
+          "Black"
+        ],
+        "max_price": 2000
+      },
+      {
+        "types": [
+          "T-shirt"
+        ],
+        "colors": [
+          "White",
+          "Off White"
+        ],
+        "max_price": 2000
+      }
+    ]
+  },
+  {
+    "name": "exclude-black",
+    "area": "validity",
+    "split": "dev",
+    "args": {
+      "query": "no black dresses"
+    },
+    "choices": [
+      {
+        "types": [
+          "Dress"
+        ],
+        "excluded_colors": [
+          "Black"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "exclude-type",
+    "area": "validity",
+    "split": "dev",
+    "args": {
+      "query": "shoes excluding sneakers"
+    },
+    "choices": [
+      {
+        "categories": [
+          "Shoes"
+        ],
+        "excluded_types": [
+          "Sneakers"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "color-alternative",
+    "area": "ranking",
+    "split": "dev",
+    "args": {
+      "query": "dress blue or white"
+    },
+    "choices": [
+      {
+        "types": [
+          "Dress"
+        ],
+        "colors": [
+          "Blue",
+          "White"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "unusual-lounge",
+    "area": "unusual",
+    "split": "dev",
+    "args": {
+      "query": "something comfortable for a lazy Sunday"
+    },
+    "choices": [
+      {
+        "types": [
+          "Hoodie",
+          "Sweater",
+          "Pyjama set",
+          "Pyjama bottom",
+          "Robe",
+          "Slippers",
+          "T-shirt"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "known-typo",
+    "area": "unusual",
+    "split": "dev",
+    "args": {
+      "query": "black sneekers"
+    },
+    "choices": [
+      {
+        "types": [
+          "Sneakers"
+        ],
+        "colors": [
+          "Black"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "unknown-material",
+    "area": "irrelevant",
+    "split": "dev",
+    "args": {
+      "query": "recommend a warp-drive handbag"
+    },
+    "empty": true
+  },
+  {
+    "name": "zero-price",
+    "area": "irrelevant",
+    "split": "dev",
+    "args": {
+      "query": "dress under 0"
+    },
+    "empty": true
+  },
+  {
+    "name": "unavailable-size",
+    "area": "irrelevant",
+    "split": "dev",
+    "args": {
+      "query": "black dress size M"
+    },
+    "empty": true
+  },
+  {
+    "name": "unknown-text",
+    "area": "irrelevant",
+    "split": "dev",
+    "args": {
+      "query": "blue shirt made of unobtainium"
+    },
+    "empty": true
+  },
+  {
+    "name": "impossible-count",
+    "area": "irrelevant",
+    "split": "dev",
+    "args": {
+      "query": "white trousers rated at least 4.8 with at least 10000000 reviews"
+    },
+    "empty": true
+  },
+  {
+    "name": "suggest-skirt",
+    "area": "ranking",
+    "split": "heldout",
+    "args": {
+      "query": "suggest a red skirt under INR 2500"
+    },
+    "choices": [
+      {
+        "types": [
+          "Skirt"
+        ],
+        "colors": [
+          "Red",
+          "Dark Red",
+          "Light Red"
+        ],
+        "max_price": 2500
+      }
+    ]
+  },
+  {
+    "name": "either-accessory",
+    "area": "mixed",
+    "split": "heldout",
+    "args": {
+      "query": "either a scarf or a belt"
+    },
+    "choices": [
+      {
+        "types": [
+          "Scarf"
+        ]
+      },
+      {
+        "types": [
+          "Belt"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "both-men",
+    "area": "mixed",
+    "split": "heldout",
+    "args": {
+      "query": "both navy shirts and beige trousers for men"
+    },
+    "choices": [
+      {
+        "types": [
+          "Shirt"
+        ],
+        "colors": [
+          "Dark Blue"
+        ],
+        "audience": "men"
+      },
+      {
+        "types": [
+          "Trousers"
+        ],
+        "colors": [
+          "Beige",
+          "Light Beige",
+          "Dark Beige",
+          "Greyish Beige"
+        ],
+        "audience": "men"
+      }
+    ]
+  },
+  {
+    "name": "no-more-price-reworded",
+    "area": "ranking",
+    "split": "heldout",
+    "args": {
+      "query": "dresses no more than 1500 rupees"
+    },
+    "choices": [
+      {
+        "types": [
+          "Dress"
+        ],
+        "max_price": 1500
+      }
+    ]
+  },
+  {
+    "name": "budget-no-article",
+    "area": "ranking",
+    "split": "heldout",
+    "args": {
+      "query": "coat budget of 3000"
+    },
+    "choices": [
+      {
+        "types": [
+          "Coat"
+        ],
+        "max_price": 3000
+      }
+    ]
+  },
+  {
+    "name": "rating-existing",
+    "area": "ranking",
+    "split": "heldout",
+    "args": {
+      "query": "a shirt rated at least 4.2"
+    },
+    "choices": [
+      {
+        "types": [
+          "Shirt"
+        ],
+        "min_rating": 4.2
+      }
+    ]
+  },
+  {
+    "name": "pattern-budget",
+    "area": "ranking",
+    "split": "heldout",
+    "args": {
+      "query": "striped shirts for men under 1500"
+    },
+    "choices": [
+      {
+        "types": [
+          "Shirt"
+        ],
+        "patterns": [
+          "Stripe"
+        ],
+        "audience": "men",
+        "max_price": 1500
+      }
+    ]
+  },
+  {
+    "name": "color-tshirt",
+    "area": "unusual",
+    "split": "heldout",
+    "args": {
+      "query": "off-white T-shirts"
+    },
+    "choices": [
+      {
+        "types": [
+          "T-shirt"
+        ],
+        "colors": [
+          "Off White"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "floral-complement",
+    "area": "recommendations",
+    "split": "heldout",
+    "args": {
+      "query": "floral skirt with coordinating bag under 1500",
+      "include_recommendations": true
+    },
+    "choices": [
+      {
+        "types": [
+          "Skirt"
+        ],
+        "text": [
+          "floral"
+        ]
+      }
+    ],
+    "complements": [
+      {
+        "types": [
+          "Bag",
+          "Shoulder bag",
+          "Cross-body bag",
+          "Tote bag",
+          "Weekend/Gym bag",
+          "Backpack",
+          "Bumbag"
+        ],
+        "max_price": 1500
+      }
+    ]
+  },
+  {
+    "name": "unknown-request",
+    "area": "irrelevant",
+    "split": "heldout",
+    "args": {
+      "query": "recommend a qzxx T-shirt"
+    },
+    "empty": true
+  },
+  {
+    "name": "mixed-unsupported",
+    "area": "irrelevant",
+    "split": "heldout",
+    "args": {
+      "query": "both a dress and a spaceship engine"
+    },
+    "empty": true
+  },
+  {
+    "name": "alias-with-unsupported",
+    "area": "irrelevant",
+    "split": "heldout",
+    "args": {
+      "query": "off-white dress made of adamantium"
+    },
+    "empty": true
+  },
+  {
+    "name": "unknown-inventory",
+    "area": "irrelevant",
+    "split": "heldout",
+    "args": {
+      "query": "white sneakers with delivery tomorrow"
+    },
+    "empty": true
+  },
+  {
+    "name": "unknown-brand",
+    "area": "irrelevant",
+    "split": "heldout",
+    "args": {
+      "query": "Nike trainers"
+    },
+    "empty": true
+  }
+]

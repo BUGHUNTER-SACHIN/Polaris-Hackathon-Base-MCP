@@ -8,7 +8,7 @@ from functools import lru_cache
 from pathlib import Path
 
 from jsonschema import Draft202012Validator, ValidationError
-from query import QueryParser, audience_matches, words
+from query import QueryParser, audience_matches, parity_matches, words
 from recommendations import recommend
 
 ROOT = Path(__file__).resolve().parent
@@ -64,6 +64,7 @@ class Catalog:
             {p['product_type'] for p in self.products},
             {p.get('color', '') for p in self.products},
             {p.get('pattern', '') for p in self.products},
+            {p.get('category', '') for p in self.products},
         )
         self.orders = {
             ('id', False): self.products,
@@ -111,6 +112,10 @@ class Catalog:
 
     def intent_score(self, product, intent):
         score = self.relevance(product, intent.terms)
+        if intent.prefer_adult and (
+            audience_matches(product, 'men') or audience_matches(product, 'women')
+        ):
+            score += 3
         score += sum(
             0.5 for word in intent.soft if product['id'] in self.postings.get(word, ())
         )
@@ -124,7 +129,7 @@ class Catalog:
     def recommend(self, results, arguments):
         return recommend(self, results, arguments)
 
-    def retrieve(self, intent, explicit):
+    def retrieve(self, intent, explicit, id_parity=None):
         """Intersect full postings before ranking; recheck original catalog facts."""
         if not intent.meaningful or intent.unsupported:
             return []
@@ -169,18 +174,39 @@ class Catalog:
             and explicit['product_type'].strip().casefold()
             not in [t.casefold() for t in intent.types]
         ):
-            terms = tuple(t for t in terms if t != 'jeans')
+            terms = tuple(t for t in terms if t not in ('jeans', 'chinos'))
         pools.extend(self.postings.get(word, set()) for word in terms)
         pools.sort(key=len)
         ids = set(pools[0]).intersection(*pools[1:]) if pools else self.by_id.keys()
         candidates = []
         for id in sorted(ids):
+            if not parity_matches(id, id_parity):
+                continue
             p = self.by_id[id]
-            if not self.matches(p, filters):
+            checked_filters = filters
+            if (
+                intent.nullable_rating
+                and 'min_rating' not in explicit
+                and p['rating']['average'] is None
+            ):
+                checked_filters = {
+                    k: v for k, v in filters.items() if k != 'min_rating'
+                }
+            if not self.matches(p, checked_filters):
                 continue
             if 'audience' not in explicit and not audience_matches(p, intent.audience):
                 continue
             if 'color' not in explicit and p.get('color') in intent.excluded_colors:
+                continue
+            if (
+                'product_type' not in explicit
+                and p['product_type'] in intent.excluded_types
+            ):
+                continue
+            if (
+                'category' not in explicit
+                and p['category'] in intent.excluded_categories
+            ):
                 continue
             if any(id in self.postings.get(t, ()) for t in intent.excluded_terms):
                 continue
@@ -250,17 +276,40 @@ class Catalog:
         filters = arguments.get('filters', {})
         scores = {}
         plan = self.parser.parse(query_text)
+        if plan.unsupported_reason:
+            return {'results': [], 'recommendations': []}
+        # Query controls fill absent arguments; explicit public arguments win.
+        arguments = dict(arguments)
+        for field in ('limit', 'sort_by', 'sort_order'):
+            value = getattr(plan, field)
+            if value is not None:
+                arguments.setdefault(
+                    field, min(value, 100) if field == 'limit' else value
+                )
+        if arguments.get('limit', 10) == 0:
+            return {'results': [], 'recommendations': []}
         if len(plan.primary) == 1:
             intent = plan.primary[0]
-            candidates = self.retrieve(intent, filters)
+            candidates = self.retrieve(intent, filters, plan.id_parity)
             scores = {p['id']: self.intent_score(p, intent) for p in candidates}
+            if intent.quantity is not None:
+                candidates.sort(key=lambda p: scores[p['id']], reverse=True)
+                if plan.diverse:
+                    candidates = self.diversify(candidates)
+                candidates = candidates[: intent.quantity]
         else:
             # Rank each choice independently; equal branch ranks share a score.
             # This supplies coverage without making the order depend on page size.
             for intent in plan.primary:
-                branch = self.retrieve(intent, filters)
+                branch = self.retrieve(intent, filters, plan.id_parity)
                 branch.sort(key=lambda p: self.intent_score(p, intent), reverse=True)
+                if plan.diverse:
+                    branch = self.diversify(branch)
+                if intent.quantity is not None:
+                    branch = branch[: intent.quantity]
                 for rank, p in enumerate(branch, 1):
+                    if intent.quantity:
+                        rank /= intent.quantity
                     scores[p['id']] = max(scores.get(p['id'], 0), 1 / (60 + rank))
             candidates = [self.by_id[id] for id in sorted(scores)]
         sort_by = arguments.get('sort_by', 'relevance')
@@ -290,3 +339,13 @@ class Catalog:
                 else []
             ),
         }
+
+    @staticmethod
+    def diversify(candidates):
+        """Defer same-name variants only for an explicit variety preference."""
+        seen, first, variants = set(), [], []
+        for product in candidates:
+            name = product['name'].strip().casefold()
+            (variants if name in seen else first).append(product)
+            seen.add(name)
+        return first + variants

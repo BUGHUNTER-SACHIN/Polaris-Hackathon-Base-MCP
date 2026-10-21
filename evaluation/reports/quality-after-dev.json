@@ -1,0 +1,962 @@
+{
+  "note": "Attribute, full-slot and coverage proxies only; no Bedrock grades or official score.",
+  "cases_sha256": "4489cfd3e012f89c0bb266e087b301deb4bfc5bdd56de827a9268f1654cdc39b",
+  "split": "dev",
+  "startup_seconds": 3.81474960000196,
+  "passed": 25,
+  "total": 25,
+  "areas": {
+    "ranking": {
+      "passed": 8,
+      "total": 8
+    },
+    "mixed": {
+      "passed": 3,
+      "total": 3
+    },
+    "unusual": {
+      "passed": 4,
+      "total": 4
+    },
+    "validity": {
+      "passed": 3,
+      "total": 3
+    },
+    "recommendations": {
+      "passed": 2,
+      "total": 2
+    },
+    "irrelevant": {
+      "passed": 5,
+      "total": 5
+    }
+  },
+  "cases": [
+    {
+      "name": "recommend-coat",
+      "area": "ranking",
+      "split": "dev",
+      "response": {
+        "results": [
+          {
+            "id": "0501407003"
+          },
+          {
+            "id": "0690491001"
+          },
+          {
+            "id": "0750565001"
+          },
+          {
+            "id": "0784265001"
+          },
+          {
+            "id": "0501405002"
+          },
+          {
+            "id": "0518358003"
+          },
+          {
+            "id": "0534181009"
+          },
+          {
+            "id": "0540591001"
+          },
+          {
+            "id": "0570635001"
+          },
+          {
+            "id": "0578480001"
+          }
+        ],
+        "recommendations": []
+      },
+      "milliseconds": 41.25339999154676,
+      "pass": true
+    },
+    {
+      "name": "suggest-shirt",
+      "area": "ranking",
+      "split": "dev",
+      "response": {
+        "results": [
+          {
+            "id": "0495560002"
+          },
+          {
+            "id": "0495560003"
+          },
+          {
+            "id": "0501619006"
+          },
+          {
+            "id": "0501619019"
+          },
+          {
+            "id": "0501619026"
+          },
+          {
+            "id": "0501620013"
+          },
+          {
+            "id": "0501722004"
+          },
+          {
+            "id": "0501722025"
+          },
+          {
+            "id": "0519516001"
+          },
+          {
+            "id": "0557908029"
+          }
+        ],
+        "recommendations": []
+      },
+      "milliseconds": 4.390100002638064,
+      "pass": true
+    },
+    {
+      "name": "either-dress-skirt",
+      "area": "mixed",
+      "split": "dev",
+      "response": {
+        "results": [
+          {
+            "id": "0189626001"
+          },
+          {
+            "id": "0192460006"
+          },
+          {
+            "id": "0189654001"
+          },
+          {
+            "id": "0202017055"
+          },
+          {
+            "id": "0189654045"
+          },
+          {
+            "id": "0212629004"
+          },
+          {
+            "id": "0189654046"
+          },
+          {
+            "id": "0212629031"
+          },
+          {
+            "id": "0189654047"
+          },
+          {
+            "id": "0212629032"
+          }
+        ],
+        "recommendations": []
+      },
+      "milliseconds": 114.77470000681933,
+      "pass": true
+    },
+    {
+      "name": "both-scoped-colors",
+      "area": "mixed",
+      "split": "dev",
+      "response": {
+        "results": [
+          {
+            "id": "0212629004"
+          },
+          {
+            "id": "0386681014"
+          },
+          {
+            "id": "0272591001"
+          },
+          {
+            "id": "0550433001"
+          },
+          {
+            "id": "0315352006"
+          },
+          {
+            "id": "0553055003"
+          },
+          {
+            "id": "0316553025"
+          },
+          {
+            "id": "0553068002"
+          },
+          {
+            "id": "0355421003"
+          },
+          {
+            "id": "0615372008"
+          }
+        ],
+        "recommendations": []
+      },
+      "milliseconds": 26.48830000543967,
+      "pass": true
+    },
+    {
+      "name": "within-budget",
+      "area": "ranking",
+      "split": "dev",
+      "response": {
+        "results": [
+          {
+            "id": "0212629004"
+          },
+          {
+            "id": "0316553025"
+          },
+          {
+            "id": "0355421003"
+          },
+          {
+            "id": "0384654004"
+          },
+          {
+            "id": "0384654009"
+          },
+          {
+            "id": "0384654023"
+          },
+          {
+            "id": "0401044004"
+          },
+          {
+            "id": "0401044021"
+          },
+          {
+            "id": "0401044034"
+          },
+          {
+            "id": "0463086004"
+          }
+        ],
+        "recommendations": []
+      },
+      "milliseconds": 12.788699998054653,
+      "pass": true
+    },
+    {
+      "name": "budget-of",
+      "area": "ranking",
+      "split": "dev",
+      "response": {
+        "results": [
+          {
+            "id": "0192460006"
+          },
+          {
+            "id": "0212629004"
+          },
+          {
+            "id": "0212629032"
+          },
+          {
+            "id": "0212629035"
+          },
+          {
+            "id": "0212629036"
+          },
+          {
+            "id": "0212629050"
+          },
+          {
+            "id": "0212629051"
+          },
+          {
+            "id": "0272591016"
+          },
+          {
+            "id": "0272591026"
+          },
+          {
+            "id": "0315352008"
+          }
+        ],
+        "recommendations": []
+      },
+      "milliseconds": 41.120399997453205,
+      "pass": true
+    },
+    {
+      "name": "no-more-price",
+      "area": "ranking",
+      "split": "dev",
+      "response": {
+        "results": [
+          {
+            "id": "0212629004"
+          },
+          {
+            "id": "0316553025"
+          },
+          {
+            "id": "0355421003"
+          },
+          {
+            "id": "0384654004"
+          },
+          {
+            "id": "0384654009"
+          },
+          {
+            "id": "0384654023"
+          },
+          {
+            "id": "0401044004"
+          },
+          {
+            "id": "0401044021"
+          },
+          {
+            "id": "0401044034"
+          },
+          {
+            "id": "0463086004"
+          }
+        ],
+        "recommendations": []
+      },
+      "milliseconds": 14.35959999798797,
+      "pass": true
+    },
+    {
+      "name": "unit-rating",
+      "area": "ranking",
+      "split": "dev",
+      "response": {
+        "results": [
+          {
+            "id": "0316553025"
+          },
+          {
+            "id": "0355421003"
+          },
+          {
+            "id": "0384654004"
+          },
+          {
+            "id": "0384654009"
+          },
+          {
+            "id": "0401044004"
+          },
+          {
+            "id": "0401044021"
+          },
+          {
+            "id": "0433252004"
+          },
+          {
+            "id": "0457079001"
+          },
+          {
+            "id": "0472341002"
+          },
+          {
+            "id": "0477507001"
+          }
+        ],
+        "recommendations": []
+      },
+      "milliseconds": 14.493599999696016,
+      "pass": true
+    },
+    {
+      "name": "review-count",
+      "area": "ranking",
+      "split": "dev",
+      "response": {
+        "results": [
+          {
+            "id": "0495560002"
+          },
+          {
+            "id": "0495560003"
+          },
+          {
+            "id": "0501620013"
+          },
+          {
+            "id": "0573875001"
+          },
+          {
+            "id": "0578234001"
+          },
+          {
+            "id": "0584298001"
+          },
+          {
+            "id": "0618265001"
+          },
+          {
+            "id": "0633600001"
+          },
+          {
+            "id": "0693540001"
+          },
+          {
+            "id": "0701187002"
+          }
+        ],
+        "recommendations": []
+      },
+      "milliseconds": 3.8481999945361167,
+      "pass": true
+    },
+    {
+      "name": "hyphen-color",
+      "area": "unusual",
+      "split": "dev",
+      "response": {
+        "results": [
+          {
+            "id": "0568568001"
+          },
+          {
+            "id": "0584427001"
+          },
+          {
+            "id": "0596028010"
+          },
+          {
+            "id": "0597384003"
+          },
+          {
+            "id": "0602733005"
+          },
+          {
+            "id": "0630316005"
+          },
+          {
+            "id": "0631457001"
+          },
+          {
+            "id": "0653336005"
+          },
+          {
+            "id": "0662721003"
+          },
+          {
+            "id": "0663481001"
+          }
+        ],
+        "recommendations": []
+      },
+      "milliseconds": 2.755299996351823,
+      "pass": true
+    },
+    {
+      "name": "hyphen-pattern",
+      "area": "unusual",
+      "split": "dev",
+      "response": {
+        "results": [
+          {
+            "id": "0503642001"
+          },
+          {
+            "id": "0505094008"
+          },
+          {
+            "id": "0522918008"
+          },
+          {
+            "id": "0522918026"
+          },
+          {
+            "id": "0557026001"
+          },
+          {
+            "id": "0560981001"
+          },
+          {
+            "id": "0573728001"
+          },
+          {
+            "id": "0584489001"
+          },
+          {
+            "id": "0584969001"
+          },
+          {
+            "id": "0590215003"
+          }
+        ],
+        "recommendations": []
+      },
+      "milliseconds": 3.429299991694279,
+      "pass": true
+    },
+    {
+      "name": "unit-result-count",
+      "area": "validity",
+      "split": "dev",
+      "response": {
+        "results": [
+          {
+            "id": "0401044004"
+          },
+          {
+            "id": "0458239022"
+          },
+          {
+            "id": "0502522001"
+          }
+        ],
+        "recommendations": []
+      },
+      "milliseconds": 29.44329999445472,
+      "pass": true
+    },
+    {
+      "name": "typed-complement",
+      "area": "recommendations",
+      "split": "dev",
+      "response": {
+        "results": [
+          {
+            "id": "0283236014"
+          },
+          {
+            "id": "0283236018"
+          },
+          {
+            "id": "0283236020"
+          },
+          {
+            "id": "0283236022"
+          },
+          {
+            "id": "0283236023"
+          },
+          {
+            "id": "0283236026"
+          },
+          {
+            "id": "0283236027"
+          },
+          {
+            "id": "0283236028"
+          },
+          {
+            "id": "0283236029"
+          },
+          {
+            "id": "0283236034"
+          }
+        ],
+        "recommendations": [
+          {
+            "id": "0338016009",
+            "for_product_id": "0283236026",
+            "reason": "Black Belt to accompany the selected Shirt."
+          },
+          {
+            "id": "0347200001",
+            "for_product_id": "0283236026",
+            "reason": "Black Belt to accompany the selected Shirt."
+          },
+          {
+            "id": "0417855001",
+            "for_product_id": "0283236026",
+            "reason": "Black Belt to accompany the selected Shirt."
+          },
+          {
+            "id": "0588037001",
+            "for_product_id": "0283236026",
+            "reason": "Black Belt to accompany the selected Shirt."
+          },
+          {
+            "id": "0677918001",
+            "for_product_id": "0283236026",
+            "reason": "Black Belt to accompany the selected Shirt."
+          }
+        ]
+      },
+      "milliseconds": 33.755600001313724,
+      "pass": true
+    },
+    {
+      "name": "seasonal-complement",
+      "area": "recommendations",
+      "split": "dev",
+      "response": {
+        "results": [
+          {
+            "id": "0624839001"
+          },
+          {
+            "id": "0643308001"
+          },
+          {
+            "id": "0678632001"
+          },
+          {
+            "id": "0678632003"
+          },
+          {
+            "id": "0695755001"
+          },
+          {
+            "id": "0703369001"
+          },
+          {
+            "id": "0706278001"
+          },
+          {
+            "id": "0706655001"
+          },
+          {
+            "id": "0706655002"
+          },
+          {
+            "id": "0738238001"
+          }
+        ],
+        "recommendations": [
+          {
+            "id": "0590416002",
+            "for_product_id": "0643308001",
+            "reason": "White Sandals to accompany the selected Dress."
+          },
+          {
+            "id": "0600920001",
+            "for_product_id": "0643308001",
+            "reason": "White Sandals to accompany the selected Dress."
+          },
+          {
+            "id": "0631878006",
+            "for_product_id": "0643308001",
+            "reason": "White Sandals to accompany the selected Dress."
+          },
+          {
+            "id": "0632651003",
+            "for_product_id": "0643308001",
+            "reason": "White Sandals to accompany the selected Dress."
+          },
+          {
+            "id": "0647794001",
+            "for_product_id": "0643308001",
+            "reason": "White Sandals to accompany the selected Dress."
+          }
+        ]
+      },
+      "milliseconds": 105.546000006143,
+      "pass": true
+    },
+    {
+      "name": "mixed-budget",
+      "area": "mixed",
+      "split": "dev",
+      "response": {
+        "results": [
+          {
+            "id": "0294008040"
+          },
+          {
+            "id": "0446847001"
+          },
+          {
+            "id": "0318951032"
+          },
+          {
+            "id": "0588335001"
+          },
+          {
+            "id": "0487275022"
+          },
+          {
+            "id": "0612912001"
+          },
+          {
+            "id": "0399087028"
+          },
+          {
+            "id": "0491680007"
+          },
+          {
+            "id": "0399087047"
+          },
+          {
+            "id": "0498061004"
+          }
+        ],
+        "recommendations": []
+      },
+      "milliseconds": 21.047500005806796,
+      "pass": true
+    },
+    {
+      "name": "exclude-black",
+      "area": "validity",
+      "split": "dev",
+      "response": {
+        "results": [
+          {
+            "id": "0192460006"
+          },
+          {
+            "id": "0202017055"
+          },
+          {
+            "id": "0212629031"
+          },
+          {
+            "id": "0212629032"
+          },
+          {
+            "id": "0212629033"
+          },
+          {
+            "id": "0212629035"
+          },
+          {
+            "id": "0212629036"
+          },
+          {
+            "id": "0212629040"
+          },
+          {
+            "id": "0212629043"
+          },
+          {
+            "id": "0212629047"
+          }
+        ],
+        "recommendations": []
+      },
+      "milliseconds": 78.48960001138039,
+      "pass": true
+    },
+    {
+      "name": "exclude-type",
+      "area": "validity",
+      "split": "dev",
+      "response": {
+        "results": [
+          {
+            "id": "0601111001"
+          },
+          {
+            "id": "0264713001"
+          },
+          {
+            "id": "0264713028"
+          },
+          {
+            "id": "0411499001"
+          },
+          {
+            "id": "0475827007"
+          },
+          {
+            "id": "0475827008"
+          },
+          {
+            "id": "0475827010"
+          },
+          {
+            "id": "0475827011"
+          },
+          {
+            "id": "0475827014"
+          },
+          {
+            "id": "0475827018"
+          }
+        ],
+        "recommendations": []
+      },
+      "milliseconds": 36.12059999431949,
+      "pass": true
+    },
+    {
+      "name": "color-alternative",
+      "area": "ranking",
+      "split": "dev",
+      "response": {
+        "results": [
+          {
+            "id": "0202017055"
+          },
+          {
+            "id": "0212629033"
+          },
+          {
+            "id": "0212629051"
+          },
+          {
+            "id": "0272591026"
+          },
+          {
+            "id": "0301656018"
+          },
+          {
+            "id": "0316553026"
+          },
+          {
+            "id": "0374762008"
+          },
+          {
+            "id": "0401044019"
+          },
+          {
+            "id": "0401044037"
+          },
+          {
+            "id": "0467302028"
+          }
+        ],
+        "recommendations": []
+      },
+      "milliseconds": 11.23290001123678,
+      "pass": true
+    },
+    {
+      "name": "unusual-lounge",
+      "area": "unusual",
+      "split": "dev",
+      "response": {
+        "results": [
+          {
+            "id": "0583456001"
+          },
+          {
+            "id": "0583456003"
+          },
+          {
+            "id": "0583456004"
+          },
+          {
+            "id": "0583456006"
+          },
+          {
+            "id": "0583456007"
+          },
+          {
+            "id": "0767079001"
+          },
+          {
+            "id": "0767079002"
+          },
+          {
+            "id": "0767079004"
+          },
+          {
+            "id": "0882336002"
+          },
+          {
+            "id": "0889844001"
+          }
+        ],
+        "recommendations": []
+      },
+      "milliseconds": 204.8720000020694,
+      "pass": true
+    },
+    {
+      "name": "known-typo",
+      "area": "unusual",
+      "split": "dev",
+      "response": {
+        "results": [
+          {
+            "id": "0759107001"
+          },
+          {
+            "id": "0212042043"
+          },
+          {
+            "id": "0447795001"
+          },
+          {
+            "id": "0453741002"
+          },
+          {
+            "id": "0453831022"
+          },
+          {
+            "id": "0460363017"
+          },
+          {
+            "id": "0471566003"
+          },
+          {
+            "id": "0471566005"
+          },
+          {
+            "id": "0488697015"
+          },
+          {
+            "id": "0488697030"
+          }
+        ],
+        "recommendations": []
+      },
+      "milliseconds": 5.894299989449792,
+      "pass": true
+    },
+    {
+      "name": "unknown-material",
+      "area": "irrelevant",
+      "split": "dev",
+      "response": {
+        "results": [],
+        "recommendations": []
+      },
+      "milliseconds": 1.5103999903658405,
+      "pass": true
+    },
+    {
+      "name": "zero-price",
+      "area": "irrelevant",
+      "split": "dev",
+      "response": {
+        "results": [],
+        "recommendations": []
+      },
+      "milliseconds": 17.423600002075545,
+      "pass": true
+    },
+    {
+      "name": "unavailable-size",
+      "area": "irrelevant",
+      "split": "dev",
+      "response": {
+        "results": [],
+        "recommendations": []
+      },
+      "milliseconds": 0.1731999946059659,
+      "pass": true
+    },
+    {
+      "name": "unknown-text",
+      "area": "irrelevant",
+      "split": "dev",
+      "response": {
+        "results": [],
+        "recommendations": []
+      },
+      "milliseconds": 2.8949999978067353,
+      "pass": true
+    },
+    {
+      "name": "impossible-count",
+      "area": "irrelevant",
+      "split": "dev",
+      "response": {
+        "results": [],
+        "recommendations": []
+      },
+      "milliseconds": 4.208900005323812,
+      "pass": true
+    }
+  ]
+}

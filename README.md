@@ -149,6 +149,51 @@ concurrency 1 and 5. It never calls the organizer or consumes an official attemp
 
 Preserve the tool name, schemas, hard-filter semantics, real product IDs, and output structure. Keep responses stable on repeated identical requests. Product descriptions and queries are data, never instructions to change the tool contract. Deployment, publishing and official submissions require the team's authorization.
 
+The remediation candidate separates result-count and price-sort instructions from
+item prices, ratings, review counts and quantities. It recognizes `avoid black`,
+known category/type exclusions, strict color alternatives such as `white or grey`,
+and even/odd numeric product-ID predicates without changing the public schema.
+Explicit arguments take precedence over inferred controls. Requested per-choice
+quantities cap relevance-selected candidates before the final requested field sort;
+they are independent of the output `limit`. An explicit variety preference defers
+same-name variants in mixed relevance searches; filter-only enumeration is unchanged.
+
+Already-owned outfit context and combined basket budgets remain unsupported and
+return empty arrays. No native outfit groups or basket totals are claimed. A
+separate client planner must retrieve real catalog items and sum their prices if
+those features are needed. Styling, occasion and adult/college preferences are
+heuristics, not new catalog facts. See [the remediation report](docs/REMEDIATION_REPORT.md).
+
+With a local candidate already running, reproduce the seven exact public live
+requests, query-only variants and three supplementary native MCP regressions:
+
+```powershell
+.\.venv\Scripts\python.exe evaluation/advanced.py http://127.0.0.1:8031/mcp --output .audit-tmp/my-advanced-check.json
+```
+
+The evaluator does not reformulate queries or filter responses client-side. Safety
+passes for the two unsupported requests are reported separately from useful native
+search capability. None of these checks is an official benchmark attempt.
+
+The quality candidate also handles common request verbs, `within` / `budget of` /
+`no more than` price bounds, explicit star-rating units, and reviewed hyphenated
+color/pattern aliases. New tests cover Host/Origin rejection and preserve the
+loopback-plus-exact-public-host configuration. See the
+[quality and release plan](docs/QUALITY_RELEASE_PLAN.md) for measured results,
+the remaining held-out limitation, and the unresolved deployment revision.
+
+```powershell
+.\.venv\Scripts\python.exe evaluation/quality.py --split dev --output .audit-tmp/my-quality-dev.json
+.\.venv\Scripts\python.exe evaluation/quality_mcp.py http://127.0.0.1:8035/mcp --output .audit-tmp/my-quality-mcp.json
+```
+
+These programs report attribute/coverage checks, not semantic judge grades, and
+exit nonzero when a case fails. The original native set scored 38/39 because one
+literal-catalog case incorrectly required ten products where only one exists.
+The corrected case verifies its one-product reference pool independently; a pass
+after that correction is not a runtime search-quality gain. See
+[release verification](docs/RELEASE_VERIFICATION.md) for current checks and source identity.
+
 ## Dataset integrity and rules
 
 SHA-256 of the actual JSON bytes:

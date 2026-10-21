@@ -1,0 +1,19 @@
+{
+  "base_commit": "e1cbc5fe8d4831719c530309075cccea2a278401",
+  "catalog_sha256": "05b6aa5e8e8c1c8c997d584f8288e432862454f8820531e13473443e83c8f073",
+  "source_sha256": {
+    "search.py": "d7d05b224b50a38f1e550e22199afc1fc0a88782d1ce331344efea7c819b9499",
+    "query.py": "36b9991d82bf7313c76648c4f74d2428b1765993637f23838fcc448214d3ab4c",
+    "recommendations.py": "e408bab436eb1ee9c37b3a2b2b2de4b632aa195a0ec91bacff1c3ce8c06fbdc1",
+    "server.py": "1d9758c4ee77dff29517abc1d734fee9e6d045ce5b5d379a2cb1f354d0c6803e",
+    "schemas/input.schema.json": "61356c5687485d6906ba0ee053aa9dd8ea1bcac3ba4676b32ece9256b8062eb4",
+    "schemas/output.schema.json": "b678e744edd9e6ce308e8712c806da48d4ec9426a2fee5172a252c13d4d87c1f",
+    "requirements.txt": "a3088ac8bcbfc1a70d6313d810ce00934c4415f5d7e5ae759b9cba90586202fc",
+    "Dockerfile": "2805eee1e741994cad45ee31116ff3738ec2c8231327f9afbba8facd26cd800c",
+    "evaluation/cases.json": "3c706c84fbb27784680637f0ec1b402e055779e619ce44ac0d7553719cbdd46b",
+    "evaluation/run.py": "9b74be17780cf5676ba9e72e8c746da149a5891ad3aa2cbe2038442ddd70acf3",
+    "evaluation/mcp_check.py": "516cad038dd01a20b281d433daed18aae3b518e4b02945d358570ef9138eb2de"
+  },
+  "runtime_dependencies": "unchanged requirements.txt",
+  "local_formatter": "black 26.10.1 (development only)"
+}

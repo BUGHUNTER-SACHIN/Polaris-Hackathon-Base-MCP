@@ -1,0 +1,430 @@
+{
+  "note": "Student-authored rule-based proxies; not Bedrock grades or an official score.",
+  "split": "heldout",
+  "cases_sha256": "3c706c84fbb27784680637f0ec1b402e055779e619ce44ac0d7553719cbdd46b",
+  "startup_seconds": 3.1910940979996667,
+  "peak_process_mib": 757.5546875,
+  "passed": 8,
+  "total": 15,
+  "areas": {
+    "validity": {
+      "passed": 3,
+      "total": 3,
+      "mean_proxy_ndcg10": 0
+    },
+    "ranking": {
+      "passed": 0,
+      "total": 3,
+      "mean_proxy_ndcg10": 0.31124859218187034
+    },
+    "unusual": {
+      "passed": 4,
+      "total": 4,
+      "mean_proxy_ndcg10": 0.25
+    },
+    "mixed": {
+      "passed": 0,
+      "total": 2,
+      "mean_proxy_ndcg10": 0.0
+    },
+    "recommendations": {
+      "passed": 0,
+      "total": 2,
+      "mean_proxy_ndcg10": 0.0
+    },
+    "performance": {
+      "passed": 1,
+      "total": 1,
+      "mean_proxy_ndcg10": 0
+    }
+  },
+  "cases": [
+    {
+      "name": "reviews-page",
+      "area": "validity",
+      "split": "heldout",
+      "median_ms": 82.90673800001969,
+      "error": null,
+      "result": {
+        "results": [
+          {
+            "id": "0237347059"
+          },
+          {
+            "id": "0240670058"
+          },
+          {
+            "id": "0240670060"
+          },
+          {
+            "id": "0247072022"
+          },
+          {
+            "id": "0247072025"
+          },
+          {
+            "id": "0249136006"
+          },
+          {
+            "id": "0250099002"
+          },
+          {
+            "id": "0261840009"
+          },
+          {
+            "id": "0264984001"
+          },
+          {
+            "id": "0266873001"
+          }
+        ],
+        "recommendations": []
+      },
+      "pass_structure": true,
+      "pass": true
+    },
+    {
+      "name": "blank-query",
+      "area": "validity",
+      "split": "heldout",
+      "median_ms": 55.230328000106965,
+      "error": null,
+      "result": {
+        "results": [
+          {
+            "id": "0176209025"
+          },
+          {
+            "id": "0176209033"
+          },
+          {
+            "id": "0176209035"
+          },
+          {
+            "id": "0176209039"
+          },
+          {
+            "id": "0176209040"
+          },
+          {
+            "id": "0176209044"
+          },
+          {
+            "id": "0176209046"
+          },
+          {
+            "id": "0176550016"
+          },
+          {
+            "id": "0176550017"
+          },
+          {
+            "id": "0176550018"
+          },
+          {
+            "id": "0176550020"
+          },
+          {
+            "id": "0176550021"
+          },
+          {
+            "id": "0176754001"
+          },
+          {
+            "id": "0176754003"
+          },
+          {
+            "id": "0176754019"
+          },
+          {
+            "id": "0179123001"
+          },
+          {
+            "id": "0179123040"
+          }
+        ],
+        "recommendations": []
+      },
+      "pass_structure": true,
+      "pass": true
+    },
+    {
+      "name": "invalid-bool",
+      "area": "validity",
+      "split": "heldout",
+      "median_ms": 0.06008499985910021,
+      "error": "ValueError",
+      "pass": true
+    },
+    {
+      "name": "navy-coat",
+      "area": "ranking",
+      "split": "heldout",
+      "median_ms": 245.56314200162888,
+      "error": null,
+      "result": {
+        "results": [],
+        "recommendations": []
+      },
+      "pass_structure": true,
+      "proxy_ndcg10": 0.0,
+      "choice_coverage": 0.0,
+      "pass": false
+    },
+    {
+      "name": "striped-shirt",
+      "area": "ranking",
+      "split": "heldout",
+      "median_ms": 253.30743799895572,
+      "error": null,
+      "result": {
+        "results": [
+          {
+            "id": "0695322002"
+          },
+          {
+            "id": "0695322004"
+          },
+          {
+            "id": "0695322010"
+          },
+          {
+            "id": "0695322011"
+          },
+          {
+            "id": "0695322013"
+          },
+          {
+            "id": "0695322016"
+          },
+          {
+            "id": "0547104002"
+          },
+          {
+            "id": "0547104005"
+          },
+          {
+            "id": "0558423001"
+          },
+          {
+            "id": "0567616001"
+          }
+        ],
+        "recommendations": []
+      },
+      "pass_structure": true,
+      "proxy_ndcg10": 0.9337457765456111,
+      "choice_coverage": 1.0,
+      "pass": false
+    },
+    {
+      "name": "cotton-tshirt",
+      "area": "ranking",
+      "split": "heldout",
+      "median_ms": 249.43619499936176,
+      "error": null,
+      "result": {
+        "results": [],
+        "recommendations": []
+      },
+      "pass_structure": true,
+      "proxy_ndcg10": 0.0,
+      "choice_coverage": 0.0,
+      "pass": false
+    },
+    {
+      "name": "jumper-alias",
+      "area": "unusual",
+      "split": "heldout",
+      "median_ms": 243.65119300091465,
+      "error": null,
+      "result": {
+        "results": [
+          {
+            "id": "0317348002"
+          },
+          {
+            "id": "0405586006"
+          },
+          {
+            "id": "0405586008"
+          },
+          {
+            "id": "0411013001"
+          },
+          {
+            "id": "0424511007"
+          },
+          {
+            "id": "0505220001"
+          },
+          {
+            "id": "0505221001"
+          },
+          {
+            "id": "0505230004"
+          },
+          {
+            "id": "0515042002"
+          },
+          {
+            "id": "0532877001"
+          }
+        ],
+        "recommendations": []
+      },
+      "pass_structure": true,
+      "proxy_ndcg10": 1.0,
+      "choice_coverage": 1.0,
+      "pass": true
+    },
+    {
+      "name": "nonsense",
+      "area": "unusual",
+      "split": "heldout",
+      "median_ms": 227.07055099999707,
+      "error": null,
+      "result": {
+        "results": [],
+        "recommendations": []
+      },
+      "pass_structure": true,
+      "pass": true
+    },
+    {
+      "name": "medical-question",
+      "area": "unusual",
+      "split": "heldout",
+      "median_ms": 241.67408200082718,
+      "error": null,
+      "result": {
+        "results": [],
+        "recommendations": []
+      },
+      "pass_structure": true,
+      "pass": true
+    },
+    {
+      "name": "unknown-brand",
+      "area": "unusual",
+      "split": "heldout",
+      "median_ms": 250.95394600066356,
+      "error": null,
+      "result": {
+        "results": [],
+        "recommendations": []
+      },
+      "pass_structure": true,
+      "pass": true
+    },
+    {
+      "name": "two-accessories",
+      "area": "mixed",
+      "split": "heldout",
+      "median_ms": 231.88208999999915,
+      "error": null,
+      "result": {
+        "results": [
+          {
+            "id": "0852554001"
+          }
+        ],
+        "recommendations": []
+      },
+      "pass_structure": true,
+      "proxy_ndcg10": 0.0,
+      "choice_coverage": 0.0,
+      "pass": false
+    },
+    {
+      "name": "mens-mixed",
+      "area": "mixed",
+      "split": "heldout",
+      "median_ms": 278.0794390000665,
+      "error": null,
+      "result": {
+        "results": [],
+        "recommendations": []
+      },
+      "pass_structure": true,
+      "proxy_ndcg10": 0.0,
+      "choice_coverage": 0.0,
+      "pass": false
+    },
+    {
+      "name": "mens-complement",
+      "area": "recommendations",
+      "split": "heldout",
+      "median_ms": 60.65826099984406,
+      "error": null,
+      "result": {
+        "results": [],
+        "recommendations": []
+      },
+      "pass_structure": true,
+      "proxy_ndcg10": 0.0,
+      "choice_coverage": 0.0,
+      "proxy_complement_ndcg5": 0.0,
+      "pass": false
+    },
+    {
+      "name": "no-complement-budget",
+      "area": "recommendations",
+      "split": "heldout",
+      "median_ms": 292.87033999935375,
+      "error": null,
+      "result": {
+        "results": [],
+        "recommendations": []
+      },
+      "pass_structure": true,
+      "proxy_ndcg10": 0.0,
+      "choice_coverage": 0.0,
+      "pass": false
+    },
+    {
+      "name": "rating-performance",
+      "area": "performance",
+      "split": "heldout",
+      "median_ms": 101.49377400011872,
+      "error": null,
+      "result": {
+        "results": [
+          {
+            "id": "0194037001"
+          },
+          {
+            "id": "0233091003"
+          },
+          {
+            "id": "0282832021"
+          },
+          {
+            "id": "0306847009"
+          },
+          {
+            "id": "0315509001"
+          },
+          {
+            "id": "0316085001"
+          },
+          {
+            "id": "0403844009"
+          },
+          {
+            "id": "0405635001"
+          },
+          {
+            "id": "0412370001"
+          },
+          {
+            "id": "0426609029"
+          }
+        ],
+        "recommendations": []
+      },
+      "pass_structure": true,
+      "pass": true
+    }
+  ]
+}

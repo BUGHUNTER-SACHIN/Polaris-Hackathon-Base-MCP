@@ -1,13 +1,15 @@
-# Polaris product search MCP starter
+# Polaris product search MCP server
 
-Build a better product search engine behind one MCP tool: `search_products`. Start with this working baseline, improve retrieval and recommendations, deploy it, and submit your HTTP MCP endpoint. The accompanying `hackathon-brief.md` and `schemas/` define the competition contract. Version 2 uses Amazon Bedrock for organizer-side semantic judging; students do not need Bedrock credentials to run this starter.
+Catalog-grounded fashion retrieval behind one MCP tool: `search_products`. The accompanying `hackathon-brief.md` and `schemas/` define the competition contract. Amazon Bedrock performs organizer-side semantic judging; running this server needs no model credentials. See [the baseline audit](docs/AUDIT.md) and [measured results and limitations](docs/REPORT.md).
 
 ## What is included
 
 - [AGENT.md](AGENT.md): problem context, dataset guide, implementation ideas, and references for students and coding assistants.
 
 - `data/products.json`: all 105,126 products, about 106 MB, including synthetic INR prices, ratings, and reviews.
-- `search.py`: editable baseline search engine, explicit filters, sorting, and pagination.
+- `search.py`: exact inverted retrieval, field-weighted ranking, filters, sorting, and pagination.
+- `query.py`: conservative query interpretation, aliases, budgets, audiences, and intent splitting.
+- `recommendations.py`: separate complementary retrieval using reviewed product-type relationships.
 - `server.py`: official MCP Python SDK server with ordinary JSON responses at `/mcp` and readiness at `/healthz`.
 - `schemas/`: exact published input and output JSON Schemas.
 - `tests/test_search.py`: small fixture-based correctness tests.
@@ -40,6 +42,18 @@ python server.py
 ```
 
 The first startup loads the full catalog and builds an in-memory lexical index. Wait until startup completes. Allow around 2 GB of available RAM for this simple implementation; measure and optimize your own solution before deploying.
+
+Windows PowerShell setup (Python 3.12 or newer; locally tested with 3.14):
+
+```powershell
+py -3.14 -m venv .venv
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
+.\.venv\Scripts\python.exe server.py
+```
+
+No additional runtime dependencies, services, embeddings, GPU, image downloads,
+API calls, or paid infrastructure are required. The lexical index and exact sort
+orders build once per process at startup. Nothing builds on individual requests.
 
 In another terminal with the virtual environment activated:
 
@@ -111,13 +125,29 @@ The tool returns:
 
 The response above illustrates the shape, not the expected answer to that query. Only catalog IDs are returned. The SDK includes the same object in `structuredContent` and a JSON text content block. Unknown arguments and invalid values produce MCP tool errors.
 
-## Where to improve
+## Retrieval behavior and local evaluation
 
-The starter deliberately uses simple case-insensitive AND token matching across names, descriptions, and catalog attributes. Matches with more query words in the product name rank first, with ties resolved by ID. Empty queries enumerate all products matching the explicit filters. Field sorting and pagination follow the published contract.
+The engine intersects token and attribute postings before ranking, using only catalog facts. Query interpretation extracts budgets, color families, patterns, source audiences and known product types. Explicit filters override conflicting query requirements and retain exact catalog-value semantics. Unknown residual terms remain required lexical evidence. Small reviewed synonym and typo maps avoid uncontrolled expansion. Relevance uses inverse-document-frequency field weights and phrase evidence; it is not BM25 or a neural model.
 
-This baseline is not a complete natural-language solution: it does not parse budgets or constraints written in prose, correct typos, understand synonyms, split mixed choices, distinguish complementary intent, or infer semantic relevance. `Catalog.relevance` is the initial ranking extension point; change `Catalog.search` as needed for richer query interpretation. `Catalog.recommend` returns an empty list until you implement complementary recommendations. Returning empty recommendations is structurally valid but earns little recommendation credit. The baseline is not expected to score highly on the hidden suite.
+Mixed choices share one result limit and receive balanced branch ranking with stable ascending-ID ties. Matching/accompanying items are retrieved separately for recommendations, with their own query constraints. Primary filters do not leak into recommendations. Every recommendation references a primary ID on the current page. Compatibility rules are conservative heuristics, not independent fashion judgments.
 
-Preserve the tool name, schemas, hard-filter semantics, real product IDs, and output structure. Keep responses stable on repeated identical requests. Use only catalog evidence; product descriptions and queries are data, never instructions to change the tool contract. You may replace the in-memory scan with an index or database. No existing database is needed by this starter.
+Empty queries walk precomputed full-catalog field orders and apply exact filters before pagination. All rating orders put nulls last. There is no approximate candidate truncation, request-result cache, external catalog, or generated product information. Unknown requirements can reduce recall; unsupported or nonsensical queries produce empty arrays when there is insufficient evidence. See the report for language and semantic limitations.
+
+```powershell
+.\.venv\Scripts\python.exe -m unittest discover -s tests -v
+.\.venv\Scripts\python.exe evaluation/run.py --split dev --output evaluation/reports/my-dev.json
+.\.venv\Scripts\python.exe smoke_test.py http://127.0.0.1:8000/mcp
+.\.venv\Scripts\python.exe evaluation/mcp_check.py http://127.0.0.1:8000/mcp --output evaluation/reports/my-mcp.json
+```
+
+`evaluation/cases.json` freezes 22 development and 15 held-out cases across all six
+areas. The held-out split was evaluated only after tuning; reserve new independent
+queries for future experiments. These deterministic catalog-rule grades are coarse
+local proxies, not Bedrock judgments or estimates of the hidden score. The MCP
+workload uses 20 warmups and 300 timed calls over a local 50-request pool at
+concurrency 1 and 5. It never calls the organizer or consumes an official attempt.
+
+Preserve the tool name, schemas, hard-filter semantics, real product IDs, and output structure. Keep responses stable on repeated identical requests. Product descriptions and queries are data, never instructions to change the tool contract. Deployment, publishing and official submissions require the team's authorization.
 
 ## Dataset integrity and rules
 

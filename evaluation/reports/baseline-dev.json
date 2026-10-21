@@ -1,0 +1,561 @@
+{
+  "note": "Student-authored rule-based proxies; not Bedrock grades or an official score.",
+  "split": "dev",
+  "cases_sha256": "3c706c84fbb27784680637f0ec1b402e055779e619ce44ac0d7553719cbdd46b",
+  "startup_seconds": 4.030779339999754,
+  "peak_process_mib": 757.828125,
+  "passed": 11,
+  "total": 22,
+  "areas": {
+    "validity": {
+      "passed": 6,
+      "total": 6,
+      "mean_proxy_ndcg10": 0
+    },
+    "ranking": {
+      "passed": 1,
+      "total": 5,
+      "mean_proxy_ndcg10": 0.44544029298861026
+    },
+    "unusual": {
+      "passed": 3,
+      "total": 5,
+      "mean_proxy_ndcg10": 0.0
+    },
+    "mixed": {
+      "passed": 0,
+      "total": 3,
+      "mean_proxy_ndcg10": 0.0
+    },
+    "recommendations": {
+      "passed": 0,
+      "total": 2,
+      "mean_proxy_ndcg10": 0.0
+    },
+    "performance": {
+      "passed": 1,
+      "total": 1,
+      "mean_proxy_ndcg10": 0
+    }
+  },
+  "cases": [
+    {
+      "name": "empty-page",
+      "area": "validity",
+      "split": "dev",
+      "median_ms": 67.83890199949383,
+      "error": null,
+      "result": {
+        "results": [
+          {
+            "id": "0108775015"
+          },
+          {
+            "id": "0108775044"
+          },
+          {
+            "id": "0108775051"
+          },
+          {
+            "id": "0110065001"
+          },
+          {
+            "id": "0110065002"
+          },
+          {
+            "id": "0110065011"
+          },
+          {
+            "id": "0111565001"
+          },
+          {
+            "id": "0111565003"
+          },
+          {
+            "id": "0111586001"
+          },
+          {
+            "id": "0111593001"
+          }
+        ],
+        "recommendations": []
+      },
+      "pass_structure": true,
+      "pass": true
+    },
+    {
+      "name": "white-price",
+      "area": "validity",
+      "split": "dev",
+      "median_ms": 67.31415900048887,
+      "error": null,
+      "result": {
+        "results": [
+          {
+            "id": "0160442010"
+          },
+          {
+            "id": "0190021001"
+          },
+          {
+            "id": "0424432004"
+          },
+          {
+            "id": "0477893016"
+          },
+          {
+            "id": "0499802019"
+          },
+          {
+            "id": "0500435019"
+          },
+          {
+            "id": "0506195007"
+          },
+          {
+            "id": "0520427007"
+          },
+          {
+            "id": "0527662001"
+          },
+          {
+            "id": "0619506001"
+          }
+        ],
+        "recommendations": []
+      },
+      "pass_structure": true,
+      "pass": true
+    },
+    {
+      "name": "rating-null-desc",
+      "area": "validity",
+      "split": "dev",
+      "median_ms": 234.25192899958347,
+      "error": null,
+      "result": {
+        "results": [
+          {
+            "id": "0189616006"
+          },
+          {
+            "id": "0189616009"
+          },
+          {
+            "id": "0220094019"
+          },
+          {
+            "id": "0225286014"
+          },
+          {
+            "id": "0237347059"
+          },
+          {
+            "id": "0240670060"
+          },
+          {
+            "id": "0241602028"
+          },
+          {
+            "id": "0244267027"
+          },
+          {
+            "id": "0254303059"
+          },
+          {
+            "id": "0254457038"
+          }
+        ],
+        "recommendations": []
+      },
+      "pass_structure": true,
+      "pass": true
+    },
+    {
+      "name": "unknown-filter",
+      "area": "validity",
+      "split": "dev",
+      "median_ms": 66.11224599964771,
+      "error": null,
+      "result": {
+        "results": [],
+        "recommendations": []
+      },
+      "pass_structure": true,
+      "pass": true
+    },
+    {
+      "name": "invalid-extra",
+      "area": "validity",
+      "split": "dev",
+      "median_ms": 0.0635129999864148,
+      "error": "ValueError",
+      "pass": true
+    },
+    {
+      "name": "invalid-bounds",
+      "area": "validity",
+      "split": "dev",
+      "median_ms": 0.05010899985791184,
+      "error": "ValueError",
+      "pass": true
+    },
+    {
+      "name": "cotton-tops",
+      "area": "ranking",
+      "split": "dev",
+      "median_ms": 323.97059699997044,
+      "error": null,
+      "result": {
+        "results": [
+          {
+            "id": "0482217001"
+          },
+          {
+            "id": "0485591001"
+          },
+          {
+            "id": "0494291002"
+          },
+          {
+            "id": "0494291003"
+          },
+          {
+            "id": "0506269001"
+          },
+          {
+            "id": "0506269002"
+          },
+          {
+            "id": "0510696006"
+          },
+          {
+            "id": "0510933005"
+          },
+          {
+            "id": "0510933006"
+          },
+          {
+            "id": "0512008004"
+          }
+        ],
+        "recommendations": []
+      },
+      "pass_structure": true,
+      "proxy_ndcg10": 0.2934556883974403,
+      "choice_coverage": 1.0,
+      "pass": false
+    },
+    {
+      "name": "black-dress",
+      "area": "ranking",
+      "split": "dev",
+      "median_ms": 317.7843479998046,
+      "error": null,
+      "result": {
+        "results": [
+          {
+            "id": "0212629004"
+          },
+          {
+            "id": "0272591001"
+          },
+          {
+            "id": "0315352006"
+          },
+          {
+            "id": "0316553025"
+          },
+          {
+            "id": "0355421003"
+          },
+          {
+            "id": "0374762001"
+          },
+          {
+            "id": "0374762021"
+          },
+          {
+            "id": "0383569008"
+          },
+          {
+            "id": "0384654004"
+          },
+          {
+            "id": "0384654009"
+          }
+        ],
+        "recommendations": []
+      },
+      "pass_structure": true,
+      "proxy_ndcg10": 1.0,
+      "choice_coverage": 1.0,
+      "pass": true
+    },
+    {
+      "name": "budget-dress",
+      "area": "ranking",
+      "split": "dev",
+      "median_ms": 253.380589999324,
+      "error": null,
+      "result": {
+        "results": [],
+        "recommendations": []
+      },
+      "pass_structure": true,
+      "proxy_ndcg10": 0.0,
+      "choice_coverage": 0.0,
+      "pass": false
+    },
+    {
+      "name": "mens-shirt",
+      "area": "ranking",
+      "split": "dev",
+      "median_ms": 280.98542200041265,
+      "error": null,
+      "result": {
+        "results": [
+          {
+            "id": "0495560002"
+          },
+          {
+            "id": "0495560003"
+          },
+          {
+            "id": "0568478001"
+          },
+          {
+            "id": "0568478007"
+          },
+          {
+            "id": "0568478014"
+          },
+          {
+            "id": "0669388001"
+          },
+          {
+            "id": "0796669001"
+          },
+          {
+            "id": "0798033002"
+          },
+          {
+            "id": "0821726001"
+          },
+          {
+            "id": "0891844003"
+          }
+        ],
+        "recommendations": []
+      },
+      "pass_structure": true,
+      "proxy_ndcg10": 0.9337457765456111,
+      "choice_coverage": 1.0,
+      "pass": false
+    },
+    {
+      "name": "explicit-precedence",
+      "area": "ranking",
+      "split": "dev",
+      "median_ms": 83.54593700005353,
+      "error": null,
+      "result": {
+        "results": [],
+        "recommendations": []
+      },
+      "pass_structure": true,
+      "proxy_ndcg10": 0.0,
+      "choice_coverage": 0.0,
+      "pass": false
+    },
+    {
+      "name": "sneaker-typo",
+      "area": "unusual",
+      "split": "dev",
+      "median_ms": 265.9383580003123,
+      "error": null,
+      "result": {
+        "results": [],
+        "recommendations": []
+      },
+      "pass_structure": true,
+      "proxy_ndcg10": 0.0,
+      "choice_coverage": 0.0,
+      "pass": false
+    },
+    {
+      "name": "sunday",
+      "area": "unusual",
+      "split": "dev",
+      "median_ms": 258.0910070000755,
+      "error": null,
+      "result": {
+        "results": [],
+        "recommendations": []
+      },
+      "pass_structure": true,
+      "proxy_ndcg10": 0.0,
+      "choice_coverage": 0.0,
+      "pass": false
+    },
+    {
+      "name": "unrelated-engine",
+      "area": "unusual",
+      "split": "dev",
+      "median_ms": 255.30043500020838,
+      "error": null,
+      "result": {
+        "results": [],
+        "recommendations": []
+      },
+      "pass_structure": true,
+      "pass": true
+    },
+    {
+      "name": "unavailable-material",
+      "area": "unusual",
+      "split": "dev",
+      "median_ms": 247.99918700045964,
+      "error": null,
+      "result": {
+        "results": [],
+        "recommendations": []
+      },
+      "pass_structure": true,
+      "pass": true
+    },
+    {
+      "name": "zero-budget",
+      "area": "unusual",
+      "split": "dev",
+      "median_ms": 260.1368679997904,
+      "error": null,
+      "result": {
+        "results": [],
+        "recommendations": []
+      },
+      "pass_structure": true,
+      "pass": true
+    },
+    {
+      "name": "mixed-colors",
+      "area": "mixed",
+      "split": "dev",
+      "median_ms": 264.396621000742,
+      "error": null,
+      "result": {
+        "results": [],
+        "recommendations": []
+      },
+      "pass_structure": true,
+      "proxy_ndcg10": 0.0,
+      "choice_coverage": 0.0,
+      "pass": false
+    },
+    {
+      "name": "dress-or-skirt",
+      "area": "mixed",
+      "split": "dev",
+      "median_ms": 292.63178299970605,
+      "error": null,
+      "result": {
+        "results": [],
+        "recommendations": []
+      },
+      "pass_structure": true,
+      "proxy_ndcg10": 0.0,
+      "choice_coverage": 0.0,
+      "pass": false
+    },
+    {
+      "name": "dress-and-bag",
+      "area": "mixed",
+      "split": "dev",
+      "median_ms": 290.2675819996148,
+      "error": null,
+      "result": {
+        "results": [],
+        "recommendations": []
+      },
+      "pass_structure": true,
+      "proxy_ndcg10": 0.0,
+      "choice_coverage": 0.0,
+      "pass": false
+    },
+    {
+      "name": "bag-budget",
+      "area": "recommendations",
+      "split": "dev",
+      "median_ms": 269.0263859994957,
+      "error": null,
+      "result": {
+        "results": [],
+        "recommendations": []
+      },
+      "pass_structure": true,
+      "proxy_ndcg10": 0.0,
+      "choice_coverage": 0.0,
+      "proxy_complement_ndcg5": 0.0,
+      "pass": false
+    },
+    {
+      "name": "complements-off",
+      "area": "recommendations",
+      "split": "dev",
+      "median_ms": 257.4650879996625,
+      "error": null,
+      "result": {
+        "results": [],
+        "recommendations": []
+      },
+      "pass_structure": true,
+      "proxy_ndcg10": 0.0,
+      "choice_coverage": 0.0,
+      "pass": false
+    },
+    {
+      "name": "filter-performance",
+      "area": "performance",
+      "split": "dev",
+      "median_ms": 49.711802000274474,
+      "error": null,
+      "result": {
+        "results": [
+          {
+            "id": "0212629047"
+          },
+          {
+            "id": "0254457033"
+          },
+          {
+            "id": "0254457037"
+          },
+          {
+            "id": "0272591028"
+          },
+          {
+            "id": "0276242021"
+          },
+          {
+            "id": "0301656029"
+          },
+          {
+            "id": "0315352006"
+          },
+          {
+            "id": "0406979005"
+          },
+          {
+            "id": "0424254005"
+          },
+          {
+            "id": "0437129005"
+          }
+        ],
+        "recommendations": []
+      },
+      "pass_structure": true,
+      "pass": true
+    }
+  ]
+}

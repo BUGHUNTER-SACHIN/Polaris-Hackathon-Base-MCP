@@ -50,6 +50,7 @@ def recommend(catalog, results, arguments):
     plan = catalog.parser.parse(arguments.get('query', ''))
     excluded = {r['id'] for r in results}
     ranked, seen_anchors, cache = {}, set(), {}
+    choice_ids = [set() for _ in plan.complements]
     for result in results:
         anchor = catalog.by_id[result['id']]
         audience = plan.audience or inferred_audience(anchor)
@@ -81,7 +82,7 @@ def recommend(catalog, results, arguments):
                 meaningful=True,
             )
         ]
-        for intent in intents:
+        for choice, intent in enumerate(intents):
             scoped_audience = intent.audience or audience
             types = tuple(t for t in (intent.types or compatible) if t in compatible)
             if not types:
@@ -101,6 +102,7 @@ def recommend(catalog, results, arguments):
                 excluded_types=intent.excluded_types,
                 excluded_categories=intent.excluded_categories,
                 nullable_rating=intent.nullable_rating,
+                phrases=intent.phrases,
             )
             key = (
                 types,
@@ -115,6 +117,7 @@ def recommend(catalog, results, arguments):
                 scoped.excluded_types,
                 scoped.excluded_categories,
                 scoped.nullable_rating,
+                scoped.phrases,
             )
             if key not in cache:
                 cache[key] = [
@@ -124,6 +127,8 @@ def recommend(catalog, results, arguments):
             for p, base in cache[key]:
                 if p['id'] in excluded or not parity_matches(p['id'], plan.id_parity):
                     continue
+                if plan.complements:
+                    choice_ids[choice].add(p['id'])
                 score = base + (1 if p.get('color') == anchor.get('color') else 0)
                 # Neutral catalog colors are a modest coordination preference.
                 score += (
@@ -134,7 +139,22 @@ def recommend(catalog, results, arguments):
                 previous = ranked.get(p['id'])
                 if previous is None or score > previous[0]:
                     ranked[p['id']] = (score, anchor['id'])
-    ids = sorted(ranked, key=lambda id: (-ranked[id][0], id))[:5]
+    ordered = sorted(ranked, key=lambda id: (-ranked[id][0], id))
+    selected = set()
+    # Reserve a best eligible match for each explicitly requested complement.
+    # Keep the final score order; do not change generic/single-choice ranking.
+    for pool in choice_ids:
+        if len(selected) == 5:
+            break
+        if selected.isdisjoint(pool):
+            best = next((id for id in ordered if id in pool), None)
+            if best is not None:
+                selected.add(best)
+    for id in ordered:
+        if len(selected) == 5:
+            break
+        selected.add(id)
+    ids = [id for id in ordered if id in selected]
     return [
         {
             'id': id,

@@ -1,0 +1,884 @@
+{
+  "note": "Student attribute/coverage proxies, not Bedrock grades or official scores. Latency is this sequential case sample, not the official performance workload.",
+  "url": "http://127.0.0.1:8047/mcp",
+  "split": "all",
+  "catalog_sha256": "05b6aa5e8e8c1c8c997d584f8288e432862454f8820531e13473443e83c8f073",
+  "cases_sha256": "e4eb61c9583b05c53961ead7a3514d0adb74ad6d7adcffd5ba71c28fac87475d",
+  "startup_seconds": 1.140776399988681,
+  "passed": 18,
+  "total": 18,
+  "p95_ms": 279.33399999164976,
+  "areas": {
+    "ranking": {
+      "passed": 4,
+      "total": 4
+    },
+    "irrelevant": {
+      "passed": 4,
+      "total": 4
+    },
+    "mixed": {
+      "passed": 2,
+      "total": 2
+    },
+    "unusual": {
+      "passed": 2,
+      "total": 2
+    },
+    "recommendations": {
+      "passed": 6,
+      "total": 6
+    }
+  },
+  "cases": [
+    {
+      "name": "polite-skirt",
+      "area": "ranking",
+      "split": "dev",
+      "arguments": {
+        "query": "I would love a red skirt under 2500"
+      },
+      "response": {
+        "results": [
+          {
+            "id": "0189654046"
+          },
+          {
+            "id": "0483737003"
+          },
+          {
+            "id": "0517331003"
+          },
+          {
+            "id": "0520457003"
+          },
+          {
+            "id": "0524517004"
+          },
+          {
+            "id": "0527237001"
+          },
+          {
+            "id": "0535826006"
+          },
+          {
+            "id": "0537742002"
+          },
+          {
+            "id": "0542439003"
+          },
+          {
+            "id": "0542442001"
+          }
+        ],
+        "recommendations": []
+      },
+      "milliseconds": 27.417499994044192,
+      "pass": true
+    },
+    {
+      "name": "polite-unknown",
+      "area": "irrelevant",
+      "split": "dev",
+      "arguments": {
+        "query": "I would love a titanium skirt"
+      },
+      "response": {
+        "results": [],
+        "recommendations": []
+      },
+      "milliseconds": 19.573099998524413,
+      "pass": true
+    },
+    {
+      "name": "plus-scoped",
+      "area": "mixed",
+      "split": "dev",
+      "arguments": {
+        "query": "a black dress plus a white bag under 2000"
+      },
+      "response": {
+        "results": [
+          {
+            "id": "0212629004"
+          },
+          {
+            "id": "0553068002"
+          },
+          {
+            "id": "0316553025"
+          },
+          {
+            "id": "0619318001"
+          },
+          {
+            "id": "0355421003"
+          },
+          {
+            "id": "0621073001"
+          },
+          {
+            "id": "0384654004"
+          },
+          {
+            "id": "0650734005"
+          },
+          {
+            "id": "0384654009"
+          },
+          {
+            "id": "0663312001"
+          }
+        ],
+        "recommendations": []
+      },
+      "milliseconds": 39.24209999968298,
+      "pass": true
+    },
+    {
+      "name": "plus-unknown",
+      "area": "irrelevant",
+      "split": "dev",
+      "arguments": {
+        "query": "dress plus a spaceship engine"
+      },
+      "response": {
+        "results": [],
+        "recommendations": []
+      },
+      "milliseconds": 26.985599994077347,
+      "pass": true
+    },
+    {
+      "name": "comfy-lounge",
+      "area": "unusual",
+      "split": "dev",
+      "arguments": {
+        "query": "something comfy for a lazy Sunday"
+      },
+      "response": {
+        "results": [
+          {
+            "id": "0583456001"
+          },
+          {
+            "id": "0583456003"
+          },
+          {
+            "id": "0583456004"
+          },
+          {
+            "id": "0583456006"
+          },
+          {
+            "id": "0583456007"
+          },
+          {
+            "id": "0767079001"
+          },
+          {
+            "id": "0767079002"
+          },
+          {
+            "id": "0767079004"
+          },
+          {
+            "id": "0882336002"
+          },
+          {
+            "id": "0889844001"
+          }
+        ],
+        "recommendations": []
+      },
+      "milliseconds": 279.33399999164976,
+      "pass": true
+    },
+    {
+      "name": "comfy-unknown",
+      "area": "irrelevant",
+      "split": "dev",
+      "arguments": {
+        "query": "comfy titanium hoodie"
+      },
+      "response": {
+        "results": [],
+        "recommendations": []
+      },
+      "milliseconds": 23.246800003107637,
+      "pass": true
+    },
+    {
+      "name": "suffix-accessory",
+      "area": "recommendations",
+      "split": "dev",
+      "arguments": {
+        "query": "a dress with a bag to match",
+        "include_recommendations": true
+      },
+      "response": {
+        "results": [
+          {
+            "id": "0192460006"
+          },
+          {
+            "id": "0202017055"
+          },
+          {
+            "id": "0212629004"
+          },
+          {
+            "id": "0212629031"
+          },
+          {
+            "id": "0212629032"
+          },
+          {
+            "id": "0212629033"
+          },
+          {
+            "id": "0212629035"
+          },
+          {
+            "id": "0212629036"
+          },
+          {
+            "id": "0212629040"
+          },
+          {
+            "id": "0212629043"
+          }
+        ],
+        "recommendations": [
+          {
+            "id": "0241436001",
+            "for_product_id": "0212629004",
+            "reason": "Black Bag to accompany the selected Dress."
+          },
+          {
+            "id": "0386681012",
+            "for_product_id": "0212629004",
+            "reason": "Black Bag to accompany the selected Dress."
+          },
+          {
+            "id": "0386681014",
+            "for_product_id": "0202017055",
+            "reason": "White Bag to accompany the selected Dress."
+          },
+          {
+            "id": "0428454001",
+            "for_product_id": "0212629004",
+            "reason": "Black Bag to accompany the selected Dress."
+          },
+          {
+            "id": "0436570008",
+            "for_product_id": "0212629004",
+            "reason": "Black Bag to accompany the selected Dress."
+          }
+        ]
+      },
+      "milliseconds": 149.67809998779558,
+      "pass": true
+    },
+    {
+      "name": "suffix-disabled",
+      "area": "ranking",
+      "split": "dev",
+      "arguments": {
+        "query": "a dress with a bag to match"
+      },
+      "response": {
+        "results": [
+          {
+            "id": "0192460006"
+          },
+          {
+            "id": "0202017055"
+          },
+          {
+            "id": "0212629004"
+          },
+          {
+            "id": "0212629031"
+          },
+          {
+            "id": "0212629032"
+          },
+          {
+            "id": "0212629033"
+          },
+          {
+            "id": "0212629035"
+          },
+          {
+            "id": "0212629036"
+          },
+          {
+            "id": "0212629040"
+          },
+          {
+            "id": "0212629043"
+          }
+        ],
+        "recommendations": []
+      },
+      "milliseconds": 141.61199999216478,
+      "pass": true
+    },
+    {
+      "name": "suffix-budget",
+      "area": "recommendations",
+      "split": "dev",
+      "arguments": {
+        "query": "black dress and a bag under 1000 to go with it",
+        "include_recommendations": true
+      },
+      "response": {
+        "results": [
+          {
+            "id": "0212629004"
+          },
+          {
+            "id": "0272591001"
+          },
+          {
+            "id": "0315352006"
+          },
+          {
+            "id": "0316553025"
+          },
+          {
+            "id": "0355421003"
+          },
+          {
+            "id": "0374762001"
+          },
+          {
+            "id": "0374762021"
+          },
+          {
+            "id": "0383569008"
+          },
+          {
+            "id": "0384654004"
+          },
+          {
+            "id": "0384654009"
+          }
+        ],
+        "recommendations": [
+          {
+            "id": "0436570008",
+            "for_product_id": "0212629004",
+            "reason": "Black Bag to accompany the selected Dress."
+          },
+          {
+            "id": "0475762003",
+            "for_product_id": "0212629004",
+            "reason": "Black Bag to accompany the selected Dress."
+          },
+          {
+            "id": "0486195003",
+            "for_product_id": "0212629004",
+            "reason": "Black Bag to accompany the selected Dress."
+          },
+          {
+            "id": "0536584002",
+            "for_product_id": "0212629004",
+            "reason": "Black Bag to accompany the selected Dress."
+          },
+          {
+            "id": "0546684001",
+            "for_product_id": "0212629004",
+            "reason": "Black Bag to accompany the selected Dress."
+          }
+        ]
+      },
+      "milliseconds": 68.01919999998063,
+      "pass": true
+    },
+    {
+      "name": "multiple-complements",
+      "area": "recommendations",
+      "split": "dev",
+      "arguments": {
+        "query": "black dress with a matching bag and sandals",
+        "include_recommendations": true
+      },
+      "response": {
+        "results": [
+          {
+            "id": "0212629004"
+          },
+          {
+            "id": "0272591001"
+          },
+          {
+            "id": "0315352006"
+          },
+          {
+            "id": "0316553025"
+          },
+          {
+            "id": "0355421003"
+          },
+          {
+            "id": "0374762001"
+          },
+          {
+            "id": "0374762021"
+          },
+          {
+            "id": "0383569008"
+          },
+          {
+            "id": "0384654004"
+          },
+          {
+            "id": "0384654009"
+          }
+        ],
+        "recommendations": [
+          {
+            "id": "0241436001",
+            "for_product_id": "0212629004",
+            "reason": "Black Bag to accompany the selected Dress."
+          },
+          {
+            "id": "0386681012",
+            "for_product_id": "0212629004",
+            "reason": "Black Bag to accompany the selected Dress."
+          },
+          {
+            "id": "0428454001",
+            "for_product_id": "0212629004",
+            "reason": "Black Bag to accompany the selected Dress."
+          },
+          {
+            "id": "0436570008",
+            "for_product_id": "0212629004",
+            "reason": "Black Bag to accompany the selected Dress."
+          },
+          {
+            "id": "0478022001",
+            "for_product_id": "0212629004",
+            "reason": "Black Sandals to accompany the selected Dress."
+          }
+        ]
+      },
+      "milliseconds": 81.49609999964014,
+      "pass": true
+    },
+    {
+      "name": "polite-trousers",
+      "area": "ranking",
+      "split": "heldout",
+      "arguments": {
+        "query": "I would love beige trousers for men under 2500"
+      },
+      "response": {
+        "results": [
+          {
+            "id": "0212766042"
+          },
+          {
+            "id": "0451402002"
+          },
+          {
+            "id": "0721366005"
+          },
+          {
+            "id": "0843465003"
+          },
+          {
+            "id": "0843465008"
+          },
+          {
+            "id": "0843465011"
+          },
+          {
+            "id": "0219075028"
+          },
+          {
+            "id": "0384482002"
+          },
+          {
+            "id": "0447694018"
+          },
+          {
+            "id": "0467297004"
+          }
+        ],
+        "recommendations": []
+      },
+      "milliseconds": 20.705000002635643,
+      "pass": true
+    },
+    {
+      "name": "plus-accessories",
+      "area": "mixed",
+      "split": "heldout",
+      "arguments": {
+        "query": "a red scarf plus a black belt under 2000"
+      },
+      "response": {
+        "results": [
+          {
+            "id": "0179950017"
+          },
+          {
+            "id": "0507987031"
+          },
+          {
+            "id": "0183815013"
+          },
+          {
+            "id": "0521804006"
+          },
+          {
+            "id": "0337991001"
+          },
+          {
+            "id": "0532421001"
+          },
+          {
+            "id": "0337991005"
+          },
+          {
+            "id": "0537183005"
+          },
+          {
+            "id": "0338016009"
+          },
+          {
+            "id": "0606047001"
+          }
+        ],
+        "recommendations": []
+      },
+      "milliseconds": 23.098599995137192,
+      "pass": true
+    },
+    {
+      "name": "comfy-cotton",
+      "area": "unusual",
+      "split": "heldout",
+      "arguments": {
+        "query": "comfy cotton sweaters under 2500"
+      },
+      "response": {
+        "results": [
+          {
+            "id": "0793893002"
+          },
+          {
+            "id": "0793893003"
+          },
+          {
+            "id": "0776743001"
+          },
+          {
+            "id": "0824386001"
+          },
+          {
+            "id": "0824386002"
+          },
+          {
+            "id": "0874196004"
+          },
+          {
+            "id": "0874196009"
+          },
+          {
+            "id": "0906305001"
+          },
+          {
+            "id": "0906305002"
+          },
+          {
+            "id": "0674493001"
+          }
+        ],
+        "recommendations": []
+      },
+      "milliseconds": 45.770600001560524,
+      "pass": true
+    },
+    {
+      "name": "suffix-coat",
+      "area": "recommendations",
+      "split": "heldout",
+      "arguments": {
+        "query": "coat and a scarf under 1500 to match",
+        "include_recommendations": true
+      },
+      "response": {
+        "results": [
+          {
+            "id": "0312878001"
+          },
+          {
+            "id": "0312878005"
+          },
+          {
+            "id": "0312878010"
+          },
+          {
+            "id": "0368505002"
+          },
+          {
+            "id": "0368505006"
+          },
+          {
+            "id": "0417773006"
+          },
+          {
+            "id": "0417773007"
+          },
+          {
+            "id": "0488549001"
+          },
+          {
+            "id": "0498181001"
+          },
+          {
+            "id": "0501407003"
+          }
+        ],
+        "recommendations": [
+          {
+            "id": "0507987001",
+            "for_product_id": "0312878001",
+            "reason": "Black Scarf to accompany the selected Coat."
+          },
+          {
+            "id": "0511801001",
+            "for_product_id": "0312878001",
+            "reason": "Black Scarf to accompany the selected Coat."
+          },
+          {
+            "id": "0554994006",
+            "for_product_id": "0312878001",
+            "reason": "Black Scarf to accompany the selected Coat."
+          },
+          {
+            "id": "0624638003",
+            "for_product_id": "0312878001",
+            "reason": "Black Scarf to accompany the selected Coat."
+          },
+          {
+            "id": "0626346005",
+            "for_product_id": "0312878001",
+            "reason": "Black Scarf to accompany the selected Coat."
+          }
+        ]
+      },
+      "milliseconds": 34.262700006365776,
+      "pass": true
+    },
+    {
+      "name": "suffix-unsupported",
+      "area": "ranking",
+      "split": "heldout",
+      "arguments": {
+        "query": "shirt with a titanium belt to match",
+        "include_recommendations": true
+      },
+      "response": {
+        "results": [
+          {
+            "id": "0283236014"
+          },
+          {
+            "id": "0283236018"
+          },
+          {
+            "id": "0283236020"
+          },
+          {
+            "id": "0283236022"
+          },
+          {
+            "id": "0283236023"
+          },
+          {
+            "id": "0283236026"
+          },
+          {
+            "id": "0283236027"
+          },
+          {
+            "id": "0283236028"
+          },
+          {
+            "id": "0283236029"
+          },
+          {
+            "id": "0283236034"
+          }
+        ],
+        "recommendations": []
+      },
+      "milliseconds": 57.51990000135265,
+      "pass": true
+    },
+    {
+      "name": "suffix-negative",
+      "area": "recommendations",
+      "split": "heldout",
+      "arguments": {
+        "query": "a skirt with a bag excluding black to match",
+        "include_recommendations": true
+      },
+      "response": {
+        "results": [
+          {
+            "id": "0189626001"
+          },
+          {
+            "id": "0189654001"
+          },
+          {
+            "id": "0189654045"
+          },
+          {
+            "id": "0189654046"
+          },
+          {
+            "id": "0189654047"
+          },
+          {
+            "id": "0317812001"
+          },
+          {
+            "id": "0317812011"
+          },
+          {
+            "id": "0317812012"
+          },
+          {
+            "id": "0327310001"
+          },
+          {
+            "id": "0327310002"
+          }
+        ],
+        "recommendations": [
+          {
+            "id": "0387444006",
+            "for_product_id": "0189654046",
+            "reason": "Red Bag to accompany the selected Skirt."
+          },
+          {
+            "id": "0436570019",
+            "for_product_id": "0189654046",
+            "reason": "Red Bag to accompany the selected Skirt."
+          },
+          {
+            "id": "0489607003",
+            "for_product_id": "0189654047",
+            "reason": "Greenish Khaki Bag to accompany the selected Skirt."
+          },
+          {
+            "id": "0540771001",
+            "for_product_id": "0327310001",
+            "reason": "Light Grey Bag to accompany the selected Skirt."
+          },
+          {
+            "id": "0569242004",
+            "for_product_id": "0189654046",
+            "reason": "Red Bag to accompany the selected Skirt."
+          }
+        ]
+      },
+      "milliseconds": 62.59519999730401,
+      "pass": true
+    },
+    {
+      "name": "multiple-coat-complements",
+      "area": "recommendations",
+      "split": "heldout",
+      "arguments": {
+        "query": "coat with a matching scarf and gloves",
+        "include_recommendations": true
+      },
+      "response": {
+        "results": [
+          {
+            "id": "0312878001"
+          },
+          {
+            "id": "0312878005"
+          },
+          {
+            "id": "0312878010"
+          },
+          {
+            "id": "0368505002"
+          },
+          {
+            "id": "0368505006"
+          },
+          {
+            "id": "0417773006"
+          },
+          {
+            "id": "0417773007"
+          },
+          {
+            "id": "0488549001"
+          },
+          {
+            "id": "0498181001"
+          },
+          {
+            "id": "0501407003"
+          }
+        ],
+        "recommendations": [
+          {
+            "id": "0233091003",
+            "for_product_id": "0312878001",
+            "reason": "Black Gloves to accompany the selected Coat."
+          },
+          {
+            "id": "0233091020",
+            "for_product_id": "0312878001",
+            "reason": "Black Gloves to accompany the selected Coat."
+          },
+          {
+            "id": "0233091021",
+            "for_product_id": "0312878001",
+            "reason": "Black Gloves to accompany the selected Coat."
+          },
+          {
+            "id": "0342034003",
+            "for_product_id": "0312878001",
+            "reason": "Black Scarf to accompany the selected Coat."
+          },
+          {
+            "id": "0402382004",
+            "for_product_id": "0312878001",
+            "reason": "Black Scarf to accompany the selected Coat."
+          }
+        ]
+      },
+      "milliseconds": 51.22100000153296,
+      "pass": true
+    },
+    {
+      "name": "plus-unsupported-material",
+      "area": "irrelevant",
+      "split": "heldout",
+      "arguments": {
+        "query": "a titanium shirt plus unobtainium trousers"
+      },
+      "response": {
+        "results": [],
+        "recommendations": []
+      },
+      "milliseconds": 26.828999994904734,
+      "pass": true
+    }
+  ]
+}

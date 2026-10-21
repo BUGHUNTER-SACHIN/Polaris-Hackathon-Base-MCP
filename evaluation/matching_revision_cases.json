@@ -1,0 +1,543 @@
+[
+  {
+    "name": "attribute-scope",
+    "area": "parser_scope",
+    "split": "dev",
+    "args": {
+      "query": "dress with a shirt collar and a bag to match",
+      "include_recommendations": true
+    },
+    "choices": [
+      {
+        "types": [
+          "Dress"
+        ],
+        "text": [
+          "shirt collar"
+        ]
+      }
+    ],
+    "complements": [
+      {
+        "types": [
+          "Bag",
+          "Shoulder bag",
+          "Cross-body bag",
+          "Tote bag",
+          "Weekend/Gym bag",
+          "Backpack",
+          "Bumbag"
+        ]
+      }
+    ],
+    "expected_plan": {
+      "primary": [
+        {
+          "types": [
+            "Dress"
+          ],
+          "phrases": [
+            "shirt collar"
+          ],
+          "terms": [
+            "shirt",
+            "collar"
+          ]
+        }
+      ],
+      "complements": [
+        {
+          "types": [
+            "Bag",
+            "Shoulder bag",
+            "Cross-body bag",
+            "Tote bag",
+            "Weekend/Gym bag",
+            "Backpack",
+            "Bumbag"
+          ],
+          "unsupported": false
+        }
+      ]
+    },
+    "min_results": 1,
+    "reference_count": 1
+  },
+  {
+    "name": "separate-ranges",
+    "area": "parser_scope",
+    "split": "dev",
+    "args": {
+      "query": "dress between 900 and 1400 with a bag between 300 and 700 to match",
+      "include_recommendations": true
+    },
+    "choices": [
+      {
+        "types": [
+          "Dress"
+        ],
+        "min_price": 900,
+        "max_price": 1400
+      }
+    ],
+    "complements": [
+      {
+        "types": [
+          "Bag",
+          "Shoulder bag",
+          "Cross-body bag",
+          "Tote bag",
+          "Weekend/Gym bag",
+          "Backpack",
+          "Bumbag"
+        ],
+        "min_price": 300,
+        "max_price": 700
+      }
+    ],
+    "expected_plan": {
+      "primary": [
+        {
+          "types": [
+            "Dress"
+          ],
+          "filters": {
+            "min_price": 900,
+            "max_price": 1400
+          }
+        }
+      ],
+      "complements": [
+        {
+          "types": [
+            "Bag",
+            "Shoulder bag",
+            "Cross-body bag",
+            "Tote bag",
+            "Weekend/Gym bag",
+            "Backpack",
+            "Bumbag"
+          ],
+          "filters": {
+            "min_price": 300,
+            "max_price": 700
+          }
+        }
+      ]
+    }
+  },
+  {
+    "name": "color-alternatives",
+    "area": "parser_scope",
+    "split": "dev",
+    "args": {
+      "query": "dress with a black or white bag to match",
+      "include_recommendations": true
+    },
+    "choices": [
+      {
+        "types": [
+          "Dress"
+        ]
+      }
+    ],
+    "complements": [
+      {
+        "types": [
+          "Bag",
+          "Shoulder bag",
+          "Cross-body bag",
+          "Tote bag",
+          "Weekend/Gym bag",
+          "Backpack",
+          "Bumbag"
+        ],
+        "colors": [
+          "Black",
+          "White"
+        ]
+      }
+    ],
+    "expected_plan": {
+      "primary": [
+        {
+          "colors": []
+        }
+      ],
+      "complements": [
+        {
+          "types": [
+            "Bag",
+            "Shoulder bag",
+            "Cross-body bag",
+            "Tote bag",
+            "Weekend/Gym bag",
+            "Backpack",
+            "Bumbag"
+          ],
+          "colors": [
+            "Black",
+            "White"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "negative-type",
+    "area": "parser_scope",
+    "split": "dev",
+    "args": {
+      "query": "dress with a bag and no sandals to match",
+      "include_recommendations": true
+    },
+    "choices": [
+      {
+        "types": [
+          "Dress"
+        ]
+      }
+    ],
+    "complements": [
+      {
+        "types": [
+          "Bag",
+          "Shoulder bag",
+          "Cross-body bag",
+          "Tote bag",
+          "Weekend/Gym bag",
+          "Backpack",
+          "Bumbag"
+        ],
+        "excluded_types": [
+          "Sandals"
+        ]
+      }
+    ],
+    "expected_plan": {
+      "primary": [
+        {
+          "types": [
+            "Dress"
+          ]
+        }
+      ],
+      "complements": [
+        {
+          "types": [
+            "Bag",
+            "Shoulder bag",
+            "Cross-body bag",
+            "Tote bag",
+            "Weekend/Gym bag",
+            "Backpack",
+            "Bumbag"
+          ],
+          "excluded_types": [
+            "Sandals"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "negative-color-chain",
+    "area": "parser_scope",
+    "split": "dev",
+    "args": {
+      "query": "dress with a bag and no black and white to match",
+      "include_recommendations": true
+    },
+    "choices": [
+      {
+        "types": [
+          "Dress"
+        ]
+      }
+    ],
+    "complements": [
+      {
+        "types": [
+          "Bag",
+          "Shoulder bag",
+          "Cross-body bag",
+          "Tote bag",
+          "Weekend/Gym bag",
+          "Backpack",
+          "Bumbag"
+        ],
+        "excluded_colors": [
+          "Black",
+          "White",
+          "Off White"
+        ]
+      }
+    ],
+    "expected_plan": {
+      "complements": [
+        {
+          "types": [
+            "Bag",
+            "Shoulder bag",
+            "Cross-body bag",
+            "Tote bag",
+            "Weekend/Gym bag",
+            "Backpack",
+            "Bumbag"
+          ],
+          "excluded_colors": [
+            "Black",
+            "White",
+            "Off White"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "unsupported-stock",
+    "area": "parser_scope",
+    "split": "dev",
+    "args": {
+      "query": "dress with a bag in stock to match",
+      "include_recommendations": true
+    },
+    "choices": [
+      {
+        "types": [
+          "Dress"
+        ]
+      }
+    ],
+    "expected_plan": {
+      "primary": [
+        {
+          "types": [
+            "Dress"
+          ],
+          "unsupported": false
+        }
+      ],
+      "complements": [
+        {
+          "types": [
+            "Bag",
+            "Shoulder bag",
+            "Cross-body bag",
+            "Tote bag",
+            "Weekend/Gym bag",
+            "Backpack",
+            "Bumbag"
+          ],
+          "unsupported": true
+        }
+      ]
+    },
+    "no_complements": true
+  },
+  {
+    "name": "unknown-accessory",
+    "area": "parser_scope",
+    "split": "dev",
+    "args": {
+      "query": "dress with a laptop to match",
+      "include_recommendations": true
+    },
+    "choices": [
+      {
+        "types": [
+          "Dress"
+        ]
+      }
+    ],
+    "expected_plan": {
+      "primary": [
+        {
+          "types": [
+            "Dress"
+          ]
+        }
+      ],
+      "complements": [
+        {
+          "types": [],
+          "terms": [
+            "laptop"
+          ],
+          "unsupported": true
+        }
+      ]
+    },
+    "no_complements": true
+  },
+  {
+    "name": "unknown-accessory-disabled",
+    "area": "parser_scope",
+    "split": "dev",
+    "args": {
+      "query": "dress with a laptop to match",
+      "include_recommendations": false
+    },
+    "choices": [
+      {
+        "types": [
+          "Dress"
+        ]
+      }
+    ],
+    "expected_plan": {
+      "primary": [
+        {
+          "types": [
+            "Dress"
+          ]
+        }
+      ],
+      "complements": [
+        {
+          "types": [],
+          "unsupported": true
+        }
+      ]
+    },
+    "no_complements": true
+  },
+  {
+    "name": "unsupported-primary-material",
+    "area": "parser_scope",
+    "split": "dev",
+    "args": {
+      "query": "dress with an unobtainium blend and a bag to match",
+      "include_recommendations": true
+    },
+    "expected_plan": {
+      "primary": [
+        {
+          "types": [
+            "Dress"
+          ],
+          "terms": [
+            "unobtainium",
+            "blend"
+          ]
+        }
+      ],
+      "complements": [
+        {
+          "types": [
+            "Bag",
+            "Shoulder bag",
+            "Cross-body bag",
+            "Tote bag",
+            "Weekend/Gym bag",
+            "Backpack",
+            "Bumbag"
+          ]
+        }
+      ]
+    },
+    "empty": true
+  },
+  {
+    "name": "mixed-independent-ranges",
+    "area": "parser_scope",
+    "split": "dev",
+    "args": {
+      "query": "black dress between 900 and 1400 plus white bag between 300 and 700",
+      "include_recommendations": false
+    },
+    "choices": [
+      {
+        "types": [
+          "Dress"
+        ],
+        "colors": [
+          "Black"
+        ],
+        "min_price": 900,
+        "max_price": 1400
+      },
+      {
+        "types": [
+          "Bag",
+          "Shoulder bag",
+          "Cross-body bag",
+          "Tote bag",
+          "Weekend/Gym bag",
+          "Backpack",
+          "Bumbag"
+        ],
+        "colors": [
+          "White",
+          "Off White"
+        ],
+        "min_price": 300,
+        "max_price": 700
+      }
+    ],
+    "expected_plan": {
+      "primary": [
+        {
+          "types": [
+            "Dress"
+          ],
+          "filters": {
+            "min_price": 900,
+            "max_price": 1400
+          }
+        },
+        {
+          "types": [
+            "Bag",
+            "Shoulder bag",
+            "Cross-body bag",
+            "Tote bag",
+            "Weekend/Gym bag",
+            "Backpack",
+            "Bumbag"
+          ],
+          "filters": {
+            "min_price": 300,
+            "max_price": 700
+          }
+        }
+      ],
+      "complements": []
+    }
+  },
+  {
+    "name": "polite-comfort",
+    "area": "parser_scope",
+    "split": "dev",
+    "args": {
+      "query": "I would love comfy cotton sweaters under 2000",
+      "include_recommendations": false
+    },
+    "choices": [
+      {
+        "types": [
+          "Sweater"
+        ],
+        "text": [
+          "cotton"
+        ],
+        "max_price": 2000
+      }
+    ],
+    "expected_plan": {
+      "primary": [
+        {
+          "types": [
+            "Sweater"
+          ],
+          "terms": [
+            "cotton"
+          ],
+          "filters": {
+            "max_price": 2000
+          }
+        }
+      ]
+    }
+  }
+]

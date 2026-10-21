@@ -170,6 +170,7 @@ OCCASIONS = {
     "sunday": ("soft", "jersey", "cotton"),
     "lounge": ("soft", "jersey", "cotton"),
     "comfortable": ("soft", "jersey", "cotton"),
+    "comfy": ("soft", "jersey", "cotton"),
 }
 AUDIENCE_WORDS = {
     "women": "women",
@@ -209,6 +210,20 @@ RANGE = re.compile(
     rf"\bbetween\s*{MONEY}(?P<low>{NUMBER})\s*and\s*{MONEY}(?P<high>{NUMBER})\b"
 )
 
+# Grammatical garment parts, not inferred product facts. A type modifying one of
+# these nouns (e.g. 'shirt collar', 'jacket pockets') is lexical attribute evidence.
+ATTRIBUTE_HEADS = (
+    "collar", "collars", "sleeve", "sleeves", "neckline", "necklines",
+    "pocket", "pockets", "hem", "hems", "cuff", "cuffs", "lining", "linings",
+    "waistband", "waistbands", "print", "prints", "pattern", "patterns",
+    "detail", "details",
+    "fabric", "fabrics", "material", "materials", "blend", "blends",
+    "weave", "weaves", "finish", "finishes", "trim", "trims",
+    "hood", "hoods", "neck", "necks", "zip", "zips", "zipper", "zippers",
+    "button", "buttons", "fastening", "fastenings", "slit", "slits",
+    "embroidery", "design", "designs", "bow", "bows", "train", "trains",
+)
+
 
 def amount(text):
     return float(text.replace(",", "").replace(" ", "").rstrip("kK")) * (
@@ -234,6 +249,7 @@ class Intent:
     excluded_categories: tuple = ()
     nullable_rating: bool = False
     prefer_adult: bool = False
+    phrases: tuple = ()
 
 
 @dataclass
@@ -288,6 +304,89 @@ class QueryParser:
         self.colors = {normalize(c): c for c in colors if c not in ("Other", "Unknown")}
         self.patterns = {normalize(p): p for p in patterns if p != "Unknown"}
         self.categories = {normalize(c): c for c in categories}
+        color_names = "(?:" + "|".join(
+            re.escape(c) for c in sorted(
+                set(self.colors) | set(COLOR_ALIASES), key=lambda s: (-len(s), s)
+            )
+        ) + ")"
+        self.color_alternatives = re.compile(
+            r"(?<!\w)" + color_names + r"(?:\s+or\s+" + color_names + r")+(?!\w)"
+        )
+        self.negative_colors = re.compile(
+            r"\b(?:not|except|excluding|without|no|avoid)\s+" + color_names
+            + r"(?:\s+(?:and|or)\s+" + color_names + r")+(?!\w)"
+        )
+        type_names = "|".join(
+            re.escape(t) for t in sorted(self.type_aliases, key=lambda s: (-len(s), s))
+        )
+        self.attribute_phrase = re.compile(
+            r"(?<!\w)(?:" + type_names + r")[\s-]+(?:"
+            + "|".join(ATTRIBUTE_HEADS) + r")(?!\w)"
+        )
+        self.coordinated_attribute = re.compile(
+            r"(?<!\w)" + color_names + r"(?:\s+and\s+" + color_names
+            + r")+\s+(?:" + "|".join(ATTRIBUTE_HEADS) + r")(?!\w)"
+        )
+
+    def clause_boundaries(self, text, *, with_attributes=False):
+        """Return connector spans without splitting units or color alternatives."""
+        protected = [m.span() for m in RANGE.finditer(text)]
+        protected += [m.span() for m in self.color_alternatives.finditer(text)]
+        protected += [m.span() for m in self.negative_colors.finditer(text)]
+        protected += [m.span() for m in re.finditer(
+            r"\b\d(?:\.\d+)?\s*stars?\s+and\s+(?:above|over)\b", text
+        )]
+        connectors = r"and|or|plus|with" if with_attributes else r"and|or|plus"
+        boundaries = []
+        for match in re.finditer(
+            r"\s+(?:" + connectors + r")\s+|\s*[,;]\s*(?!\d)", text
+        ):
+            token_start = match.start() + len(match.group()) - len(match.group().lstrip())
+            if not any(a <= token_start < b for a, b in protected):
+                boundaries.append(match)
+        return boundaries
+
+    def choice_clauses(self, text):
+        boundaries = self.clause_boundaries(text)
+        starts = [0] + [m.end() for m in boundaries]
+        ends = [m.start() for m in boundaries] + [len(text)]
+        return [text[a:b].strip(" .,") for a, b in zip(starts, ends)
+                if text[a:b].strip(" .,")]
+
+    def suffix_complement(self, text, audience):
+        """Locate a requested item head; attributes before that head stay primary."""
+        suffix = re.search(r"\s+(?:to match|to go with (?:it|them))\b", text)
+        if not suffix:
+            return [text]
+        before = text[:suffix.start()]
+        boundaries = self.clause_boundaries(before, with_attributes=True)
+        candidates = []
+        for index, separator in enumerate(boundaries):
+            end = (boundaries[index + 1].start()
+                   if index + 1 < len(boundaries) else len(before))
+            head = before[separator.end():end].strip()
+            intent = self.parse_intent(head, audience)
+            # Attribute nouns are not requested items, even when modified by a
+            # catalog type. An indefinite noun phrase can name an unsupported
+            # item; its availability is evaluated only after scope is established.
+            attribute_only = not intent.types and (
+                intent.phrases or set(words(head)).intersection(ATTRIBUTE_HEADS)
+            )
+            # An article plus a color alone is a modifier fragment, not an item
+            # head: the following conjunction may still precede 'white print'.
+            item_head = intent.types or (
+                intent.terms and re.match(r"^(?:a|an)\s+\w", head)
+            )
+            if item_head and not attribute_only:
+                candidates.append(separator)
+        if candidates:
+            # Explicit attachment binds after earlier mixed primary choices.
+            # E.g. 'dress plus skirt with a bag' keeps both clothing choices.
+            separator = next((m for m in candidates if m.group().strip() == "with"),
+                             candidates[0])
+            return [before[:separator.start()],
+                    before[separator.end():] + text[suffix.end():]]
+        return [text]
 
     @staticmethod
     def _extract(text, phrases):
@@ -359,14 +458,15 @@ class QueryParser:
 
     def parse_intent(self, text, audience):
         text = normalize(text)
-        if re.search(
+        text = self.color_alternatives.sub(
+            lambda m: re.sub(r"\s+or\s+", " / ", m.group()), text
+        )
+        unsupported = bool(re.search(
             r"\b(?:size\s*(?:xxxs|xxs|xs|s|m|l|xl|xxl|xxxl|\d{1,2}(?:xl)?)"
             r"|in stock|out of stock|inventory|next day delivery|delivery tomorrow"
             r"|free shipping|discount(?:ed)?|on sale)\b",
             text,
-        ):
-            # The catalog has no garment-size availability, stock, shipping or discount facts.
-            return Intent(audience=audience, meaningful=True, unsupported=True)
+        ))
         audience = next(
             (AUDIENCE_WORDS[w] for w in words(text) if w in AUDIENCE_WORDS), audience
         )
@@ -472,6 +572,15 @@ class QueryParser:
             exclude,
             text,
         )
+        phrases = []
+
+        def attribute(match):
+            phrases.append(" ".join(words(match.group())))
+            return " "
+
+        # A coordinated modifier on a garment part is a source requirement,
+        # not an OR over whole-product color facets. Retain its complete phrase.
+        text = self.coordinated_attribute.sub(attribute, text)
         strict_colors = "/" in text
         neutral = bool(re.search(r"\bneutral(?:-colou?red| colou?red)?\b", text))
         text = re.sub(r"\bneutral(?:-colou?red| colou?red)?\b", " ", text)
@@ -505,6 +614,7 @@ class QueryParser:
                 r"\b" + re.escape(alias) + r"\b", PATTERN_ALIASES[alias], text
             )
         text, pattern_values = self._extract(text, self.patterns)
+        text = self.attribute_phrase.sub(attribute, text)
         # Jeans are a trouser subtype and must still have lexical denim/jeans evidence.
         subtype = next(
             (t for t in ("jeans", "chinos") if re.search(r"\b" + t + r"\b", text)), None
@@ -523,8 +633,10 @@ class QueryParser:
                 residual.append(word)
         if subtype:
             residual.append(subtype)
+        for phrase in phrases:
+            residual.extend(words(phrase))
         if not types and soft:
-            if any(w in words(text) for w in ("sunday", "comfortable", "lounge")):
+            if any(w in words(text) for w in ("sunday", "comfortable", "comfy", "lounge")):
                 types = (
                     "Hoodie",
                     "Sweater",
@@ -553,6 +665,8 @@ class QueryParser:
             excluded_types=tuple(dict.fromkeys(excluded_types)),
             excluded_categories=tuple(dict.fromkeys(excluded_categories)),
             nullable_rating=nullable_rating,
+            unsupported=unsupported,
+            phrases=tuple(dict.fromkeys(phrases)),
         )
 
     def _color_family(self, color):
@@ -565,19 +679,7 @@ class QueryParser:
             )
         return (self.colors[color],) if color in self.colors else ()
 
-    def choices(self, text, audience):
-        # A color alternative within one item is not a separate product intent.
-        color_phrases = "|".join(
-            re.escape(c)
-            for c in sorted(
-                set(self.colors) | set(COLOR_ALIASES), key=lambda s: (-len(s), s)
-            )
-        )
-        text = re.sub(
-            r"\b(" + color_phrases + r")\s+or\s+(" + color_phrases + r")(?!\w)",
-            lambda m: m[1] + " / " + m[2],
-            text,
-        )
+    def choices(self, text, audience, *, complementary=False):
         shared = {}
 
         def shared_money(match):
@@ -590,12 +692,7 @@ class QueryParser:
             shared_money,
             text,
         )
-        # Do not split the 'and' inside a price range.
-        primary_text = RANGE.sub(lambda m: m.group().replace(" and ", " to "), text)
-        clauses = re.split(r"\s+(?:and|or)\s+|\s*[,;]\s*(?!\d)", primary_text)
-        clauses = [
-            re.sub(r"\bbetween\s+(.+?)\s+to\s+", r"between \1 and ", c) for c in clauses
-        ]
+        clauses = self.choice_clauses(text)
         intents = [
             self.parse_intent(re.sub(r"^(?:and|or)\s+", "", c.strip(" .,")), audience)
             for c in clauses
@@ -603,8 +700,31 @@ class QueryParser:
         ]
         if not intents:
             intents = [self.parse_intent("", audience)]
-        if len(intents) > 1 and not all(i.types for i in intents):
+        if not complementary and len(intents) > 1 and not all(i.types for i in intents):
             intents = [self.parse_intent(text, audience)]
+        if complementary:
+            negatives = [i for i in intents if not (i.types or i.terms or i.filters
+                         or i.colors or i.patterns) and any((i.excluded_colors,
+                         i.excluded_types, i.excluded_terms, i.excluded_categories))]
+            intents = [i for i in intents if i not in negatives]
+            for intent in intents:
+                for field in ("excluded_colors", "excluded_types", "excluded_terms",
+                              "excluded_categories"):
+                    setattr(intent, field, tuple(dict.fromkeys(
+                        getattr(intent, field) + tuple(
+                            value for negative in negatives
+                            for value in getattr(negative, field)
+                        )
+                    )))
+                # A generic accessory is supported, but a laptop word in a bag's
+                # description cannot make that bag the requested laptop.
+                if not intent.types and intent.terms:
+                    if intent.terms in (("accessory",), ("accessories",)):
+                        intent.terms = ()
+                    else:
+                        intent.unsupported = True
+            if not intents:
+                intents = [Intent(meaningful=True, unsupported=True)]
         if len(intents) > 1:
             # Share a sole trailing constraint after it has been assigned its unit.
             # Rescanning raw text here would turn rating/review numbers into prices.
@@ -628,6 +748,8 @@ class QueryParser:
 
     def parse(self, query):
         text = normalize(query)
+        # Strip a request prefix, never a product's residual 'love' attribute.
+        text = re.sub(r"^\s*(?:i|we)(?:\s+would|'d)\s+love\s+", "", text)
         text, controls = self.controls(text)
         # Combined budgets and already-owned inventory have no representation in v1.
         basket = re.search(
@@ -678,8 +800,11 @@ class QueryParser:
         audiences = {AUDIENCE_WORDS[w] for w in words(text) if w in AUDIENCE_WORDS}
         audience = next(iter(audiences)) if len(audiences) == 1 else None
         parts = COMPLEMENT.split(text, maxsplit=1)
+        if len(parts) == 1:
+            parts = self.suffix_complement(text, audience)
         intents = self.choices(parts[0], audience)
-        complements = self.choices(parts[1], audience) if len(parts) > 1 else []
+        complements = (self.choices(parts[1], audience, complementary=True)
+                       if len(parts) > 1 else [])
         for intent in intents:
             intent.prefer_adult = prefer_adult
             if minimalist:

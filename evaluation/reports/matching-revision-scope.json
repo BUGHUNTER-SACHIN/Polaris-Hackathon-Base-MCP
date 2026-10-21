@@ -1,0 +1,3936 @@
+{
+  "note": "Student attribute/coverage proxies, not Bedrock grades or official scores. Latency is this sequential case sample, not the official performance workload.",
+  "url": "http://127.0.0.1:8051/mcp",
+  "split": "all",
+  "session_error": null,
+  "catalog_sha256": "05b6aa5e8e8c1c8c997d584f8288e432862454f8820531e13473443e83c8f073",
+  "cases_sha256": "ec0f91e49f613943a90ff8de011a5cf70e6f4d822a139ea8f98a912056585040",
+  "startup_seconds": 0.741366400005063,
+  "passed": 11,
+  "total": 11,
+  "p95_ms": 149.04750000278,
+  "areas": {
+    "parser_scope": {
+      "passed": 11,
+      "total": 11
+    }
+  },
+  "cases": [
+    {
+      "name": "attribute-scope",
+      "area": "parser_scope",
+      "split": "dev",
+      "arguments": {
+        "query": "dress with a shirt collar and a bag to match",
+        "include_recommendations": true
+      },
+      "query": "dress with a shirt collar and a bag to match",
+      "expected_intent": {
+        "choices": [
+          {
+            "types": [
+              "Dress"
+            ],
+            "text": [
+              "shirt collar"
+            ]
+          }
+        ],
+        "complements": [
+          {
+            "types": [
+              "Bag",
+              "Shoulder bag",
+              "Cross-body bag",
+              "Tote bag",
+              "Weekend/Gym bag",
+              "Backpack",
+              "Bumbag"
+            ]
+          }
+        ],
+        "expected_plan": {
+          "primary": [
+            {
+              "types": [
+                "Dress"
+              ],
+              "phrases": [
+                "shirt collar"
+              ],
+              "terms": [
+                "shirt",
+                "collar"
+              ]
+            }
+          ],
+          "complements": [
+            {
+              "types": [
+                "Bag",
+                "Shoulder bag",
+                "Cross-body bag",
+                "Tote bag",
+                "Weekend/Gym bag",
+                "Backpack",
+                "Bumbag"
+              ],
+              "unsupported": false
+            }
+          ]
+        }
+      },
+      "actual_parsed_intent": {
+        "primary": [
+          {
+            "terms": [
+              "shirt",
+              "collar"
+            ],
+            "types": [
+              "Dress"
+            ],
+            "colors": [],
+            "patterns": [],
+            "filters": {},
+            "excluded_colors": [],
+            "excluded_terms": [],
+            "soft": [],
+            "audience": null,
+            "meaningful": true,
+            "unsupported": false,
+            "quantity": null,
+            "excluded_types": [],
+            "excluded_categories": [],
+            "nullable_rating": false,
+            "prefer_adult": false,
+            "phrases": [
+              "shirt collar"
+            ]
+          }
+        ],
+        "complements": [
+          {
+            "terms": [],
+            "types": [
+              "Bag",
+              "Shoulder bag",
+              "Cross-body bag",
+              "Tote bag",
+              "Weekend/Gym bag",
+              "Backpack",
+              "Bumbag"
+            ],
+            "colors": [],
+            "patterns": [],
+            "filters": {},
+            "excluded_colors": [],
+            "excluded_terms": [],
+            "soft": [],
+            "audience": null,
+            "meaningful": true,
+            "unsupported": false,
+            "quantity": null,
+            "excluded_types": [],
+            "excluded_categories": [],
+            "nullable_rating": false,
+            "prefer_adult": false,
+            "phrases": []
+          }
+        ],
+        "audience": null,
+        "limit": null,
+        "sort_by": null,
+        "sort_order": null,
+        "id_parity": null,
+        "diverse": false,
+        "basket_budget": null,
+        "unsupported_reason": null
+      },
+      "parsed_intent_source": "local parser projection; MCP exposes no internal plan",
+      "result_ids": [
+        "0743126001"
+      ],
+      "recommendation_ids": [
+        "0241436001",
+        "0386681012",
+        "0428454001",
+        "0436570008",
+        "0436570024"
+      ],
+      "pass": true,
+      "timed_tool_call": true,
+      "milliseconds": 48.91519999364391,
+      "response": {
+        "results": [
+          {
+            "id": "0743126001"
+          }
+        ],
+        "recommendations": [
+          {
+            "id": "0241436001",
+            "for_product_id": "0743126001",
+            "reason": "Black Bag to accompany the selected Dress."
+          },
+          {
+            "id": "0386681012",
+            "for_product_id": "0743126001",
+            "reason": "Black Bag to accompany the selected Dress."
+          },
+          {
+            "id": "0428454001",
+            "for_product_id": "0743126001",
+            "reason": "Black Bag to accompany the selected Dress."
+          },
+          {
+            "id": "0436570008",
+            "for_product_id": "0743126001",
+            "reason": "Black Bag to accompany the selected Dress."
+          },
+          {
+            "id": "0436570024",
+            "for_product_id": "0743126001",
+            "reason": "Black Bag to accompany the selected Dress."
+          }
+        ]
+      },
+      "total_milliseconds": 144.18200000363868,
+      "catalog_facts": [
+        {
+          "id": "0743126001",
+          "name": "SPEED Brioche",
+          "product_type": "Dress",
+          "category": "Garment Full body",
+          "color": "Black",
+          "price": {
+            "amount": 2299,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": 3.14,
+            "count": 7,
+            "synthetic": true
+          },
+          "description": "Fitted, knee-length dress in a patterned stretch cr\u00eape weave with cap sleeves and a back-to-front shirt collar with an opening and buttons at the back of the neck. Unlined."
+        },
+        {
+          "id": "0241436001",
+          "name": "Fix it tote bag",
+          "product_type": "Bag",
+          "category": "Accessories",
+          "color": "Black",
+          "price": {
+            "amount": 1599,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": 2.0,
+            "count": 8,
+            "synthetic": true
+          }
+        },
+        {
+          "id": "0386681012",
+          "name": "Mini Cross Bag",
+          "product_type": "Bag",
+          "category": "Accessories",
+          "color": "Black",
+          "price": {
+            "amount": 2099,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": 4.0,
+            "count": 6,
+            "synthetic": true
+          }
+        },
+        {
+          "id": "0428454001",
+          "name": "Omega bag",
+          "product_type": "Bag",
+          "category": "Accessories",
+          "color": "Black",
+          "price": {
+            "amount": 2299,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": null,
+            "count": 0,
+            "synthetic": true
+          }
+        },
+        {
+          "id": "0436570008",
+          "name": "Moscow Cross Bag",
+          "product_type": "Bag",
+          "category": "Accessories",
+          "color": "Black",
+          "price": {
+            "amount": 699,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": 3.5,
+            "count": 4,
+            "synthetic": true
+          }
+        },
+        {
+          "id": "0436570024",
+          "name": "Moscow Cross Bag",
+          "product_type": "Bag",
+          "category": "Accessories",
+          "color": "Black",
+          "price": {
+            "amount": 2099,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": 2.5,
+            "count": 2,
+            "synthetic": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "separate-ranges",
+      "area": "parser_scope",
+      "split": "dev",
+      "arguments": {
+        "query": "dress between 900 and 1400 with a bag between 300 and 700 to match",
+        "include_recommendations": true
+      },
+      "query": "dress between 900 and 1400 with a bag between 300 and 700 to match",
+      "expected_intent": {
+        "choices": [
+          {
+            "types": [
+              "Dress"
+            ],
+            "min_price": 900,
+            "max_price": 1400
+          }
+        ],
+        "complements": [
+          {
+            "types": [
+              "Bag",
+              "Shoulder bag",
+              "Cross-body bag",
+              "Tote bag",
+              "Weekend/Gym bag",
+              "Backpack",
+              "Bumbag"
+            ],
+            "min_price": 300,
+            "max_price": 700
+          }
+        ],
+        "expected_plan": {
+          "primary": [
+            {
+              "types": [
+                "Dress"
+              ],
+              "filters": {
+                "min_price": 900,
+                "max_price": 1400
+              }
+            }
+          ],
+          "complements": [
+            {
+              "types": [
+                "Bag",
+                "Shoulder bag",
+                "Cross-body bag",
+                "Tote bag",
+                "Weekend/Gym bag",
+                "Backpack",
+                "Bumbag"
+              ],
+              "filters": {
+                "min_price": 300,
+                "max_price": 700
+              }
+            }
+          ]
+        }
+      },
+      "actual_parsed_intent": {
+        "primary": [
+          {
+            "terms": [],
+            "types": [
+              "Dress"
+            ],
+            "colors": [],
+            "patterns": [],
+            "filters": {
+              "min_price": 900.0,
+              "max_price": 1400.0
+            },
+            "excluded_colors": [],
+            "excluded_terms": [],
+            "soft": [],
+            "audience": null,
+            "meaningful": true,
+            "unsupported": false,
+            "quantity": null,
+            "excluded_types": [],
+            "excluded_categories": [],
+            "nullable_rating": false,
+            "prefer_adult": false,
+            "phrases": []
+          }
+        ],
+        "complements": [
+          {
+            "terms": [],
+            "types": [
+              "Bag",
+              "Shoulder bag",
+              "Cross-body bag",
+              "Tote bag",
+              "Weekend/Gym bag",
+              "Backpack",
+              "Bumbag"
+            ],
+            "colors": [],
+            "patterns": [],
+            "filters": {
+              "min_price": 300.0,
+              "max_price": 700.0
+            },
+            "excluded_colors": [],
+            "excluded_terms": [],
+            "soft": [],
+            "audience": null,
+            "meaningful": true,
+            "unsupported": false,
+            "quantity": null,
+            "excluded_types": [],
+            "excluded_categories": [],
+            "nullable_rating": false,
+            "prefer_adult": false,
+            "phrases": []
+          }
+        ],
+        "audience": null,
+        "limit": null,
+        "sort_by": null,
+        "sort_order": null,
+        "id_parity": null,
+        "diverse": false,
+        "basket_budget": null,
+        "unsupported_reason": null
+      },
+      "parsed_intent_source": "local parser projection; MCP exposes no internal plan",
+      "result_ids": [
+        "0192460006",
+        "0212629032",
+        "0212629035",
+        "0315352008",
+        "0316553025",
+        "0355421003",
+        "0401044004",
+        "0442992005",
+        "0454143003",
+        "0467302100"
+      ],
+      "recommendation_ids": [
+        "0436570008",
+        "0475762003",
+        "0486195003",
+        "0536584002",
+        "0601139001"
+      ],
+      "pass": true,
+      "timed_tool_call": true,
+      "milliseconds": 74.73310000204947,
+      "response": {
+        "results": [
+          {
+            "id": "0192460006"
+          },
+          {
+            "id": "0212629032"
+          },
+          {
+            "id": "0212629035"
+          },
+          {
+            "id": "0315352008"
+          },
+          {
+            "id": "0316553025"
+          },
+          {
+            "id": "0355421003"
+          },
+          {
+            "id": "0401044004"
+          },
+          {
+            "id": "0442992005"
+          },
+          {
+            "id": "0454143003"
+          },
+          {
+            "id": "0467302100"
+          }
+        ],
+        "recommendations": [
+          {
+            "id": "0436570008",
+            "for_product_id": "0316553025",
+            "reason": "Black Bag to accompany the selected Dress."
+          },
+          {
+            "id": "0475762003",
+            "for_product_id": "0316553025",
+            "reason": "Black Bag to accompany the selected Dress."
+          },
+          {
+            "id": "0486195003",
+            "for_product_id": "0316553025",
+            "reason": "Black Bag to accompany the selected Dress."
+          },
+          {
+            "id": "0536584002",
+            "for_product_id": "0316553025",
+            "reason": "Black Bag to accompany the selected Dress."
+          },
+          {
+            "id": "0601139001",
+            "for_product_id": "0316553025",
+            "reason": "Black Bag to accompany the selected Dress."
+          }
+        ]
+      },
+      "total_milliseconds": 78.20810000703204,
+      "catalog_facts": [
+        {
+          "id": "0192460006",
+          "name": "Knit dress",
+          "product_type": "Dress",
+          "category": "Garment Full body",
+          "color": "Dark Grey",
+          "price": {
+            "amount": 1199,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": null,
+            "count": 0,
+            "synthetic": true
+          }
+        },
+        {
+          "id": "0212629032",
+          "name": "Alcazar strap dress",
+          "product_type": "Dress",
+          "category": "Garment Full body",
+          "color": "Dark Pink",
+          "price": {
+            "amount": 1399,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": 1.57,
+            "count": 7,
+            "synthetic": true
+          }
+        },
+        {
+          "id": "0212629035",
+          "name": "Alcazar strap dress",
+          "product_type": "Dress",
+          "category": "Garment Full body",
+          "color": "Red",
+          "price": {
+            "amount": 999,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": 4.67,
+            "count": 3,
+            "synthetic": true
+          }
+        },
+        {
+          "id": "0315352008",
+          "name": "Edit dress (1)",
+          "product_type": "Dress",
+          "category": "Garment Full body",
+          "color": "Dark Red",
+          "price": {
+            "amount": 1199,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": 3.4,
+            "count": 5,
+            "synthetic": true
+          }
+        },
+        {
+          "id": "0316553025",
+          "name": "Washington dress",
+          "product_type": "Dress",
+          "category": "Garment Full body",
+          "color": "Black",
+          "price": {
+            "amount": 1099,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": 4.0,
+            "count": 6,
+            "synthetic": true
+          }
+        },
+        {
+          "id": "0355421003",
+          "name": "Colette dress",
+          "product_type": "Dress",
+          "category": "Garment Full body",
+          "color": "Black",
+          "price": {
+            "amount": 1299,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": 4.67,
+            "count": 3,
+            "synthetic": true
+          }
+        },
+        {
+          "id": "0401044004",
+          "name": "Cora Dress",
+          "product_type": "Dress",
+          "category": "Garment Full body",
+          "color": "Black",
+          "price": {
+            "amount": 999,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": 4.0,
+            "count": 4,
+            "synthetic": true
+          }
+        },
+        {
+          "id": "0442992005",
+          "name": "Maserati dress",
+          "product_type": "Dress",
+          "category": "Garment Full body",
+          "color": "Other",
+          "price": {
+            "amount": 999,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": 1.33,
+            "count": 3,
+            "synthetic": true
+          }
+        },
+        {
+          "id": "0454143003",
+          "name": "Ada woven dress",
+          "product_type": "Dress",
+          "category": "Garment Full body",
+          "color": "Dark Blue",
+          "price": {
+            "amount": 1299,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": 4.5,
+            "count": 4,
+            "synthetic": true
+          }
+        },
+        {
+          "id": "0467302100",
+          "name": "Panda dress J",
+          "product_type": "Dress",
+          "category": "Garment Full body",
+          "color": "Dark Blue",
+          "price": {
+            "amount": 999,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": 2.12,
+            "count": 8,
+            "synthetic": true
+          }
+        },
+        {
+          "id": "0436570008",
+          "name": "Moscow Cross Bag",
+          "product_type": "Bag",
+          "category": "Accessories",
+          "color": "Black",
+          "price": {
+            "amount": 699,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": 3.5,
+            "count": 4,
+            "synthetic": true
+          }
+        },
+        {
+          "id": "0475762003",
+          "name": "Marais tote bag",
+          "product_type": "Bag",
+          "category": "Accessories",
+          "color": "Black",
+          "price": {
+            "amount": 499,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": null,
+            "count": 0,
+            "synthetic": true
+          }
+        },
+        {
+          "id": "0486195003",
+          "name": "Polly Bag",
+          "product_type": "Bag",
+          "category": "Accessories",
+          "color": "Black",
+          "price": {
+            "amount": 499,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": 4.88,
+            "count": 8,
+            "synthetic": true
+          }
+        },
+        {
+          "id": "0536584002",
+          "name": "Clio PQ leather bag",
+          "product_type": "Bag",
+          "category": "Accessories",
+          "color": "Black",
+          "price": {
+            "amount": 499,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": 3.43,
+            "count": 7,
+            "synthetic": true
+          }
+        },
+        {
+          "id": "0601139001",
+          "name": "TAYLOR RUNNING BAG",
+          "product_type": "Bag",
+          "category": "Accessories",
+          "color": "Black",
+          "price": {
+            "amount": 499,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": 1.38,
+            "count": 8,
+            "synthetic": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "color-alternatives",
+      "area": "parser_scope",
+      "split": "dev",
+      "arguments": {
+        "query": "dress with a black or white bag to match",
+        "include_recommendations": true
+      },
+      "query": "dress with a black or white bag to match",
+      "expected_intent": {
+        "choices": [
+          {
+            "types": [
+              "Dress"
+            ]
+          }
+        ],
+        "complements": [
+          {
+            "types": [
+              "Bag",
+              "Shoulder bag",
+              "Cross-body bag",
+              "Tote bag",
+              "Weekend/Gym bag",
+              "Backpack",
+              "Bumbag"
+            ],
+            "colors": [
+              "Black",
+              "White"
+            ]
+          }
+        ],
+        "expected_plan": {
+          "primary": [
+            {
+              "colors": []
+            }
+          ],
+          "complements": [
+            {
+              "types": [
+                "Bag",
+                "Shoulder bag",
+                "Cross-body bag",
+                "Tote bag",
+                "Weekend/Gym bag",
+                "Backpack",
+                "Bumbag"
+              ],
+              "colors": [
+                "Black",
+                "White"
+              ]
+            }
+          ]
+        }
+      },
+      "actual_parsed_intent": {
+        "primary": [
+          {
+            "terms": [],
+            "types": [
+              "Dress"
+            ],
+            "colors": [],
+            "patterns": [],
+            "filters": {},
+            "excluded_colors": [],
+            "excluded_terms": [],
+            "soft": [],
+            "audience": null,
+            "meaningful": true,
+            "unsupported": false,
+            "quantity": null,
+            "excluded_types": [],
+            "excluded_categories": [],
+            "nullable_rating": false,
+            "prefer_adult": false,
+            "phrases": []
+          }
+        ],
+        "complements": [
+          {
+            "terms": [],
+            "types": [
+              "Bag",
+              "Shoulder bag",
+              "Cross-body bag",
+              "Tote bag",
+              "Weekend/Gym bag",
+              "Backpack",
+              "Bumbag"
+            ],
+            "colors": [
+              "Black",
+              "White"
+            ],
+            "patterns": [],
+            "filters": {},
+            "excluded_colors": [],
+            "excluded_terms": [],
+            "soft": [],
+            "audience": null,
+            "meaningful": true,
+            "unsupported": false,
+            "quantity": null,
+            "excluded_types": [],
+            "excluded_categories": [],
+            "nullable_rating": false,
+            "prefer_adult": false,
+            "phrases": []
+          }
+        ],
+        "audience": null,
+        "limit": null,
+        "sort_by": null,
+        "sort_order": null,
+        "id_parity": null,
+        "diverse": false,
+        "basket_budget": null,
+        "unsupported_reason": null
+      },
+      "parsed_intent_source": "local parser projection; MCP exposes no internal plan",
+      "result_ids": [
+        "0192460006",
+        "0202017055",
+        "0212629004",
+        "0212629031",
+        "0212629032",
+        "0212629033",
+        "0212629035",
+        "0212629036",
+        "0212629040",
+        "0212629043"
+      ],
+      "recommendation_ids": [
+        "0241436001",
+        "0386681012",
+        "0386681014",
+        "0428454001",
+        "0436570008"
+      ],
+      "pass": true,
+      "timed_tool_call": true,
+      "milliseconds": 149.04750000278,
+      "response": {
+        "results": [
+          {
+            "id": "0192460006"
+          },
+          {
+            "id": "0202017055"
+          },
+          {
+            "id": "0212629004"
+          },
+          {
+            "id": "0212629031"
+          },
+          {
+            "id": "0212629032"
+          },
+          {
+            "id": "0212629033"
+          },
+          {
+            "id": "0212629035"
+          },
+          {
+            "id": "0212629036"
+          },
+          {
+            "id": "0212629040"
+          },
+          {
+            "id": "0212629043"
+          }
+        ],
+        "recommendations": [
+          {
+            "id": "0241436001",
+            "for_product_id": "0212629004",
+            "reason": "Black Bag to accompany the selected Dress."
+          },
+          {
+            "id": "0386681012",
+            "for_product_id": "0212629004",
+            "reason": "Black Bag to accompany the selected Dress."
+          },
+          {
+            "id": "0386681014",
+            "for_product_id": "0202017055",
+            "reason": "White Bag to accompany the selected Dress."
+          },
+          {
+            "id": "0428454001",
+            "for_product_id": "0212629004",
+            "reason": "Black Bag to accompany the selected Dress."
+          },
+          {
+            "id": "0436570008",
+            "for_product_id": "0212629004",
+            "reason": "Black Bag to accompany the selected Dress."
+          }
+        ]
+      },
+      "total_milliseconds": 152.05600000626873,
+      "catalog_facts": [
+        {
+          "id": "0192460006",
+          "name": "Knit dress",
+          "product_type": "Dress",
+          "category": "Garment Full body",
+          "color": "Dark Grey",
+          "price": {
+            "amount": 1199,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": null,
+            "count": 0,
+            "synthetic": true
+          }
+        },
+        {
+          "id": "0202017055",
+          "name": "Rihanna dress",
+          "product_type": "Dress",
+          "category": "Garment Full body",
+          "color": "White",
+          "price": {
+            "amount": 4499,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": 2.0,
+            "count": 2,
+            "synthetic": true
+          }
+        },
+        {
+          "id": "0212629004",
+          "name": "Alcazar strap dress",
+          "product_type": "Dress",
+          "category": "Garment Full body",
+          "color": "Black",
+          "price": {
+            "amount": 1899,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": 2.0,
+            "count": 4,
+            "synthetic": true
+          }
+        },
+        {
+          "id": "0212629031",
+          "name": "Alcazar strap dress",
+          "product_type": "Dress",
+          "category": "Garment Full body",
+          "color": "Dark Green",
+          "price": {
+            "amount": 4299,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": 1.25,
+            "count": 4,
+            "synthetic": true
+          }
+        },
+        {
+          "id": "0212629032",
+          "name": "Alcazar strap dress",
+          "product_type": "Dress",
+          "category": "Garment Full body",
+          "color": "Dark Pink",
+          "price": {
+            "amount": 1399,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": 1.57,
+            "count": 7,
+            "synthetic": true
+          }
+        },
+        {
+          "id": "0212629033",
+          "name": "Alcazar strap dress",
+          "product_type": "Dress",
+          "category": "Garment Full body",
+          "color": "White",
+          "price": {
+            "amount": 4099,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": 4.6,
+            "count": 5,
+            "synthetic": true
+          }
+        },
+        {
+          "id": "0212629035",
+          "name": "Alcazar strap dress",
+          "product_type": "Dress",
+          "category": "Garment Full body",
+          "color": "Red",
+          "price": {
+            "amount": 999,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": 4.67,
+            "count": 3,
+            "synthetic": true
+          }
+        },
+        {
+          "id": "0212629036",
+          "name": "Alcazar strap dress",
+          "product_type": "Dress",
+          "category": "Garment Full body",
+          "color": "Greenish Khaki",
+          "price": {
+            "amount": 1699,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": 2.0,
+            "count": 5,
+            "synthetic": true
+          }
+        },
+        {
+          "id": "0212629040",
+          "name": "Alcazar strap dress",
+          "product_type": "Dress",
+          "category": "Garment Full body",
+          "color": "Dark Red",
+          "price": {
+            "amount": 2599,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": 3.33,
+            "count": 3,
+            "synthetic": true
+          }
+        },
+        {
+          "id": "0212629043",
+          "name": "Alcazar strap dress",
+          "product_type": "Dress",
+          "category": "Garment Full body",
+          "color": "Red",
+          "price": {
+            "amount": 2699,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": 3.57,
+            "count": 7,
+            "synthetic": true
+          }
+        },
+        {
+          "id": "0241436001",
+          "name": "Fix it tote bag",
+          "product_type": "Bag",
+          "category": "Accessories",
+          "color": "Black",
+          "price": {
+            "amount": 1599,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": 2.0,
+            "count": 8,
+            "synthetic": true
+          }
+        },
+        {
+          "id": "0386681012",
+          "name": "Mini Cross Bag",
+          "product_type": "Bag",
+          "category": "Accessories",
+          "color": "Black",
+          "price": {
+            "amount": 2099,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": 4.0,
+            "count": 6,
+            "synthetic": true
+          }
+        },
+        {
+          "id": "0386681014",
+          "name": "Mini cross bag",
+          "product_type": "Bag",
+          "category": "Accessories",
+          "color": "White",
+          "price": {
+            "amount": 2099,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": 3.0,
+            "count": 2,
+            "synthetic": true
+          }
+        },
+        {
+          "id": "0428454001",
+          "name": "Omega bag",
+          "product_type": "Bag",
+          "category": "Accessories",
+          "color": "Black",
+          "price": {
+            "amount": 2299,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": null,
+            "count": 0,
+            "synthetic": true
+          }
+        },
+        {
+          "id": "0436570008",
+          "name": "Moscow Cross Bag",
+          "product_type": "Bag",
+          "category": "Accessories",
+          "color": "Black",
+          "price": {
+            "amount": 699,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": 3.5,
+            "count": 4,
+            "synthetic": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "negative-type",
+      "area": "parser_scope",
+      "split": "dev",
+      "arguments": {
+        "query": "dress with a bag and no sandals to match",
+        "include_recommendations": true
+      },
+      "query": "dress with a bag and no sandals to match",
+      "expected_intent": {
+        "choices": [
+          {
+            "types": [
+              "Dress"
+            ]
+          }
+        ],
+        "complements": [
+          {
+            "types": [
+              "Bag",
+              "Shoulder bag",
+              "Cross-body bag",
+              "Tote bag",
+              "Weekend/Gym bag",
+              "Backpack",
+              "Bumbag"
+            ],
+            "excluded_types": [
+              "Sandals"
+            ]
+          }
+        ],
+        "expected_plan": {
+          "primary": [
+            {
+              "types": [
+                "Dress"
+              ]
+            }
+          ],
+          "complements": [
+            {
+              "types": [
+                "Bag",
+                "Shoulder bag",
+                "Cross-body bag",
+                "Tote bag",
+                "Weekend/Gym bag",
+                "Backpack",
+                "Bumbag"
+              ],
+              "excluded_types": [
+                "Sandals"
+              ]
+            }
+          ]
+        }
+      },
+      "actual_parsed_intent": {
+        "primary": [
+          {
+            "terms": [],
+            "types": [
+              "Dress"
+            ],
+            "colors": [],
+            "patterns": [],
+            "filters": {},
+            "excluded_colors": [],
+            "excluded_terms": [],
+            "soft": [],
+            "audience": null,
+            "meaningful": true,
+            "unsupported": false,
+            "quantity": null,
+            "excluded_types": [],
+            "excluded_categories": [],
+            "nullable_rating": false,
+            "prefer_adult": false,
+            "phrases": []
+          }
+        ],
+        "complements": [
+          {
+            "terms": [],
+            "types": [
+              "Bag",
+              "Shoulder bag",
+              "Cross-body bag",
+              "Tote bag",
+              "Weekend/Gym bag",
+              "Backpack",
+              "Bumbag"
+            ],
+            "colors": [],
+            "patterns": [],
+            "filters": {},
+            "excluded_colors": [],
+            "excluded_terms": [],
+            "soft": [],
+            "audience": null,
+            "meaningful": true,
+            "unsupported": false,
+            "quantity": null,
+            "excluded_types": [
+              "Sandals"
+            ],
+            "excluded_categories": [],
+            "nullable_rating": false,
+            "prefer_adult": false,
+            "phrases": []
+          }
+        ],
+        "audience": null,
+        "limit": null,
+        "sort_by": null,
+        "sort_order": null,
+        "id_parity": null,
+        "diverse": false,
+        "basket_budget": null,
+        "unsupported_reason": null
+      },
+      "parsed_intent_source": "local parser projection; MCP exposes no internal plan",
+      "result_ids": [
+        "0192460006",
+        "0202017055",
+        "0212629004",
+        "0212629031",
+        "0212629032",
+        "0212629033",
+        "0212629035",
+        "0212629036",
+        "0212629040",
+        "0212629043"
+      ],
+      "recommendation_ids": [
+        "0241436001",
+        "0386681012",
+        "0386681014",
+        "0428454001",
+        "0436570008"
+      ],
+      "pass": true,
+      "timed_tool_call": true,
+      "milliseconds": 126.49059999966994,
+      "response": {
+        "results": [
+          {
+            "id": "0192460006"
+          },
+          {
+            "id": "0202017055"
+          },
+          {
+            "id": "0212629004"
+          },
+          {
+            "id": "0212629031"
+          },
+          {
+            "id": "0212629032"
+          },
+          {
+            "id": "0212629033"
+          },
+          {
+            "id": "0212629035"
+          },
+          {
+            "id": "0212629036"
+          },
+          {
+            "id": "0212629040"
+          },
+          {
+            "id": "0212629043"
+          }
+        ],
+        "recommendations": [
+          {
+            "id": "0241436001",
+            "for_product_id": "0212629004",
+            "reason": "Black Bag to accompany the selected Dress."
+          },
+          {
+            "id": "0386681012",
+            "for_product_id": "0212629004",
+            "reason": "Black Bag to accompany the selected Dress."
+          },
+          {
+            "id": "0386681014",
+            "for_product_id": "0202017055",
+            "reason": "White Bag to accompany the selected Dress."
+          },
+          {
+            "id": "0428454001",
+            "for_product_id": "0212629004",
+            "reason": "Black Bag to accompany the selected Dress."
+          },
+          {
+            "id": "0436570008",
+            "for_product_id": "0212629004",
+            "reason": "Black Bag to accompany the selected Dress."
+          }
+        ]
+      },
+      "total_milliseconds": 132.1680999972159,
+      "catalog_facts": [
+        {
+          "id": "0192460006",
+          "name": "Knit dress",
+          "product_type": "Dress",
+          "category": "Garment Full body",
+          "color": "Dark Grey",
+          "price": {
+            "amount": 1199,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": null,
+            "count": 0,
+            "synthetic": true
+          }
+        },
+        {
+          "id": "0202017055",
+          "name": "Rihanna dress",
+          "product_type": "Dress",
+          "category": "Garment Full body",
+          "color": "White",
+          "price": {
+            "amount": 4499,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": 2.0,
+            "count": 2,
+            "synthetic": true
+          }
+        },
+        {
+          "id": "0212629004",
+          "name": "Alcazar strap dress",
+          "product_type": "Dress",
+          "category": "Garment Full body",
+          "color": "Black",
+          "price": {
+            "amount": 1899,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": 2.0,
+            "count": 4,
+            "synthetic": true
+          }
+        },
+        {
+          "id": "0212629031",
+          "name": "Alcazar strap dress",
+          "product_type": "Dress",
+          "category": "Garment Full body",
+          "color": "Dark Green",
+          "price": {
+            "amount": 4299,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": 1.25,
+            "count": 4,
+            "synthetic": true
+          }
+        },
+        {
+          "id": "0212629032",
+          "name": "Alcazar strap dress",
+          "product_type": "Dress",
+          "category": "Garment Full body",
+          "color": "Dark Pink",
+          "price": {
+            "amount": 1399,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": 1.57,
+            "count": 7,
+            "synthetic": true
+          }
+        },
+        {
+          "id": "0212629033",
+          "name": "Alcazar strap dress",
+          "product_type": "Dress",
+          "category": "Garment Full body",
+          "color": "White",
+          "price": {
+            "amount": 4099,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": 4.6,
+            "count": 5,
+            "synthetic": true
+          }
+        },
+        {
+          "id": "0212629035",
+          "name": "Alcazar strap dress",
+          "product_type": "Dress",
+          "category": "Garment Full body",
+          "color": "Red",
+          "price": {
+            "amount": 999,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": 4.67,
+            "count": 3,
+            "synthetic": true
+          }
+        },
+        {
+          "id": "0212629036",
+          "name": "Alcazar strap dress",
+          "product_type": "Dress",
+          "category": "Garment Full body",
+          "color": "Greenish Khaki",
+          "price": {
+            "amount": 1699,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": 2.0,
+            "count": 5,
+            "synthetic": true
+          }
+        },
+        {
+          "id": "0212629040",
+          "name": "Alcazar strap dress",
+          "product_type": "Dress",
+          "category": "Garment Full body",
+          "color": "Dark Red",
+          "price": {
+            "amount": 2599,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": 3.33,
+            "count": 3,
+            "synthetic": true
+          }
+        },
+        {
+          "id": "0212629043",
+          "name": "Alcazar strap dress",
+          "product_type": "Dress",
+          "category": "Garment Full body",
+          "color": "Red",
+          "price": {
+            "amount": 2699,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": 3.57,
+            "count": 7,
+            "synthetic": true
+          }
+        },
+        {
+          "id": "0241436001",
+          "name": "Fix it tote bag",
+          "product_type": "Bag",
+          "category": "Accessories",
+          "color": "Black",
+          "price": {
+            "amount": 1599,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": 2.0,
+            "count": 8,
+            "synthetic": true
+          }
+        },
+        {
+          "id": "0386681012",
+          "name": "Mini Cross Bag",
+          "product_type": "Bag",
+          "category": "Accessories",
+          "color": "Black",
+          "price": {
+            "amount": 2099,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": 4.0,
+            "count": 6,
+            "synthetic": true
+          }
+        },
+        {
+          "id": "0386681014",
+          "name": "Mini cross bag",
+          "product_type": "Bag",
+          "category": "Accessories",
+          "color": "White",
+          "price": {
+            "amount": 2099,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": 3.0,
+            "count": 2,
+            "synthetic": true
+          }
+        },
+        {
+          "id": "0428454001",
+          "name": "Omega bag",
+          "product_type": "Bag",
+          "category": "Accessories",
+          "color": "Black",
+          "price": {
+            "amount": 2299,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": null,
+            "count": 0,
+            "synthetic": true
+          }
+        },
+        {
+          "id": "0436570008",
+          "name": "Moscow Cross Bag",
+          "product_type": "Bag",
+          "category": "Accessories",
+          "color": "Black",
+          "price": {
+            "amount": 699,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": 3.5,
+            "count": 4,
+            "synthetic": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "negative-color-chain",
+      "area": "parser_scope",
+      "split": "dev",
+      "arguments": {
+        "query": "dress with a bag and no black and white to match",
+        "include_recommendations": true
+      },
+      "query": "dress with a bag and no black and white to match",
+      "expected_intent": {
+        "choices": [
+          {
+            "types": [
+              "Dress"
+            ]
+          }
+        ],
+        "complements": [
+          {
+            "types": [
+              "Bag",
+              "Shoulder bag",
+              "Cross-body bag",
+              "Tote bag",
+              "Weekend/Gym bag",
+              "Backpack",
+              "Bumbag"
+            ],
+            "excluded_colors": [
+              "Black",
+              "White",
+              "Off White"
+            ]
+          }
+        ],
+        "expected_plan": {
+          "complements": [
+            {
+              "types": [
+                "Bag",
+                "Shoulder bag",
+                "Cross-body bag",
+                "Tote bag",
+                "Weekend/Gym bag",
+                "Backpack",
+                "Bumbag"
+              ],
+              "excluded_colors": [
+                "Black",
+                "White",
+                "Off White"
+              ]
+            }
+          ]
+        }
+      },
+      "actual_parsed_intent": {
+        "primary": [
+          {
+            "terms": [],
+            "types": [
+              "Dress"
+            ],
+            "colors": [],
+            "patterns": [],
+            "filters": {},
+            "excluded_colors": [],
+            "excluded_terms": [],
+            "soft": [],
+            "audience": null,
+            "meaningful": true,
+            "unsupported": false,
+            "quantity": null,
+            "excluded_types": [],
+            "excluded_categories": [],
+            "nullable_rating": false,
+            "prefer_adult": false,
+            "phrases": []
+          }
+        ],
+        "complements": [
+          {
+            "terms": [],
+            "types": [
+              "Bag",
+              "Shoulder bag",
+              "Cross-body bag",
+              "Tote bag",
+              "Weekend/Gym bag",
+              "Backpack",
+              "Bumbag"
+            ],
+            "colors": [],
+            "patterns": [],
+            "filters": {},
+            "excluded_colors": [
+              "Black",
+              "White",
+              "Off White"
+            ],
+            "excluded_terms": [],
+            "soft": [],
+            "audience": null,
+            "meaningful": true,
+            "unsupported": false,
+            "quantity": null,
+            "excluded_types": [],
+            "excluded_categories": [],
+            "nullable_rating": false,
+            "prefer_adult": false,
+            "phrases": []
+          }
+        ],
+        "audience": null,
+        "limit": null,
+        "sort_by": null,
+        "sort_order": null,
+        "id_parity": null,
+        "diverse": false,
+        "basket_budget": null,
+        "unsupported_reason": null
+      },
+      "parsed_intent_source": "local parser projection; MCP exposes no internal plan",
+      "result_ids": [
+        "0192460006",
+        "0202017055",
+        "0212629004",
+        "0212629031",
+        "0212629032",
+        "0212629033",
+        "0212629035",
+        "0212629036",
+        "0212629040",
+        "0212629043"
+      ],
+      "recommendation_ids": [
+        "0387444006",
+        "0436570019",
+        "0436570023",
+        "0482660013",
+        "0482660015"
+      ],
+      "pass": true,
+      "timed_tool_call": true,
+      "milliseconds": 114.45670000102837,
+      "response": {
+        "results": [
+          {
+            "id": "0192460006"
+          },
+          {
+            "id": "0202017055"
+          },
+          {
+            "id": "0212629004"
+          },
+          {
+            "id": "0212629031"
+          },
+          {
+            "id": "0212629032"
+          },
+          {
+            "id": "0212629033"
+          },
+          {
+            "id": "0212629035"
+          },
+          {
+            "id": "0212629036"
+          },
+          {
+            "id": "0212629040"
+          },
+          {
+            "id": "0212629043"
+          }
+        ],
+        "recommendations": [
+          {
+            "id": "0387444006",
+            "for_product_id": "0212629035",
+            "reason": "Red Bag to accompany the selected Dress."
+          },
+          {
+            "id": "0436570019",
+            "for_product_id": "0212629035",
+            "reason": "Red Bag to accompany the selected Dress."
+          },
+          {
+            "id": "0436570023",
+            "for_product_id": "0212629032",
+            "reason": "Dark Pink Bag to accompany the selected Dress."
+          },
+          {
+            "id": "0482660013",
+            "for_product_id": "0212629031",
+            "reason": "Dark Green Bag to accompany the selected Dress."
+          },
+          {
+            "id": "0482660015",
+            "for_product_id": "0212629031",
+            "reason": "Dark Green Bag to accompany the selected Dress."
+          }
+        ]
+      },
+      "total_milliseconds": 117.68869998923037,
+      "catalog_facts": [
+        {
+          "id": "0192460006",
+          "name": "Knit dress",
+          "product_type": "Dress",
+          "category": "Garment Full body",
+          "color": "Dark Grey",
+          "price": {
+            "amount": 1199,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": null,
+            "count": 0,
+            "synthetic": true
+          }
+        },
+        {
+          "id": "0202017055",
+          "name": "Rihanna dress",
+          "product_type": "Dress",
+          "category": "Garment Full body",
+          "color": "White",
+          "price": {
+            "amount": 4499,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": 2.0,
+            "count": 2,
+            "synthetic": true
+          }
+        },
+        {
+          "id": "0212629004",
+          "name": "Alcazar strap dress",
+          "product_type": "Dress",
+          "category": "Garment Full body",
+          "color": "Black",
+          "price": {
+            "amount": 1899,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": 2.0,
+            "count": 4,
+            "synthetic": true
+          }
+        },
+        {
+          "id": "0212629031",
+          "name": "Alcazar strap dress",
+          "product_type": "Dress",
+          "category": "Garment Full body",
+          "color": "Dark Green",
+          "price": {
+            "amount": 4299,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": 1.25,
+            "count": 4,
+            "synthetic": true
+          }
+        },
+        {
+          "id": "0212629032",
+          "name": "Alcazar strap dress",
+          "product_type": "Dress",
+          "category": "Garment Full body",
+          "color": "Dark Pink",
+          "price": {
+            "amount": 1399,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": 1.57,
+            "count": 7,
+            "synthetic": true
+          }
+        },
+        {
+          "id": "0212629033",
+          "name": "Alcazar strap dress",
+          "product_type": "Dress",
+          "category": "Garment Full body",
+          "color": "White",
+          "price": {
+            "amount": 4099,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": 4.6,
+            "count": 5,
+            "synthetic": true
+          }
+        },
+        {
+          "id": "0212629035",
+          "name": "Alcazar strap dress",
+          "product_type": "Dress",
+          "category": "Garment Full body",
+          "color": "Red",
+          "price": {
+            "amount": 999,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": 4.67,
+            "count": 3,
+            "synthetic": true
+          }
+        },
+        {
+          "id": "0212629036",
+          "name": "Alcazar strap dress",
+          "product_type": "Dress",
+          "category": "Garment Full body",
+          "color": "Greenish Khaki",
+          "price": {
+            "amount": 1699,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": 2.0,
+            "count": 5,
+            "synthetic": true
+          }
+        },
+        {
+          "id": "0212629040",
+          "name": "Alcazar strap dress",
+          "product_type": "Dress",
+          "category": "Garment Full body",
+          "color": "Dark Red",
+          "price": {
+            "amount": 2599,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": 3.33,
+            "count": 3,
+            "synthetic": true
+          }
+        },
+        {
+          "id": "0212629043",
+          "name": "Alcazar strap dress",
+          "product_type": "Dress",
+          "category": "Garment Full body",
+          "color": "Red",
+          "price": {
+            "amount": 2699,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": 3.57,
+            "count": 7,
+            "synthetic": true
+          }
+        },
+        {
+          "id": "0387444006",
+          "name": "Petit cross bag (1)",
+          "product_type": "Bag",
+          "category": "Accessories",
+          "color": "Red",
+          "price": {
+            "amount": 1299,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": 3.0,
+            "count": 1,
+            "synthetic": true
+          }
+        },
+        {
+          "id": "0436570019",
+          "name": "Moscow cross bag",
+          "product_type": "Bag",
+          "category": "Accessories",
+          "color": "Red",
+          "price": {
+            "amount": 599,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": 3.5,
+            "count": 2,
+            "synthetic": true
+          }
+        },
+        {
+          "id": "0436570023",
+          "name": "Moscow Cross Bag",
+          "product_type": "Bag",
+          "category": "Accessories",
+          "color": "Dark Pink",
+          "price": {
+            "amount": 1799,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": 2.67,
+            "count": 6,
+            "synthetic": true
+          }
+        },
+        {
+          "id": "0482660013",
+          "name": "Cleo Cosmetic Bag",
+          "product_type": "Bag",
+          "category": "Accessories",
+          "color": "Dark Green",
+          "price": {
+            "amount": 1299,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": 2.6,
+            "count": 5,
+            "synthetic": true
+          }
+        },
+        {
+          "id": "0482660015",
+          "name": "Cleo Cosmetic Bag",
+          "product_type": "Bag",
+          "category": "Accessories",
+          "color": "Dark Green",
+          "price": {
+            "amount": 1399,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": 4.0,
+            "count": 1,
+            "synthetic": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "unsupported-stock",
+      "area": "parser_scope",
+      "split": "dev",
+      "arguments": {
+        "query": "dress with a bag in stock to match",
+        "include_recommendations": true
+      },
+      "query": "dress with a bag in stock to match",
+      "expected_intent": {
+        "choices": [
+          {
+            "types": [
+              "Dress"
+            ]
+          }
+        ],
+        "no_complements": true,
+        "expected_plan": {
+          "primary": [
+            {
+              "types": [
+                "Dress"
+              ],
+              "unsupported": false
+            }
+          ],
+          "complements": [
+            {
+              "types": [
+                "Bag",
+                "Shoulder bag",
+                "Cross-body bag",
+                "Tote bag",
+                "Weekend/Gym bag",
+                "Backpack",
+                "Bumbag"
+              ],
+              "unsupported": true
+            }
+          ]
+        }
+      },
+      "actual_parsed_intent": {
+        "primary": [
+          {
+            "terms": [],
+            "types": [
+              "Dress"
+            ],
+            "colors": [],
+            "patterns": [],
+            "filters": {},
+            "excluded_colors": [],
+            "excluded_terms": [],
+            "soft": [],
+            "audience": null,
+            "meaningful": true,
+            "unsupported": false,
+            "quantity": null,
+            "excluded_types": [],
+            "excluded_categories": [],
+            "nullable_rating": false,
+            "prefer_adult": false,
+            "phrases": []
+          }
+        ],
+        "complements": [
+          {
+            "terms": [
+              "stock"
+            ],
+            "types": [
+              "Bag",
+              "Shoulder bag",
+              "Cross-body bag",
+              "Tote bag",
+              "Weekend/Gym bag",
+              "Backpack",
+              "Bumbag"
+            ],
+            "colors": [],
+            "patterns": [],
+            "filters": {},
+            "excluded_colors": [],
+            "excluded_terms": [],
+            "soft": [],
+            "audience": null,
+            "meaningful": true,
+            "unsupported": true,
+            "quantity": null,
+            "excluded_types": [],
+            "excluded_categories": [],
+            "nullable_rating": false,
+            "prefer_adult": false,
+            "phrases": []
+          }
+        ],
+        "audience": null,
+        "limit": null,
+        "sort_by": null,
+        "sort_order": null,
+        "id_parity": null,
+        "diverse": false,
+        "basket_budget": null,
+        "unsupported_reason": null
+      },
+      "parsed_intent_source": "local parser projection; MCP exposes no internal plan",
+      "result_ids": [
+        "0192460006",
+        "0202017055",
+        "0212629004",
+        "0212629031",
+        "0212629032",
+        "0212629033",
+        "0212629035",
+        "0212629036",
+        "0212629040",
+        "0212629043"
+      ],
+      "recommendation_ids": [],
+      "pass": true,
+      "timed_tool_call": true,
+      "milliseconds": 118.03139999392442,
+      "response": {
+        "results": [
+          {
+            "id": "0192460006"
+          },
+          {
+            "id": "0202017055"
+          },
+          {
+            "id": "0212629004"
+          },
+          {
+            "id": "0212629031"
+          },
+          {
+            "id": "0212629032"
+          },
+          {
+            "id": "0212629033"
+          },
+          {
+            "id": "0212629035"
+          },
+          {
+            "id": "0212629036"
+          },
+          {
+            "id": "0212629040"
+          },
+          {
+            "id": "0212629043"
+          }
+        ],
+        "recommendations": []
+      },
+      "total_milliseconds": 120.49359999946319,
+      "catalog_facts": [
+        {
+          "id": "0192460006",
+          "name": "Knit dress",
+          "product_type": "Dress",
+          "category": "Garment Full body",
+          "color": "Dark Grey",
+          "price": {
+            "amount": 1199,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": null,
+            "count": 0,
+            "synthetic": true
+          }
+        },
+        {
+          "id": "0202017055",
+          "name": "Rihanna dress",
+          "product_type": "Dress",
+          "category": "Garment Full body",
+          "color": "White",
+          "price": {
+            "amount": 4499,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": 2.0,
+            "count": 2,
+            "synthetic": true
+          }
+        },
+        {
+          "id": "0212629004",
+          "name": "Alcazar strap dress",
+          "product_type": "Dress",
+          "category": "Garment Full body",
+          "color": "Black",
+          "price": {
+            "amount": 1899,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": 2.0,
+            "count": 4,
+            "synthetic": true
+          }
+        },
+        {
+          "id": "0212629031",
+          "name": "Alcazar strap dress",
+          "product_type": "Dress",
+          "category": "Garment Full body",
+          "color": "Dark Green",
+          "price": {
+            "amount": 4299,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": 1.25,
+            "count": 4,
+            "synthetic": true
+          }
+        },
+        {
+          "id": "0212629032",
+          "name": "Alcazar strap dress",
+          "product_type": "Dress",
+          "category": "Garment Full body",
+          "color": "Dark Pink",
+          "price": {
+            "amount": 1399,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": 1.57,
+            "count": 7,
+            "synthetic": true
+          }
+        },
+        {
+          "id": "0212629033",
+          "name": "Alcazar strap dress",
+          "product_type": "Dress",
+          "category": "Garment Full body",
+          "color": "White",
+          "price": {
+            "amount": 4099,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": 4.6,
+            "count": 5,
+            "synthetic": true
+          }
+        },
+        {
+          "id": "0212629035",
+          "name": "Alcazar strap dress",
+          "product_type": "Dress",
+          "category": "Garment Full body",
+          "color": "Red",
+          "price": {
+            "amount": 999,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": 4.67,
+            "count": 3,
+            "synthetic": true
+          }
+        },
+        {
+          "id": "0212629036",
+          "name": "Alcazar strap dress",
+          "product_type": "Dress",
+          "category": "Garment Full body",
+          "color": "Greenish Khaki",
+          "price": {
+            "amount": 1699,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": 2.0,
+            "count": 5,
+            "synthetic": true
+          }
+        },
+        {
+          "id": "0212629040",
+          "name": "Alcazar strap dress",
+          "product_type": "Dress",
+          "category": "Garment Full body",
+          "color": "Dark Red",
+          "price": {
+            "amount": 2599,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": 3.33,
+            "count": 3,
+            "synthetic": true
+          }
+        },
+        {
+          "id": "0212629043",
+          "name": "Alcazar strap dress",
+          "product_type": "Dress",
+          "category": "Garment Full body",
+          "color": "Red",
+          "price": {
+            "amount": 2699,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": 3.57,
+            "count": 7,
+            "synthetic": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "unknown-accessory",
+      "area": "parser_scope",
+      "split": "dev",
+      "arguments": {
+        "query": "dress with a laptop to match",
+        "include_recommendations": true
+      },
+      "query": "dress with a laptop to match",
+      "expected_intent": {
+        "choices": [
+          {
+            "types": [
+              "Dress"
+            ]
+          }
+        ],
+        "no_complements": true,
+        "expected_plan": {
+          "primary": [
+            {
+              "types": [
+                "Dress"
+              ]
+            }
+          ],
+          "complements": [
+            {
+              "types": [],
+              "terms": [
+                "laptop"
+              ],
+              "unsupported": true
+            }
+          ]
+        }
+      },
+      "actual_parsed_intent": {
+        "primary": [
+          {
+            "terms": [],
+            "types": [
+              "Dress"
+            ],
+            "colors": [],
+            "patterns": [],
+            "filters": {},
+            "excluded_colors": [],
+            "excluded_terms": [],
+            "soft": [],
+            "audience": null,
+            "meaningful": true,
+            "unsupported": false,
+            "quantity": null,
+            "excluded_types": [],
+            "excluded_categories": [],
+            "nullable_rating": false,
+            "prefer_adult": false,
+            "phrases": []
+          }
+        ],
+        "complements": [
+          {
+            "terms": [
+              "laptop"
+            ],
+            "types": [],
+            "colors": [],
+            "patterns": [],
+            "filters": {},
+            "excluded_colors": [],
+            "excluded_terms": [],
+            "soft": [],
+            "audience": null,
+            "meaningful": true,
+            "unsupported": true,
+            "quantity": null,
+            "excluded_types": [],
+            "excluded_categories": [],
+            "nullable_rating": false,
+            "prefer_adult": false,
+            "phrases": []
+          }
+        ],
+        "audience": null,
+        "limit": null,
+        "sort_by": null,
+        "sort_order": null,
+        "id_parity": null,
+        "diverse": false,
+        "basket_budget": null,
+        "unsupported_reason": null
+      },
+      "parsed_intent_source": "local parser projection; MCP exposes no internal plan",
+      "result_ids": [
+        "0192460006",
+        "0202017055",
+        "0212629004",
+        "0212629031",
+        "0212629032",
+        "0212629033",
+        "0212629035",
+        "0212629036",
+        "0212629040",
+        "0212629043"
+      ],
+      "recommendation_ids": [],
+      "pass": true,
+      "timed_tool_call": true,
+      "milliseconds": 105.56979999819305,
+      "response": {
+        "results": [
+          {
+            "id": "0192460006"
+          },
+          {
+            "id": "0202017055"
+          },
+          {
+            "id": "0212629004"
+          },
+          {
+            "id": "0212629031"
+          },
+          {
+            "id": "0212629032"
+          },
+          {
+            "id": "0212629033"
+          },
+          {
+            "id": "0212629035"
+          },
+          {
+            "id": "0212629036"
+          },
+          {
+            "id": "0212629040"
+          },
+          {
+            "id": "0212629043"
+          }
+        ],
+        "recommendations": []
+      },
+      "total_milliseconds": 108.53759999736212,
+      "catalog_facts": [
+        {
+          "id": "0192460006",
+          "name": "Knit dress",
+          "product_type": "Dress",
+          "category": "Garment Full body",
+          "color": "Dark Grey",
+          "price": {
+            "amount": 1199,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": null,
+            "count": 0,
+            "synthetic": true
+          }
+        },
+        {
+          "id": "0202017055",
+          "name": "Rihanna dress",
+          "product_type": "Dress",
+          "category": "Garment Full body",
+          "color": "White",
+          "price": {
+            "amount": 4499,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": 2.0,
+            "count": 2,
+            "synthetic": true
+          }
+        },
+        {
+          "id": "0212629004",
+          "name": "Alcazar strap dress",
+          "product_type": "Dress",
+          "category": "Garment Full body",
+          "color": "Black",
+          "price": {
+            "amount": 1899,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": 2.0,
+            "count": 4,
+            "synthetic": true
+          }
+        },
+        {
+          "id": "0212629031",
+          "name": "Alcazar strap dress",
+          "product_type": "Dress",
+          "category": "Garment Full body",
+          "color": "Dark Green",
+          "price": {
+            "amount": 4299,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": 1.25,
+            "count": 4,
+            "synthetic": true
+          }
+        },
+        {
+          "id": "0212629032",
+          "name": "Alcazar strap dress",
+          "product_type": "Dress",
+          "category": "Garment Full body",
+          "color": "Dark Pink",
+          "price": {
+            "amount": 1399,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": 1.57,
+            "count": 7,
+            "synthetic": true
+          }
+        },
+        {
+          "id": "0212629033",
+          "name": "Alcazar strap dress",
+          "product_type": "Dress",
+          "category": "Garment Full body",
+          "color": "White",
+          "price": {
+            "amount": 4099,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": 4.6,
+            "count": 5,
+            "synthetic": true
+          }
+        },
+        {
+          "id": "0212629035",
+          "name": "Alcazar strap dress",
+          "product_type": "Dress",
+          "category": "Garment Full body",
+          "color": "Red",
+          "price": {
+            "amount": 999,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": 4.67,
+            "count": 3,
+            "synthetic": true
+          }
+        },
+        {
+          "id": "0212629036",
+          "name": "Alcazar strap dress",
+          "product_type": "Dress",
+          "category": "Garment Full body",
+          "color": "Greenish Khaki",
+          "price": {
+            "amount": 1699,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": 2.0,
+            "count": 5,
+            "synthetic": true
+          }
+        },
+        {
+          "id": "0212629040",
+          "name": "Alcazar strap dress",
+          "product_type": "Dress",
+          "category": "Garment Full body",
+          "color": "Dark Red",
+          "price": {
+            "amount": 2599,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": 3.33,
+            "count": 3,
+            "synthetic": true
+          }
+        },
+        {
+          "id": "0212629043",
+          "name": "Alcazar strap dress",
+          "product_type": "Dress",
+          "category": "Garment Full body",
+          "color": "Red",
+          "price": {
+            "amount": 2699,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": 3.57,
+            "count": 7,
+            "synthetic": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "unknown-accessory-disabled",
+      "area": "parser_scope",
+      "split": "dev",
+      "arguments": {
+        "query": "dress with a laptop to match",
+        "include_recommendations": false
+      },
+      "query": "dress with a laptop to match",
+      "expected_intent": {
+        "choices": [
+          {
+            "types": [
+              "Dress"
+            ]
+          }
+        ],
+        "no_complements": true,
+        "expected_plan": {
+          "primary": [
+            {
+              "types": [
+                "Dress"
+              ]
+            }
+          ],
+          "complements": [
+            {
+              "types": [],
+              "unsupported": true
+            }
+          ]
+        }
+      },
+      "actual_parsed_intent": {
+        "primary": [
+          {
+            "terms": [],
+            "types": [
+              "Dress"
+            ],
+            "colors": [],
+            "patterns": [],
+            "filters": {},
+            "excluded_colors": [],
+            "excluded_terms": [],
+            "soft": [],
+            "audience": null,
+            "meaningful": true,
+            "unsupported": false,
+            "quantity": null,
+            "excluded_types": [],
+            "excluded_categories": [],
+            "nullable_rating": false,
+            "prefer_adult": false,
+            "phrases": []
+          }
+        ],
+        "complements": [
+          {
+            "terms": [
+              "laptop"
+            ],
+            "types": [],
+            "colors": [],
+            "patterns": [],
+            "filters": {},
+            "excluded_colors": [],
+            "excluded_terms": [],
+            "soft": [],
+            "audience": null,
+            "meaningful": true,
+            "unsupported": true,
+            "quantity": null,
+            "excluded_types": [],
+            "excluded_categories": [],
+            "nullable_rating": false,
+            "prefer_adult": false,
+            "phrases": []
+          }
+        ],
+        "audience": null,
+        "limit": null,
+        "sort_by": null,
+        "sort_order": null,
+        "id_parity": null,
+        "diverse": false,
+        "basket_budget": null,
+        "unsupported_reason": null
+      },
+      "parsed_intent_source": "local parser projection; MCP exposes no internal plan",
+      "result_ids": [
+        "0192460006",
+        "0202017055",
+        "0212629004",
+        "0212629031",
+        "0212629032",
+        "0212629033",
+        "0212629035",
+        "0212629036",
+        "0212629040",
+        "0212629043"
+      ],
+      "recommendation_ids": [],
+      "pass": true,
+      "timed_tool_call": true,
+      "milliseconds": 104.8198000062257,
+      "response": {
+        "results": [
+          {
+            "id": "0192460006"
+          },
+          {
+            "id": "0202017055"
+          },
+          {
+            "id": "0212629004"
+          },
+          {
+            "id": "0212629031"
+          },
+          {
+            "id": "0212629032"
+          },
+          {
+            "id": "0212629033"
+          },
+          {
+            "id": "0212629035"
+          },
+          {
+            "id": "0212629036"
+          },
+          {
+            "id": "0212629040"
+          },
+          {
+            "id": "0212629043"
+          }
+        ],
+        "recommendations": []
+      },
+      "total_milliseconds": 107.2320000093896,
+      "catalog_facts": [
+        {
+          "id": "0192460006",
+          "name": "Knit dress",
+          "product_type": "Dress",
+          "category": "Garment Full body",
+          "color": "Dark Grey",
+          "price": {
+            "amount": 1199,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": null,
+            "count": 0,
+            "synthetic": true
+          }
+        },
+        {
+          "id": "0202017055",
+          "name": "Rihanna dress",
+          "product_type": "Dress",
+          "category": "Garment Full body",
+          "color": "White",
+          "price": {
+            "amount": 4499,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": 2.0,
+            "count": 2,
+            "synthetic": true
+          }
+        },
+        {
+          "id": "0212629004",
+          "name": "Alcazar strap dress",
+          "product_type": "Dress",
+          "category": "Garment Full body",
+          "color": "Black",
+          "price": {
+            "amount": 1899,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": 2.0,
+            "count": 4,
+            "synthetic": true
+          }
+        },
+        {
+          "id": "0212629031",
+          "name": "Alcazar strap dress",
+          "product_type": "Dress",
+          "category": "Garment Full body",
+          "color": "Dark Green",
+          "price": {
+            "amount": 4299,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": 1.25,
+            "count": 4,
+            "synthetic": true
+          }
+        },
+        {
+          "id": "0212629032",
+          "name": "Alcazar strap dress",
+          "product_type": "Dress",
+          "category": "Garment Full body",
+          "color": "Dark Pink",
+          "price": {
+            "amount": 1399,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": 1.57,
+            "count": 7,
+            "synthetic": true
+          }
+        },
+        {
+          "id": "0212629033",
+          "name": "Alcazar strap dress",
+          "product_type": "Dress",
+          "category": "Garment Full body",
+          "color": "White",
+          "price": {
+            "amount": 4099,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": 4.6,
+            "count": 5,
+            "synthetic": true
+          }
+        },
+        {
+          "id": "0212629035",
+          "name": "Alcazar strap dress",
+          "product_type": "Dress",
+          "category": "Garment Full body",
+          "color": "Red",
+          "price": {
+            "amount": 999,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": 4.67,
+            "count": 3,
+            "synthetic": true
+          }
+        },
+        {
+          "id": "0212629036",
+          "name": "Alcazar strap dress",
+          "product_type": "Dress",
+          "category": "Garment Full body",
+          "color": "Greenish Khaki",
+          "price": {
+            "amount": 1699,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": 2.0,
+            "count": 5,
+            "synthetic": true
+          }
+        },
+        {
+          "id": "0212629040",
+          "name": "Alcazar strap dress",
+          "product_type": "Dress",
+          "category": "Garment Full body",
+          "color": "Dark Red",
+          "price": {
+            "amount": 2599,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": 3.33,
+            "count": 3,
+            "synthetic": true
+          }
+        },
+        {
+          "id": "0212629043",
+          "name": "Alcazar strap dress",
+          "product_type": "Dress",
+          "category": "Garment Full body",
+          "color": "Red",
+          "price": {
+            "amount": 2699,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": 3.57,
+            "count": 7,
+            "synthetic": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "unsupported-primary-material",
+      "area": "parser_scope",
+      "split": "dev",
+      "arguments": {
+        "query": "dress with an unobtainium blend and a bag to match",
+        "include_recommendations": true
+      },
+      "query": "dress with an unobtainium blend and a bag to match",
+      "expected_intent": {
+        "empty": true,
+        "expected_plan": {
+          "primary": [
+            {
+              "types": [
+                "Dress"
+              ],
+              "terms": [
+                "unobtainium",
+                "blend"
+              ]
+            }
+          ],
+          "complements": [
+            {
+              "types": [
+                "Bag",
+                "Shoulder bag",
+                "Cross-body bag",
+                "Tote bag",
+                "Weekend/Gym bag",
+                "Backpack",
+                "Bumbag"
+              ]
+            }
+          ]
+        }
+      },
+      "actual_parsed_intent": {
+        "primary": [
+          {
+            "terms": [
+              "unobtainium",
+              "blend"
+            ],
+            "types": [
+              "Dress"
+            ],
+            "colors": [],
+            "patterns": [],
+            "filters": {},
+            "excluded_colors": [],
+            "excluded_terms": [],
+            "soft": [],
+            "audience": null,
+            "meaningful": true,
+            "unsupported": false,
+            "quantity": null,
+            "excluded_types": [],
+            "excluded_categories": [],
+            "nullable_rating": false,
+            "prefer_adult": false,
+            "phrases": []
+          }
+        ],
+        "complements": [
+          {
+            "terms": [],
+            "types": [
+              "Bag",
+              "Shoulder bag",
+              "Cross-body bag",
+              "Tote bag",
+              "Weekend/Gym bag",
+              "Backpack",
+              "Bumbag"
+            ],
+            "colors": [],
+            "patterns": [],
+            "filters": {},
+            "excluded_colors": [],
+            "excluded_terms": [],
+            "soft": [],
+            "audience": null,
+            "meaningful": true,
+            "unsupported": false,
+            "quantity": null,
+            "excluded_types": [],
+            "excluded_categories": [],
+            "nullable_rating": false,
+            "prefer_adult": false,
+            "phrases": []
+          }
+        ],
+        "audience": null,
+        "limit": null,
+        "sort_by": null,
+        "sort_order": null,
+        "id_parity": null,
+        "diverse": false,
+        "basket_budget": null,
+        "unsupported_reason": null
+      },
+      "parsed_intent_source": "local parser projection; MCP exposes no internal plan",
+      "result_ids": [],
+      "recommendation_ids": [],
+      "pass": true,
+      "timed_tool_call": true,
+      "milliseconds": 23.29949999693781,
+      "response": {
+        "results": [],
+        "recommendations": []
+      },
+      "total_milliseconds": 27.113700009067543,
+      "catalog_facts": []
+    },
+    {
+      "name": "mixed-independent-ranges",
+      "area": "parser_scope",
+      "split": "dev",
+      "arguments": {
+        "query": "black dress between 900 and 1400 plus white bag between 300 and 700",
+        "include_recommendations": false
+      },
+      "query": "black dress between 900 and 1400 plus white bag between 300 and 700",
+      "expected_intent": {
+        "choices": [
+          {
+            "types": [
+              "Dress"
+            ],
+            "colors": [
+              "Black"
+            ],
+            "min_price": 900,
+            "max_price": 1400
+          },
+          {
+            "types": [
+              "Bag",
+              "Shoulder bag",
+              "Cross-body bag",
+              "Tote bag",
+              "Weekend/Gym bag",
+              "Backpack",
+              "Bumbag"
+            ],
+            "colors": [
+              "White",
+              "Off White"
+            ],
+            "min_price": 300,
+            "max_price": 700
+          }
+        ],
+        "expected_plan": {
+          "primary": [
+            {
+              "types": [
+                "Dress"
+              ],
+              "filters": {
+                "min_price": 900,
+                "max_price": 1400
+              }
+            },
+            {
+              "types": [
+                "Bag",
+                "Shoulder bag",
+                "Cross-body bag",
+                "Tote bag",
+                "Weekend/Gym bag",
+                "Backpack",
+                "Bumbag"
+              ],
+              "filters": {
+                "min_price": 300,
+                "max_price": 700
+              }
+            }
+          ],
+          "complements": []
+        }
+      },
+      "actual_parsed_intent": {
+        "primary": [
+          {
+            "terms": [],
+            "types": [
+              "Dress"
+            ],
+            "colors": [
+              "Black"
+            ],
+            "patterns": [],
+            "filters": {
+              "min_price": 900.0,
+              "max_price": 1400.0
+            },
+            "excluded_colors": [],
+            "excluded_terms": [],
+            "soft": [],
+            "audience": null,
+            "meaningful": true,
+            "unsupported": false,
+            "quantity": null,
+            "excluded_types": [],
+            "excluded_categories": [],
+            "nullable_rating": false,
+            "prefer_adult": false,
+            "phrases": []
+          },
+          {
+            "terms": [],
+            "types": [
+              "Bag",
+              "Shoulder bag",
+              "Cross-body bag",
+              "Tote bag",
+              "Weekend/Gym bag",
+              "Backpack",
+              "Bumbag"
+            ],
+            "colors": [
+              "White",
+              "Off White"
+            ],
+            "patterns": [],
+            "filters": {
+              "min_price": 300.0,
+              "max_price": 700.0
+            },
+            "excluded_colors": [],
+            "excluded_terms": [],
+            "soft": [],
+            "audience": null,
+            "meaningful": true,
+            "unsupported": false,
+            "quantity": null,
+            "excluded_types": [],
+            "excluded_categories": [],
+            "nullable_rating": false,
+            "prefer_adult": false,
+            "phrases": []
+          }
+        ],
+        "complements": [],
+        "audience": null,
+        "limit": null,
+        "sort_by": null,
+        "sort_order": null,
+        "id_parity": null,
+        "diverse": false,
+        "basket_budget": null,
+        "unsupported_reason": null
+      },
+      "parsed_intent_source": "local parser projection; MCP exposes no internal plan",
+      "result_ids": [
+        "0316553025",
+        "0732060008",
+        "0355421003",
+        "0740302003",
+        "0401044004",
+        "0682238005",
+        "0502522001",
+        "0712589001",
+        "0518585001",
+        "0523554001"
+      ],
+      "recommendation_ids": [],
+      "pass": true,
+      "timed_tool_call": true,
+      "milliseconds": 33.26480000396259,
+      "response": {
+        "results": [
+          {
+            "id": "0316553025"
+          },
+          {
+            "id": "0732060008"
+          },
+          {
+            "id": "0355421003"
+          },
+          {
+            "id": "0740302003"
+          },
+          {
+            "id": "0401044004"
+          },
+          {
+            "id": "0682238005"
+          },
+          {
+            "id": "0502522001"
+          },
+          {
+            "id": "0712589001"
+          },
+          {
+            "id": "0518585001"
+          },
+          {
+            "id": "0523554001"
+          }
+        ],
+        "recommendations": []
+      },
+      "total_milliseconds": 36.60690000106115,
+      "catalog_facts": [
+        {
+          "id": "0316553025",
+          "name": "Washington dress",
+          "product_type": "Dress",
+          "category": "Garment Full body",
+          "color": "Black",
+          "price": {
+            "amount": 1099,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": 4.0,
+            "count": 6,
+            "synthetic": true
+          }
+        },
+        {
+          "id": "0732060008",
+          "name": "Bag Buster Bum Bag",
+          "product_type": "Bag",
+          "category": "Accessories",
+          "color": "White",
+          "price": {
+            "amount": 599,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": 3.5,
+            "count": 6,
+            "synthetic": true
+          }
+        },
+        {
+          "id": "0355421003",
+          "name": "Colette dress",
+          "product_type": "Dress",
+          "category": "Garment Full body",
+          "color": "Black",
+          "price": {
+            "amount": 1299,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": 4.67,
+            "count": 3,
+            "synthetic": true
+          }
+        },
+        {
+          "id": "0740302003",
+          "name": "KATHY fringe bag LATE",
+          "product_type": "Bag",
+          "category": "Accessories",
+          "color": "White",
+          "price": {
+            "amount": 499,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": 3.75,
+            "count": 4,
+            "synthetic": true
+          }
+        },
+        {
+          "id": "0401044004",
+          "name": "Cora Dress",
+          "product_type": "Dress",
+          "category": "Garment Full body",
+          "color": "Black",
+          "price": {
+            "amount": 999,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": 4.0,
+            "count": 4,
+            "synthetic": true
+          }
+        },
+        {
+          "id": "0682238005",
+          "name": "NAV MINI BACK PACK",
+          "product_type": "Bag",
+          "category": "Accessories",
+          "color": "Off White",
+          "price": {
+            "amount": 599,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": 2.75,
+            "count": 8,
+            "synthetic": true
+          }
+        },
+        {
+          "id": "0502522001",
+          "name": "Marc dress",
+          "product_type": "Dress",
+          "category": "Garment Full body",
+          "color": "Black",
+          "price": {
+            "amount": 999,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": null,
+            "count": 0,
+            "synthetic": true
+          }
+        },
+        {
+          "id": "0712589001",
+          "name": "Summer Mini Bucket",
+          "product_type": "Bag",
+          "category": "Accessories",
+          "color": "White",
+          "price": {
+            "amount": 699,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": 4.0,
+            "count": 2,
+            "synthetic": true
+          }
+        },
+        {
+          "id": "0518585001",
+          "name": "Gloria maxi dress",
+          "product_type": "Dress",
+          "category": "Garment Full body",
+          "color": "Black",
+          "price": {
+            "amount": 1099,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": 3.0,
+            "count": 1,
+            "synthetic": true
+          }
+        },
+        {
+          "id": "0523554001",
+          "name": "Wattle dress",
+          "product_type": "Dress",
+          "category": "Garment Full body",
+          "color": "Black",
+          "price": {
+            "amount": 1299,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": 3.0,
+            "count": 2,
+            "synthetic": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "polite-comfort",
+      "area": "parser_scope",
+      "split": "dev",
+      "arguments": {
+        "query": "I would love comfy cotton sweaters under 2000",
+        "include_recommendations": false
+      },
+      "query": "I would love comfy cotton sweaters under 2000",
+      "expected_intent": {
+        "choices": [
+          {
+            "types": [
+              "Sweater"
+            ],
+            "text": [
+              "cotton"
+            ],
+            "max_price": 2000
+          }
+        ],
+        "expected_plan": {
+          "primary": [
+            {
+              "types": [
+                "Sweater"
+              ],
+              "terms": [
+                "cotton"
+              ],
+              "filters": {
+                "max_price": 2000
+              }
+            }
+          ]
+        }
+      },
+      "actual_parsed_intent": {
+        "primary": [
+          {
+            "terms": [
+              "cotton"
+            ],
+            "types": [
+              "Sweater"
+            ],
+            "colors": [],
+            "patterns": [],
+            "filters": {
+              "max_price": 2000.0
+            },
+            "excluded_colors": [],
+            "excluded_terms": [],
+            "soft": [
+              "cotton",
+              "jersey",
+              "soft"
+            ],
+            "audience": null,
+            "meaningful": true,
+            "unsupported": false,
+            "quantity": null,
+            "excluded_types": [],
+            "excluded_categories": [],
+            "nullable_rating": false,
+            "prefer_adult": false,
+            "phrases": []
+          }
+        ],
+        "complements": [],
+        "audience": null,
+        "limit": null,
+        "sort_by": null,
+        "sort_order": null,
+        "id_parity": null,
+        "diverse": false,
+        "basket_budget": null,
+        "unsupported_reason": null
+      },
+      "parsed_intent_source": "local parser projection; MCP exposes no internal plan",
+      "result_ids": [
+        "0793893002",
+        "0793893003",
+        "0824386001",
+        "0824386002",
+        "0874196004",
+        "0874196009",
+        "0674493001",
+        "0674493003",
+        "0794897001",
+        "0559162001"
+      ],
+      "recommendation_ids": [],
+      "pass": true,
+      "timed_tool_call": true,
+      "milliseconds": 35.46539999661036,
+      "response": {
+        "results": [
+          {
+            "id": "0793893002"
+          },
+          {
+            "id": "0793893003"
+          },
+          {
+            "id": "0824386001"
+          },
+          {
+            "id": "0824386002"
+          },
+          {
+            "id": "0874196004"
+          },
+          {
+            "id": "0874196009"
+          },
+          {
+            "id": "0674493001"
+          },
+          {
+            "id": "0674493003"
+          },
+          {
+            "id": "0794897001"
+          },
+          {
+            "id": "0559162001"
+          }
+        ],
+        "recommendations": []
+      },
+      "total_milliseconds": 36.624400003347546,
+      "catalog_facts": [
+        {
+          "id": "0793893002",
+          "name": "FROST cotton/cashmere sweater",
+          "product_type": "Sweater",
+          "category": "Garment Upper body",
+          "color": "Dark Beige",
+          "price": {
+            "amount": 1999,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": null,
+            "count": 0,
+            "synthetic": true
+          }
+        },
+        {
+          "id": "0793893003",
+          "name": "FROST cotton/cashmere sweater",
+          "product_type": "Sweater",
+          "category": "Garment Upper body",
+          "color": "Grey",
+          "price": {
+            "amount": 1699,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": 3.8,
+            "count": 5,
+            "synthetic": true
+          }
+        },
+        {
+          "id": "0824386001",
+          "name": "PEBBLE cotton/cashmere",
+          "product_type": "Sweater",
+          "category": "Garment Upper body",
+          "color": "Black",
+          "price": {
+            "amount": 1599,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": 5.0,
+            "count": 2,
+            "synthetic": true
+          }
+        },
+        {
+          "id": "0824386002",
+          "name": "PEBBLE cotton/cashmere",
+          "product_type": "Sweater",
+          "category": "Garment Upper body",
+          "color": "Light Grey",
+          "price": {
+            "amount": 799,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": null,
+            "count": 0,
+            "synthetic": true
+          }
+        },
+        {
+          "id": "0874196004",
+          "name": "PINE crewneck cotton cashmere",
+          "product_type": "Sweater",
+          "category": "Garment Upper body",
+          "color": "Dark Beige",
+          "price": {
+            "amount": 1399,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": 4.75,
+            "count": 4,
+            "synthetic": true
+          }
+        },
+        {
+          "id": "0874196009",
+          "name": "PINE crewneck cotton cashmere",
+          "product_type": "Sweater",
+          "category": "Garment Upper body",
+          "color": "Black",
+          "price": {
+            "amount": 1999,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": 2.17,
+            "count": 6,
+            "synthetic": true
+          }
+        },
+        {
+          "id": "0674493001",
+          "name": "PARSLEY cotton saddle sleeve",
+          "product_type": "Sweater",
+          "category": "Garment Upper body",
+          "color": "Black",
+          "price": {
+            "amount": 599,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": 2.4,
+            "count": 5,
+            "synthetic": true
+          }
+        },
+        {
+          "id": "0674493003",
+          "name": "PARSLEY cotton saddle sleeve",
+          "product_type": "Sweater",
+          "category": "Garment Upper body",
+          "color": "Dark Red",
+          "price": {
+            "amount": 499,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": 2.33,
+            "count": 3,
+            "synthetic": true
+          }
+        },
+        {
+          "id": "0794897001",
+          "name": "STAR v-neck cotton/cash",
+          "product_type": "Sweater",
+          "category": "Garment Upper body",
+          "color": "Dark Blue",
+          "price": {
+            "amount": 1699,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": 2.67,
+            "count": 3,
+            "synthetic": true
+          }
+        },
+        {
+          "id": "0559162001",
+          "name": "Basic bonded jersey sweater",
+          "product_type": "Sweater",
+          "category": "Garment Upper body",
+          "color": "Light Pink",
+          "price": {
+            "amount": 1999,
+            "currency": "INR",
+            "synthetic": true
+          },
+          "rating": {
+            "average": null,
+            "count": 0,
+            "synthetic": true
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,345 @@
+[
+  {
+    "name": "mixed-plus-with-accessory",
+    "area": "mixed",
+    "split": "dev",
+    "args": {
+      "query": "dress plus skirt with a bag to match",
+      "include_recommendations": true
+    },
+    "choices": [
+      {
+        "types": [
+          "Dress"
+        ]
+      },
+      {
+        "types": [
+          "Skirt"
+        ]
+      }
+    ],
+    "complements": [
+      {
+        "types": [
+          "Bag",
+          "Shoulder bag",
+          "Cross-body bag",
+          "Tote bag",
+          "Weekend/Gym bag",
+          "Backpack",
+          "Bumbag"
+        ]
+      }
+    ],
+    "expected_plan": {
+      "primary": [
+        {
+          "types": [
+            "Dress"
+          ]
+        },
+        {
+          "types": [
+            "Skirt"
+          ]
+        }
+      ],
+      "complements": [
+        {
+          "types": [
+            "Bag",
+            "Shoulder bag",
+            "Cross-body bag",
+            "Tote bag",
+            "Weekend/Gym bag",
+            "Backpack",
+            "Bumbag"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "mixed-and-with-accessory",
+    "area": "mixed",
+    "split": "dev",
+    "args": {
+      "query": "dress and skirt with a bag to match",
+      "include_recommendations": true
+    },
+    "choices": [
+      {
+        "types": [
+          "Dress"
+        ]
+      },
+      {
+        "types": [
+          "Skirt"
+        ]
+      }
+    ],
+    "complements": [
+      {
+        "types": [
+          "Bag",
+          "Shoulder bag",
+          "Cross-body bag",
+          "Tote bag",
+          "Weekend/Gym bag",
+          "Backpack",
+          "Bumbag"
+        ]
+      }
+    ],
+    "expected_plan": {
+      "primary": [
+        {
+          "types": [
+            "Dress"
+          ]
+        },
+        {
+          "types": [
+            "Skirt"
+          ]
+        }
+      ],
+      "complements": [
+        {
+          "types": [
+            "Bag",
+            "Shoulder bag",
+            "Cross-body bag",
+            "Tote bag",
+            "Weekend/Gym bag",
+            "Backpack",
+            "Bumbag"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "coordinated-print",
+    "area": "validity",
+    "split": "dev",
+    "args": {
+      "query": "dress with a black and white print and a bag to match",
+      "include_recommendations": true
+    },
+    "empty": true,
+    "expected_plan": {
+      "primary": [
+        {
+          "types": [
+            "Dress"
+          ],
+          "phrases": [
+            "black and white print"
+          ]
+        }
+      ],
+      "complements": [
+        {
+          "types": [
+            "Bag",
+            "Shoulder bag",
+            "Cross-body bag",
+            "Tote bag",
+            "Weekend/Gym bag",
+            "Backpack",
+            "Bumbag"
+          ]
+        }
+      ]
+    },
+    "evidence_note": "Independent source scan found zero Dress records containing the normalized literal phrase black and white print. Conservative phrase policy rejects paraphrases; this is not proof that no semantically equivalent print exists. Positive and negative exact-source fixtures are tested separately."
+  },
+  {
+    "name": "coordinated-print-budget",
+    "area": "validity",
+    "split": "dev",
+    "args": {
+      "query": "dress with a black and white print under 1000 and a bag under 500 to match",
+      "include_recommendations": true
+    },
+    "empty": true,
+    "expected_plan": {
+      "primary": [
+        {
+          "types": [
+            "Dress"
+          ],
+          "phrases": [
+            "black and white print"
+          ],
+          "filters": {
+            "max_price": 1000
+          }
+        }
+      ],
+      "complements": [
+        {
+          "types": [
+            "Bag",
+            "Shoulder bag",
+            "Cross-body bag",
+            "Tote bag",
+            "Weekend/Gym bag",
+            "Backpack",
+            "Bumbag"
+          ],
+          "filters": {
+            "max_price": 500
+          }
+        }
+      ]
+    },
+    "evidence_note": "Independent source scan found zero Dress records containing the normalized literal phrase black and white print. Conservative phrase policy rejects paraphrases; this is not proof that no semantically equivalent print exists. Positive and negative exact-source fixtures are tested separately."
+  },
+  {
+    "name": "nonempty-independent-budgets",
+    "area": "validity",
+    "split": "dev",
+    "args": {
+      "query": "dress under 1000 plus skirt under 1300 with a bag under 500 to match",
+      "include_recommendations": true
+    },
+    "choices": [
+      {
+        "types": [
+          "Dress"
+        ],
+        "max_price": 1000
+      },
+      {
+        "types": [
+          "Skirt"
+        ],
+        "max_price": 1300
+      }
+    ],
+    "complements": [
+      {
+        "types": [
+          "Bag",
+          "Shoulder bag",
+          "Cross-body bag",
+          "Tote bag",
+          "Weekend/Gym bag",
+          "Backpack",
+          "Bumbag"
+        ],
+        "max_price": 500
+      }
+    ],
+    "expected_plan": {
+      "primary": [
+        {
+          "types": [
+            "Dress"
+          ],
+          "filters": {
+            "max_price": 1000
+          }
+        },
+        {
+          "types": [
+            "Skirt"
+          ],
+          "filters": {
+            "max_price": 1300
+          }
+        }
+      ],
+      "complements": [
+        {
+          "types": [
+            "Bag",
+            "Shoulder bag",
+            "Cross-body bag",
+            "Tote bag",
+            "Weekend/Gym bag",
+            "Backpack",
+            "Bumbag"
+          ],
+          "filters": {
+            "max_price": 500
+          }
+        }
+      ]
+    }
+  },
+  {
+    "name": "nonempty-primary-collar-and-accessory-budgets",
+    "area": "validity",
+    "split": "dev",
+    "args": {
+      "query": "dress with a shirt collar under 2500 and a bag under 500 to match",
+      "include_recommendations": true
+    },
+    "choices": [
+      {
+        "types": [
+          "Dress"
+        ],
+        "text": [
+          "shirt collar"
+        ],
+        "phrases": [
+          "shirt collar"
+        ],
+        "max_price": 2500
+      }
+    ],
+    "complements": [
+      {
+        "types": [
+          "Bag",
+          "Shoulder bag",
+          "Cross-body bag",
+          "Tote bag",
+          "Weekend/Gym bag",
+          "Backpack",
+          "Bumbag"
+        ],
+        "max_price": 500
+      }
+    ],
+    "min_results": 1,
+    "reference_count": 1,
+    "expected_plan": {
+      "primary": [
+        {
+          "types": [
+            "Dress"
+          ],
+          "phrases": [
+            "shirt collar"
+          ],
+          "filters": {
+            "max_price": 2500
+          }
+        }
+      ],
+      "complements": [
+        {
+          "types": [
+            "Bag",
+            "Shoulder bag",
+            "Cross-body bag",
+            "Tote bag",
+            "Weekend/Gym bag",
+            "Backpack",
+            "Bumbag"
+          ],
+          "filters": {
+            "max_price": 500
+          }
+        }
+      ]
+    }
+  }
+]

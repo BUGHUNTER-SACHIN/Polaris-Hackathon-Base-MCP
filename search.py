@@ -183,6 +183,12 @@ class Catalog:
             if not parity_matches(id, id_parity):
                 continue
             p = self.by_id[id]
+            if intent.phrases:
+                source = ' ' + ' '.join(words(
+                    (p.get('name') or '') + ' ' + (p.get('description') or '')
+                )) + ' '
+                if any(' ' + phrase + ' ' not in source for phrase in intent.phrases):
+                    continue
             checked_filters = filters
             if (
                 intent.nullable_rating

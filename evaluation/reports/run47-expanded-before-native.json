@@ -1,0 +1,485 @@
+{
+  "note": "Student attribute/coverage proxies, not Bedrock grades or official scores. Latency is this sequential case sample, not the official performance workload.",
+  "url": "http://127.0.0.1:8037/mcp",
+  "split": "all",
+  "catalog_sha256": "05b6aa5e8e8c1c8c997d584f8288e432862454f8820531e13473443e83c8f073",
+  "cases_sha256": "e4eb61c9583b05c53961ead7a3514d0adb74ad6d7adcffd5ba71c28fac87475d",
+  "startup_seconds": 0.9494238999905065,
+  "passed": 6,
+  "total": 18,
+  "p95_ms": 469.4675999926403,
+  "areas": {
+    "ranking": {
+      "passed": 0,
+      "total": 4
+    },
+    "irrelevant": {
+      "passed": 4,
+      "total": 4
+    },
+    "mixed": {
+      "passed": 0,
+      "total": 2
+    },
+    "unusual": {
+      "passed": 0,
+      "total": 2
+    },
+    "recommendations": {
+      "passed": 2,
+      "total": 6
+    }
+  },
+  "cases": [
+    {
+      "name": "polite-skirt",
+      "area": "ranking",
+      "split": "dev",
+      "arguments": {
+        "query": "I would love a red skirt under 2500"
+      },
+      "response": {
+        "results": [],
+        "recommendations": []
+      },
+      "milliseconds": 244.0924999973504,
+      "pass": false,
+      "error": "missing primary slots"
+    },
+    {
+      "name": "polite-unknown",
+      "area": "irrelevant",
+      "split": "dev",
+      "arguments": {
+        "query": "I would love a titanium skirt"
+      },
+      "response": {
+        "results": [],
+        "recommendations": []
+      },
+      "milliseconds": 26.682499999878928,
+      "pass": true
+    },
+    {
+      "name": "plus-scoped",
+      "area": "mixed",
+      "split": "dev",
+      "arguments": {
+        "query": "a black dress plus a white bag under 2000"
+      },
+      "response": {
+        "results": [
+          {
+            "id": "0726186002"
+          }
+        ],
+        "recommendations": []
+      },
+      "milliseconds": 469.4675999926403,
+      "pass": false,
+      "error": "missing primary slots"
+    },
+    {
+      "name": "plus-unknown",
+      "area": "irrelevant",
+      "split": "dev",
+      "arguments": {
+        "query": "dress plus a spaceship engine"
+      },
+      "response": {
+        "results": [],
+        "recommendations": []
+      },
+      "milliseconds": 25.970800008508377,
+      "pass": true
+    },
+    {
+      "name": "comfy-lounge",
+      "area": "unusual",
+      "split": "dev",
+      "arguments": {
+        "query": "something comfy for a lazy Sunday"
+      },
+      "response": {
+        "results": [
+          {
+            "id": "0558037001"
+          }
+        ],
+        "recommendations": []
+      },
+      "milliseconds": 88.82660001108889,
+      "pass": false,
+      "error": "missing primary slots"
+    },
+    {
+      "name": "comfy-unknown",
+      "area": "irrelevant",
+      "split": "dev",
+      "arguments": {
+        "query": "comfy titanium hoodie"
+      },
+      "response": {
+        "results": [],
+        "recommendations": []
+      },
+      "milliseconds": 23.08199999970384,
+      "pass": true
+    },
+    {
+      "name": "suffix-accessory",
+      "area": "recommendations",
+      "split": "dev",
+      "arguments": {
+        "query": "a dress with a bag to match",
+        "include_recommendations": true
+      },
+      "response": {
+        "results": [],
+        "recommendations": []
+      },
+      "milliseconds": 21.35419999831356,
+      "pass": false,
+      "error": "missing primary slots"
+    },
+    {
+      "name": "suffix-disabled",
+      "area": "ranking",
+      "split": "dev",
+      "arguments": {
+        "query": "a dress with a bag to match"
+      },
+      "response": {
+        "results": [],
+        "recommendations": []
+      },
+      "milliseconds": 20.25639999192208,
+      "pass": false,
+      "error": "missing primary slots"
+    },
+    {
+      "name": "suffix-budget",
+      "area": "recommendations",
+      "split": "dev",
+      "arguments": {
+        "query": "black dress and a bag under 1000 to go with it",
+        "include_recommendations": true
+      },
+      "response": {
+        "results": [
+          {
+            "id": "0401044004"
+          },
+          {
+            "id": "0502522001"
+          },
+          {
+            "id": "0537034002"
+          },
+          {
+            "id": "0566850001"
+          },
+          {
+            "id": "0571169001"
+          },
+          {
+            "id": "0573595001"
+          },
+          {
+            "id": "0573760001"
+          },
+          {
+            "id": "0583533001"
+          },
+          {
+            "id": "0585218001"
+          },
+          {
+            "id": "0591948001"
+          }
+        ],
+        "recommendations": [
+          {
+            "id": "0436570008",
+            "for_product_id": "0401044004",
+            "reason": "Black Bag to accompany the selected Dress."
+          },
+          {
+            "id": "0475762003",
+            "for_product_id": "0401044004",
+            "reason": "Black Bag to accompany the selected Dress."
+          },
+          {
+            "id": "0486195003",
+            "for_product_id": "0401044004",
+            "reason": "Black Bag to accompany the selected Dress."
+          },
+          {
+            "id": "0536584002",
+            "for_product_id": "0401044004",
+            "reason": "Black Bag to accompany the selected Dress."
+          },
+          {
+            "id": "0546684001",
+            "for_product_id": "0401044004",
+            "reason": "Black Bag to accompany the selected Dress."
+          }
+        ]
+      },
+      "milliseconds": 323.8075999979628,
+      "pass": true
+    },
+    {
+      "name": "multiple-complements",
+      "area": "recommendations",
+      "split": "dev",
+      "arguments": {
+        "query": "black dress with a matching bag and sandals",
+        "include_recommendations": true
+      },
+      "response": {
+        "results": [
+          {
+            "id": "0212629004"
+          },
+          {
+            "id": "0272591001"
+          },
+          {
+            "id": "0315352006"
+          },
+          {
+            "id": "0316553025"
+          },
+          {
+            "id": "0355421003"
+          },
+          {
+            "id": "0374762001"
+          },
+          {
+            "id": "0374762021"
+          },
+          {
+            "id": "0383569008"
+          },
+          {
+            "id": "0384654004"
+          },
+          {
+            "id": "0384654009"
+          }
+        ],
+        "recommendations": [
+          {
+            "id": "0241436001",
+            "for_product_id": "0212629004",
+            "reason": "Black Bag to accompany the selected Dress."
+          },
+          {
+            "id": "0386681012",
+            "for_product_id": "0212629004",
+            "reason": "Black Bag to accompany the selected Dress."
+          },
+          {
+            "id": "0428454001",
+            "for_product_id": "0212629004",
+            "reason": "Black Bag to accompany the selected Dress."
+          },
+          {
+            "id": "0436570008",
+            "for_product_id": "0212629004",
+            "reason": "Black Bag to accompany the selected Dress."
+          },
+          {
+            "id": "0436570024",
+            "for_product_id": "0212629004",
+            "reason": "Black Bag to accompany the selected Dress."
+          }
+        ]
+      },
+      "milliseconds": 172.50329999660607,
+      "pass": false,
+      "error": "missing complement choice"
+    },
+    {
+      "name": "polite-trousers",
+      "area": "ranking",
+      "split": "heldout",
+      "arguments": {
+        "query": "I would love beige trousers for men under 2500"
+      },
+      "response": {
+        "results": [],
+        "recommendations": []
+      },
+      "milliseconds": 65.16659999033436,
+      "pass": false,
+      "error": "missing primary slots"
+    },
+    {
+      "name": "plus-accessories",
+      "area": "mixed",
+      "split": "heldout",
+      "arguments": {
+        "query": "a red scarf plus a black belt under 2000"
+      },
+      "response": {
+        "results": [],
+        "recommendations": []
+      },
+      "milliseconds": 27.762699988670647,
+      "pass": false,
+      "error": "missing primary slots"
+    },
+    {
+      "name": "comfy-cotton",
+      "area": "unusual",
+      "split": "heldout",
+      "arguments": {
+        "query": "comfy cotton sweaters under 2500"
+      },
+      "response": {
+        "results": [],
+        "recommendations": []
+      },
+      "milliseconds": 20.9138000063831,
+      "pass": false,
+      "error": "missing primary slots"
+    },
+    {
+      "name": "suffix-coat",
+      "area": "recommendations",
+      "split": "heldout",
+      "arguments": {
+        "query": "coat and a scarf under 1500 to match",
+        "include_recommendations": true
+      },
+      "response": {
+        "results": [],
+        "recommendations": []
+      },
+      "milliseconds": 31.504900005529635,
+      "pass": false,
+      "error": "missing primary slots"
+    },
+    {
+      "name": "suffix-unsupported",
+      "area": "ranking",
+      "split": "heldout",
+      "arguments": {
+        "query": "shirt with a titanium belt to match",
+        "include_recommendations": true
+      },
+      "response": {
+        "results": [],
+        "recommendations": []
+      },
+      "milliseconds": 28.762900008587167,
+      "pass": false,
+      "error": "missing primary slots"
+    },
+    {
+      "name": "suffix-negative",
+      "area": "recommendations",
+      "split": "heldout",
+      "arguments": {
+        "query": "a skirt with a bag excluding black to match",
+        "include_recommendations": true
+      },
+      "response": {
+        "results": [],
+        "recommendations": []
+      },
+      "milliseconds": 22.22040000197012,
+      "pass": false,
+      "error": "missing primary slots"
+    },
+    {
+      "name": "multiple-coat-complements",
+      "area": "recommendations",
+      "split": "heldout",
+      "arguments": {
+        "query": "coat with a matching scarf and gloves",
+        "include_recommendations": true
+      },
+      "response": {
+        "results": [
+          {
+            "id": "0312878001"
+          },
+          {
+            "id": "0312878005"
+          },
+          {
+            "id": "0312878010"
+          },
+          {
+            "id": "0368505002"
+          },
+          {
+            "id": "0368505006"
+          },
+          {
+            "id": "0417773006"
+          },
+          {
+            "id": "0417773007"
+          },
+          {
+            "id": "0488549001"
+          },
+          {
+            "id": "0498181001"
+          },
+          {
+            "id": "0501407003"
+          }
+        ],
+        "recommendations": [
+          {
+            "id": "0233091003",
+            "for_product_id": "0312878001",
+            "reason": "Black Gloves to accompany the selected Coat."
+          },
+          {
+            "id": "0233091020",
+            "for_product_id": "0312878001",
+            "reason": "Black Gloves to accompany the selected Coat."
+          },
+          {
+            "id": "0233091021",
+            "for_product_id": "0312878001",
+            "reason": "Black Gloves to accompany the selected Coat."
+          },
+          {
+            "id": "0342034003",
+            "for_product_id": "0312878001",
+            "reason": "Black Scarf to accompany the selected Coat."
+          },
+          {
+            "id": "0402382004",
+            "for_product_id": "0312878001",
+            "reason": "Black Scarf to accompany the selected Coat."
+          }
+        ]
+      },
+      "milliseconds": 97.7707999991253,
+      "pass": true
+    },
+    {
+      "name": "plus-unsupported-material",
+      "area": "irrelevant",
+      "split": "heldout",
+      "arguments": {
+        "query": "a titanium shirt plus unobtainium trousers"
+      },
+      "response": {
+        "results": [],
+        "recommendations": []
+      },
+      "milliseconds": 25.272500002756715,
+      "pass": true
+    }
+  ]
+}
